@@ -1,0 +1,81 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #070808;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+.navbarcontainer {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.cinzel-400 {
+             font-family: "Cinzel", serif;
+             font-optical-sizing: auto;
+             font-weight: 400;
+             font-style: normal
+}
+
+.navbar-brand {
+    font-size: 34px !important;
+    font-family: "Cinzel", serif;
+}
+#navbar {
+    background-color: #070808 !important;
+}
+#navbar a {
+    padding: 0px 13px;
+    font-size: 18px;
+    color: #bdbfc9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+#navbar a:hover {
+    color: #b7d2e7;
+    transition: 300ms;
+}
+#navbar .navbar-brand:hover {
+    transform: scale(105%);
+    transition: 300ms;
+}
+#navbar .active {
+    color: #84879a;
+}
+#navbar .active:hover {
+    transform: scale(100%);
+    color: #84879a;
+}
+#functionalspacer {
+    height: 40px;
+}
+@media (max-width: 1200px) {
+    #navbar .smallify {
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    #navbar ul {
+        padding-top: 10px;
+    }
+    #navbar li {
+        padding: 1px 0px;
+    }
+    #functionalspacer {
+        height: 50px;
+    }
+}
+@media (min-width: 650px) {
+    .belownavbar {
+        height: 100px;
+    }
+}
+@media (max-width: 649px) {
+    .belownavbar {
+        height: 1px;
+    }
+}
