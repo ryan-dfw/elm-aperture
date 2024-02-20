@@ -12,7 +12,7 @@ const Rain = () => {
     }, []);
 
     return (
-        <div>
+        <div className="embedsocial-wrapper">
             <div className="embedsocial-hashtag" data-ref="8384500192fa9438d90085d33cdda14329c0c3e4"></div>
         </div>
     );
