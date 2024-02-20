@@ -18,7 +18,8 @@ const Navbar = () => {
                     <Nav className="ms-auto"  data-bs-theme="dark">
                         <NavDropdown title="Our Photographers" id="navbarDropdownMenuLink">
                             <NavDropdown.Item as={Link} to="/rain">Rain</NavDropdown.Item>
-                            <NavDropdown.Item href="./meraki.html">Meraki</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/meraki">Meraki</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/brayln">Brayln</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </BootstrapNavbar.Collapse>
