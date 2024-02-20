@@ -80,6 +80,9 @@
     }
 }
 @media (max-width: 649px) {
+    .navbar-brand {
+        font-size: 30px !important;
+    }
     .belownavbar {
         height: 1px;
     }

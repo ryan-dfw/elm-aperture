@@ -13,7 +13,7 @@ const Homepage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="embedsocial-wrapper">
             <div className="embedsocial-hashtag" data-ref="ee15b8a1b11a57118b3d7f3808f5783156c9669a"></div>
         </div>
     );
