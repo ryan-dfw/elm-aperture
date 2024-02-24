@@ -13,7 +13,6 @@
 
 .embedsocial-wrapper {
   overflow: hidden;
-  /*margin-top: 40px;*/
 }
 
 .feed-powered-by-es {
@@ -22,7 +21,7 @@
 
 @media (max-width: 960px) {
   .embedsocial-hashtag {
-    margin-top: -125px;
+    margin-top: 40px;
   }
 }
 
