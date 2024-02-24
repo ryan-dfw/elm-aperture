@@ -87,3 +87,19 @@
         height: 1px;
     }
 }
+
+.photographer-navbar {
+    height: 30px;
+    margin-top: 59px;
+}
+
+.photographer-navbar .pnav-container {
+    margin-top: -10px;
+}
+
+.photographer-navbar p {
+    margin: 0;
+    color: #bdbfc9;
+    font-size: 18px;
+    text-align: center;
+}
