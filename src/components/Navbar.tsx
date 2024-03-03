@@ -1,7 +1,12 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
 import '../styles/Navbar.css';
+
+const RealEstateLinks = {
+    Commercial: 'Commercial',
+    Hotel: 'Hotel',
+    Residential: 'Residential',
+};
 
 const Photographers = {
     Rain: 'Rain',
@@ -9,17 +14,7 @@ const Photographers = {
     Brayln: 'Brayln',
 };
 
-interface PhotographerNavbarProps {
-    photographerName: string;
-}
-
 const Navbar = () => {
-    const location = useLocation();
-    const currentPath = location.pathname;
-    const activePhotographer = Object.values(Photographers).find(name =>
-        currentPath.startsWith(`/${name.toLowerCase()}`)
-    );
-
     return (
         <>
             <BootstrapNavbar
@@ -33,8 +28,17 @@ const Navbar = () => {
                     <Link to="/" className="navbar-brand">Elm Aperture</Link>
                     <BootstrapNavbar.Toggle aria-controls="navmenu"/>
                     <BootstrapNavbar.Collapse id="navmenu">
-                        <Nav className="ms-auto">
-                            <NavDropdown title="Our Photographers" id="navbarDropdownMenuLink">
+                        <Nav.Link disabled className={"invisible"}>__________________</Nav.Link>
+                        <Nav.Link disabled className={"text-danger"}>Under Construction</Nav.Link>
+                        <Nav className="ms-auto" data-bs-theme="dark">
+                            <NavDropdown title="Real Estate" id="realEstateDropdown">
+                                {Object.values(RealEstateLinks).map(category => (
+                                    <NavDropdown.Item key={category} as={Link} to={`/${category.toLowerCase()}`}>
+                                        {category}
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
+                            <NavDropdown title="Our Photographers" id="photographersDropdown">
                                 {Object.values(Photographers).map(name => (
                                     <NavDropdown.Item key={name} as={Link} to={`/${name.toLowerCase()}`}>
                                         {name}
@@ -45,30 +49,8 @@ const Navbar = () => {
                     </BootstrapNavbar.Collapse>
                 </div>
             </BootstrapNavbar>
-
-            {activePhotographer ? (
-                <PhotographerNavbar photographerName={activePhotographer} />
-            ) : null}
-
         </>
     );
 }
-
-const PhotographerNavbar: React.FC<PhotographerNavbarProps> = ({ photographerName }) => {
-    return (
-        <BootstrapNavbar
-            bg="dark"
-            variant="dark"
-            className="py-1 fixed-top photographer-navbar"
-            style={{ height: '30px', marginTop: '59px' }}
-        >
-            <div className="container d-flex align-items-center pnav-container">
-                <p className="navbar-text">
-                    {`I am ${photographerName}'s Navbar`}
-                </p>
-            </div>
-        </BootstrapNavbar>
-    );
-};
 
 export default Navbar;
