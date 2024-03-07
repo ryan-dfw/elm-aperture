@@ -45,9 +45,6 @@ const HotelLightBox = () => {
                 closeButton.removeEventListener('click', closeLightbox);
             }
             document.removeEventListener('keydown', handleKeyPress);
-            if (window.location.hash === '#gallery') {
-                setShouldShowNav(true);
-            }
         };
     }, [closeLightbox, setShouldShowNav]);
 

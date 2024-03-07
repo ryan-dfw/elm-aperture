@@ -10,7 +10,7 @@
 .gallery {
   margin-top: 35px;
   display: grid;
-  height: calc(100vh - 35px);
+  height: calc(100vh - 100px);
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 0.5em;
 
