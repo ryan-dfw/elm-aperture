@@ -83,7 +83,7 @@
   }
 }
 
-[id^="lightbox-"] {
+[id^="img-"] {
   &:target {
     opacity:1;
     pointer-events:inherit;
