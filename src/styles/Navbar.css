@@ -14,10 +14,6 @@
     justify-content: center;
 }
 
-.custom-dropdown-menu .dropdown-menu {
-    background-color: blue;
-}
-
 .cinzel-400 {
              font-family: "Cinzel", serif;
              font-optical-sizing: auto;
@@ -26,7 +22,7 @@
 }
 
 .navbar-brand {
-    font-size: 34px !important;
+    font-size: 30px !important;
     font-family: "Cinzel", serif;
 }
 #navbar {
@@ -35,7 +31,7 @@
 
 #navbar a {
     padding: 0px 13px;
-    font-size: 18px;
+    font-size: 15px;
     color: #bdbfc9;
     text-transform: uppercase;
     letter-spacing: 0.05em;
