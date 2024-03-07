@@ -1,10 +1,9 @@
-import React from 'react';
 import '../../styles/Lightbox.scss';
 
 const HotelLightBox = () => {
     return (
-        <div className="lightbox-container">
-            <div className="butts">
+        <div className="gallery-container">
+            <div className="gallery">
                 <div><img src="https://picsum.photos/600/600/?image=512"/><a href="#lightbox-1">512</a></div>
                 <div><img src="https://picsum.photos/600/600/?image=513"/><a href="#lightbox-2">513</a></div>
                 <div><img src="https://picsum.photos/600/600/?image=514"/><a href="#lightbox-3">514</a></div>
