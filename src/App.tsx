@@ -7,11 +7,12 @@ import Brayln from "./pages/photographers/Brayln.tsx";
 import Commercial from "./pages/realestate/Commercial.tsx";
 import Hotel from "./pages/realestate/Hotel.tsx";
 import Residential from "./pages/realestate/Residential.tsx";
+import {ContextProvider} from "./contexts/Context.tsx";
 
 const App = () => {
     return (
         <Router>
-            <>
+            <ContextProvider>
                 <Navbar />
                 <Routes>
                     <Route path="/rain" element={<Rain />} />
@@ -22,7 +23,7 @@ const App = () => {
                     <Route path="/residential" element={<Residential />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>
-            </>
+            </ContextProvider>
         </Router>
     );
 }
