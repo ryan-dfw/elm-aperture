@@ -1,12 +1,12 @@
 import '../../styles/Lightbox.scss';
 import { useContextValue} from "../../contexts/Context.tsx";
-import {useEffect} from "react";
+import {useCallback, useEffect} from "react";
 
 const HotelLightBox = () => {
     const { setShouldShowNav } = useContextValue();
-    const closeLightbox = () => {
+    const closeLightbox = useCallback(() => {
         setShouldShowNav(true);
-    };
+    }, [setShouldShowNav]);
 
     useEffect(() => {
         const galleryImages = document.querySelectorAll('.galleryimage');
@@ -24,8 +24,10 @@ const HotelLightBox = () => {
         }
         const handleKeyPress = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
-                if (closeButton) {
-                    closeButton.click();
+                const closeButtons = document.querySelectorAll('.close');
+                if (closeButtons.length > 0) {
+                    const firstCloseButton = closeButtons[0] as HTMLAnchorElement;
+                    firstCloseButton.click();
                 }
             }
         };
@@ -42,13 +44,12 @@ const HotelLightBox = () => {
             if (closeButton) {
                 closeButton.removeEventListener('click', closeLightbox);
             }
-
             document.removeEventListener('keydown', handleKeyPress);
             if (window.location.hash === '#gallery') {
                 setShouldShowNav(true);
             }
         };
-    }, [setShouldShowNav]);
+    }, [closeLightbox, setShouldShowNav]);
 
     const imagesData = [
         { src: 'https://picsum.photos/600/600/?image=512', title: 'filler image 1' },
@@ -85,11 +86,16 @@ const HotelLightBox = () => {
             {imagesData.map((image, index) => (
                 <div className="img" id={`img-${index + 1}`} key={`img-${index + 1}`}>
                     <div className="content">
-                        <img src={image.src.replace('600/600', '1920/1080')} alt={`Large Image ${index + 1}`} />
+                        <img src={image.src.replace('600/600', '1920/1080')} alt={`Large Image ${index + 1}`}/>
                         <div className="title">
                             No. <b>{index + 512}</b> from Picsum
                         </div>
-                        <a id="closeButton" className="close" href="#gallery"></a>
+                        <a
+                            id={`closeButton-${index + 1}`}
+                            className="close"
+                            href="#gallery"
+                            onClick={() => setShouldShowNav(true)}
+                        ></a>
                     </div>
                 </div>
             ))}
