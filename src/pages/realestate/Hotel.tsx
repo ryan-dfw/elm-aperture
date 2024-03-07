@@ -1,25 +1,11 @@
+import HotelLightBoxWithStyles from "../../components/lightboxes/HotelLightBox";
+
 const Hotel = () => {
-    return (
-        <div>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-            <h1>HOTEL REAL ESTATE</h1>
-        </div>
-    )
+        return (
+            <>
+                    <HotelLightBoxWithStyles/>
+            </>
+        );
 }
 
 export default Hotel;
