@@ -113,7 +113,7 @@
     }
     &:hover > .title {
       opacity: 1;
-      transform: translateY(-3px); //Fix extra line at end
+      transform: translateY(0px);
       &::after{
         opacity:1;
       }
@@ -152,13 +152,15 @@
     margin: 0;
     padding: 0;
     filter: blur(50px);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 1), 0 15px 100px 0 rgba(0, 0, 0, 0.95);
+
   }
   a.close {
     width: 2em;
     height: 2em;
     position: fixed;
     right: 0;
-    top: 0px;
+    top: 0;
     background-color: rgba(black, 0.5);
     display: flex;
     align-items: center;
