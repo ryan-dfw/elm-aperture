@@ -13,10 +13,29 @@
 
 .embedsocial-wrapper {
   overflow: hidden;
+  margin-top: -100px;
 }
 
-.feed-powered-by-es {
-  display: none;
+@media (max-width: 1080px) {
+  .embedsocial-wrapper {
+    margin-top: -130px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .embedsocial-wrapper {
+    margin-top: -150px;
+  }
+}
+
+@media (max-width: 988px) {
+  .embedsocial-wrapper {
+    margin-top: -160px;
+  }
+}
+
+.feed-powered-by-es{
+  display: none !important;
 }
 
 @media (max-width: 960px) {
