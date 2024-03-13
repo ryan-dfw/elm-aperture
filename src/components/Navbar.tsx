@@ -12,8 +12,9 @@ const RealEstateLinks = {
 
 const Photographers = {
     Rain: 'Rain',
-    Meraki: 'Meraki',
     Brayln: 'Brayln',
+    Meraki: 'Meraki',
+    Maivy: 'Maivy'
 };
 
 const Navbar: React.FC = () => {
