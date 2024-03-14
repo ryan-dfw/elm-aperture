@@ -1,26 +1,11 @@
-const Commercial = () => {
-    return (
-        <div>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
-            <h1>COMMERCIAL REAL ESTATE</h1>
+import CommercialLightBoxWithStyles from "../../components/lightboxes/CommercialLightBox";
 
-        </div>
-    );
+const Commercial = () => {
+        return (
+            <>
+                    <CommercialLightBoxWithStyles/>
+            </>
+        );
 }
 
 export default Commercial;

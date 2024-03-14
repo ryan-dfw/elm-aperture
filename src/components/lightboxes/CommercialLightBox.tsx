@@ -1,35 +1,35 @@
 import '../../styles/Lightbox.scss';
-import { useContextValue } from '../../contexts/Context.tsx';
-import { useCallback, useEffect, useState } from 'react';
+import { useContextValue} from "../../contexts/Context.tsx";
+import {useCallback, useEffect, useState} from "react";
 
-const HotelLightBox = () => {
-    const basePath = 'res/img/realestate/hotels/';
+const CommercialLightBox = () => {
+    const basePath = 'res/img/realestate/commercial/';
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const titlesAndDetails = [
-        ['Hotel Bliss', ', Kemah TX'],
-        ['OYO', ', Corpus Christi TX'],
-        ['Hotel Bliss', ', Kemah TX'],
-        ['Stamford Inn', ', Stamford TX'],
-        ['Budget Inn', ', Corpus Christi TX'],
-        ['Hotel Bliss', ', Kemah TX'],
-        ['OYO', ', Midland TX'],
-        ['Plaza Motel', ', Corpus Christi TX'],
-        ['Vali Ho', ', Weslaco TX'],
-        ['OYO', ', Kingsville TX'],
-        ['OYO', ', Kingsville TX'],
-        ["America's Best Value Inn", ', Wichita Falls TX'],
-        ['Hometown Inn', ', Texhoma TX'],
-        ['Grand Eagle Ford Lodge', ', Tilden TX'],
-        ['Monterrey Motel', ', Corpus Christi TX'],
-        ['Stamford Inn', ', Stamford TX'],
-        ['Budget Inn', ', Corpus Christi TX'],
-        ['Hometown Inn', ', Lakin, KS']
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum'],
+        ['Lorem', ' Ipsum']
     ];
 
     const imagesData = titlesAndDetails.map(([title, detail], index) => ({
-        src: `${basePath}hotel_${(index + 1).toString().padStart(2, '0')}.webp`,
+        src: `${basePath}commercial_${(index + 1).toString().padStart(2, '0')}.webp`,
         title,
         detail
     }));
@@ -147,4 +147,4 @@ const HotelLightBox = () => {
     );
 };
 
-export default HotelLightBox;
+export default CommercialLightBox;
