@@ -1,9 +1,9 @@
 import LightBox from "../Lightbox.tsx";
 
 const Hotel = () => {
-    const commercialDirectory = 'realestate';
-    const commercialSubDirectory = 'hotel';
-    const commercialDetails = [
+    const directory = 'realestate';
+    const subDirectory = 'hotel';
+    const details = [
         ['Hotel Bliss', ', Kemah TX', 'Rain'],
         ['OYO', ', Corpus Christi TX', 'Rain'],
         ['Hotel Bliss', ', Kemah TX', 'Rain'],
@@ -24,7 +24,7 @@ const Hotel = () => {
         ['Hometown Inn', ', Lakin, KS', 'Rain']
     ];
 
-    return <LightBox  directory={commercialDirectory} subDirectory={commercialSubDirectory} details={commercialDetails}/>;
+    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Hotel;

@@ -1,9 +1,9 @@
 import LightBox from "../Lightbox.tsx";
 
 const Commercial = () => {
-    const commercialDirectory = 'realestate';
-    const commercialSubDirectory = 'commercial';
-    const commercialDetails = [
+    const directory = 'realestate';
+    const subDirectory = 'commercial';
+    const details = [
         ['The Mayfair', ', 3400 Welborn', 'Rain'],
         ['Bleu Ciel', ', 3130 N Harwood', 'Rain'],
         ['Highland Gates', ', 4602 Abbott', 'Rain'],
@@ -23,7 +23,7 @@ const Commercial = () => {
         ['Azure', ', 2900 McKinney', 'Rain'],
         ['Bleu Ciel', ', 3130 N Harwood', 'Rain']];
 
-    return <LightBox  directory={commercialDirectory} subDirectory={commercialSubDirectory} details={commercialDetails}/>;
+    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Commercial;

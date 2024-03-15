@@ -1,26 +1,11 @@
+import ResidentialLightBoxWithStyles from "../../components/lightboxes/ResidentialLightBox";
+
 const Residential = () => {
-    return (
-        <div>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-            <h1>RESIDENTIAL REAL ESTATE</h1>
-        </div>
-    )
+        return (
+            <>
+                    <ResidentialLightBoxWithStyles />
+            </>
+        );
 }
 
 export default Residential;

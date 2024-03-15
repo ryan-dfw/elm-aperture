@@ -4,10 +4,22 @@ import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
 import '../styles/Navbar.css';
 import { useContextValue } from '../contexts/Context';
 
+const PortraitLinks = {
+    Headshots: 'Headshot',
+    Professional: 'Professional',
+    Fashion: 'Fashion',
+};
+
 const RealEstateLinks = {
     Commercial: 'Commercial',
     Hotel: 'Hotel',
     Residential: 'Residential',
+};
+
+const EventLinks = {
+    Corporate: 'Corporate',
+    Weddings: 'Wedding',
+    Occasions: 'Occasion',
 };
 
 const Photographers = {
@@ -42,8 +54,30 @@ const Navbar: React.FC = () => {
                             Under Construction
                         </Nav.Link>
                         <Nav className="ms-auto" data-bs-theme="dark">
+                            <NavDropdown title="Portraits" id="portraitsDropdown">
+                                {Object.values(PortraitLinks).map((category) => (
+                                    <NavDropdown.Item
+                                        key={category}
+                                        as={Link}
+                                        to={`/${category.toLowerCase()}`}
+                                    >
+                                        {category}
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
                             <NavDropdown title="Real Estate" id="realEstateDropdown">
                                 {Object.values(RealEstateLinks).map((category) => (
+                                    <NavDropdown.Item
+                                        key={category}
+                                        as={Link}
+                                        to={`/${category.toLowerCase()}`}
+                                    >
+                                        {category}
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
+                            <NavDropdown title="Events" id="eventsDropdown">
+                                {Object.values(EventLinks).map((category) => (
                                     <NavDropdown.Item
                                         key={category}
                                         as={Link}
