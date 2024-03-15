@@ -3,35 +3,37 @@ import { useContextValue } from '../../contexts/Context.tsx';
 import { useCallback, useEffect, useState } from 'react';
 
 const HotelLightBox = () => {
-    const basePath = 'res/img/realestate/hotels/';
+    const basePath = 'res/img/realestate/';
+    const subDirectory = 'hotel';
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const titlesAndDetails = [
-        ['Hotel Bliss', ', Kemah TX'],
-        ['OYO', ', Corpus Christi TX'],
-        ['Hotel Bliss', ', Kemah TX'],
-        ['Stamford Inn', ', Stamford TX'],
-        ['Budget Inn', ', Corpus Christi TX'],
-        ['Hotel Bliss', ', Kemah TX'],
-        ['OYO', ', Midland TX'],
-        ['Plaza Motel', ', Corpus Christi TX'],
-        ['Vali Ho', ', Weslaco TX'],
-        ['OYO', ', Kingsville TX'],
-        ['OYO', ', Kingsville TX'],
-        ["America's Best Value Inn", ', Wichita Falls TX'],
-        ['Hometown Inn', ', Texhoma TX'],
-        ['Grand Eagle Ford Lodge', ', Tilden TX'],
-        ['Monterrey Motel', ', Corpus Christi TX'],
-        ['Stamford Inn', ', Stamford TX'],
-        ['Budget Inn', ', Corpus Christi TX'],
-        ['Hometown Inn', ', Lakin, KS']
+    const details = [
+        ['Hotel Bliss', ', Kemah TX', 'Rain'],
+        ['OYO', ', Corpus Christi TX', 'Rain'],
+        ['Hotel Bliss', ', Kemah TX', 'Rain'],
+        ['Stamford Inn', ', Stamford TX', 'Rain'],
+        ['Budget Inn', ', Corpus Christi TX', 'Rain'],
+        ['Hotel Bliss', ', Kemah TX', 'Rain'],
+        ['OYO', ', Midland TX', 'Rain'],
+        ['Plaza Motel', ', Corpus Christi TX', 'Rain'],
+        ['Vali Ho', ', Weslaco TX', 'Rain'],
+        ['OYO', ', Kingsville TX', 'Rain'],
+        ['OYO', ', Kingsville TX', 'Rain'],
+        ["America's Best Value Inn", ', Wichita Falls TX', 'Rain'],
+        ['Hometown Inn', ', Texhoma TX', 'Rain'],
+        ['Grand Eagle Ford Lodge', ', Tilden TX', 'Rain'],
+        ['Monterrey Motel', ', Corpus Christi TX', 'Rain'],
+        ['Stamford Inn', ', Stamford TX', 'Rain'],
+        ['Budget Inn', ', Corpus Christi TX', 'Rain'],
+        ['Hometown Inn', ', Lakin, KS', 'Rain']
     ];
 
-    const imagesData = titlesAndDetails.map(([title, detail], index) => ({
-        src: `${basePath}hotel_${(index + 1).toString().padStart(2, '0')}.webp`,
+    const imagesData = details.map(([title, detail, photographer], index) => ({
+        src: `${basePath}${subDirectory}/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
         title,
-        detail
+        detail,
+        photographer
     }));
 
     const closeLightbox = useCallback(() => {
@@ -124,8 +126,7 @@ const HotelLightBox = () => {
                             loading="lazy"
                         />
                         <div className="title">
-                            {image.title}
-                            {image.detail}
+                            {`${image.title}${image.detail}, shot by ${image.photographer}`}
                         </div>
                         <a
                             id={`closeButton-${index + 1}`}
