@@ -1,29 +1,11 @@
-const Wedding = () => {
+import WeddingLightBoxWithStyles from "../../components/lightboxes/WeddingLightBox";
 
-    return (
-        <div>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-            <h1>WEDDINGS</h1>
-        </div>
-    );
+const Wedding = () => {
+        return (
+            <>
+                    <WeddingLightBoxWithStyles/>
+            </>
+        );
 }
 
 export default Wedding;

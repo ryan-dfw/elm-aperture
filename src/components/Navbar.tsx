@@ -24,8 +24,6 @@ const EventLinks = {
 
 const Photographers = {
     Rain: 'Rain',
-    Brayln: 'Brayln',
-    Meraki: 'Meraki',
     Maivy: 'Maivy'
 };
 

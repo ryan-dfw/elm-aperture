@@ -3,8 +3,6 @@ import {ContextProvider} from "./contexts/Context.tsx";
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Rain from './pages/photographers/Rain.tsx';
-import Brayln from "./pages/photographers/Brayln.tsx";
-import Meraki from "./pages/photographers/Meraki.tsx";
 import Maivy from "./pages/photographers/Maivy.tsx";
 import Commercial from "./pages/realestate/Commercial.tsx";
 import Hotel from "./pages/realestate/Hotel.tsx";
@@ -32,8 +30,6 @@ const App = () => {
                     <Route path="/wedding" element={<Wedding />} />
                     <Route path="/occasion" element={<Occasion />} />
                     <Route path="/rain" element={<Rain />} />
-                    <Route path="/brayln" element={<Brayln />} />
-                    <Route path="/meraki" element={<Meraki />} />
                     <Route path="/maivy" element={<Maivy />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>

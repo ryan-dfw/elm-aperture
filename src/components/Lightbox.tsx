@@ -14,7 +14,8 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const imagesData = details.map(([title, detail, photographer], index) => ({
-        src: `${basePath}${subDirectory}/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
+        src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
+        thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(2, '0')}_thumb.webp`,
         title,
         detail,
         photographer
@@ -95,7 +96,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
             <div className="gallery">
                 {imagesData.map((image, index: number) => (
                     <div className="galleryimage" key={index}>
-                        <img src={image.src} alt={`Gallery Image ${index + 1}`} loading="lazy" />
+                        <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy" />
                         <a href={`#img-${index + 1}`}>{image.title}</a>
                     </div>
                 ))}
@@ -105,7 +106,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
                 <div className="img" id={`img-${index + 1}`} key={`img-${index + 1}`}>
                     <div className="content">
                         <img
-                            src={image.src.replace('600/600', '1920/1080')}
+                            src={image.src}
                             alt={`Large Image ${index + 1}`}
                             loading="lazy"
                         />
