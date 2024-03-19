@@ -10,9 +10,8 @@ import Residential from "./pages/realestate/Residential.tsx";
 import Professional from "./pages/portrait/Professional.tsx";
 import Headshot from "./pages/portrait/Headshot.tsx";
 import Fashion from "./pages/portrait/Fashion.tsx";
-import Corporate from "./pages/event/Corporate.tsx";
 import Wedding from "./pages/event/Wedding.tsx";
-import Occasion from "./pages/event/Occasion.tsx";
+import Events from "./pages/event/Events.tsx";
 
 const App = () => {
     return (
@@ -26,9 +25,8 @@ const App = () => {
                     <Route path="/commercial" element={<Commercial />} />
                     <Route path="/hotel" element={<Hotel />} />
                     <Route path="/residential" element={<Residential />} />
-                    <Route path="/corporate" element={<Corporate />} />
                     <Route path="/wedding" element={<Wedding />} />
-                    <Route path="/occasion" element={<Occasion />} />
+                    <Route path="/events" element={<Events />} />
                     <Route path="/rain" element={<Rain />} />
                     <Route path="/maivy" element={<Maivy />} />
                     <Route path="/" element={<Homepage />} />

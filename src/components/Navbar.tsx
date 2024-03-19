@@ -17,9 +17,8 @@ const RealEstateLinks = {
 };
 
 const EventLinks = {
-    Corporate: 'Corporate',
     Weddings: 'Wedding',
-    Occasions: 'Occasion',
+    Events: 'Events',
 };
 
 const Photographers = {
