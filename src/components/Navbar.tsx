@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
 import '../styles/Navbar.css';
@@ -28,8 +28,38 @@ const Photographers = {
 
 const Navbar: React.FC = () => {
     const { shouldShowNav } = useContextValue();
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(false); // Track the collapsed state
 
-    return shouldShowNav ? (
+    useEffect(() => {
+        const handleResize = () => {
+            setShowNavbar(window.innerWidth >= 600);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const handleToggleNavbar = () => {
+        setIsNavbarCollapsed(!isNavbarCollapsed); // Update the collapsed state
+    };
+
+    const handleTopLevelMenuItemClick = () => {
+        if (isNavbarCollapsed) { // Only collapse the navbar if it's already collapsed
+            handleToggleNavbar();
+        }
+    };
+
+    if (showNavbar === !showNavbar) {
+        console.log(showNavbar);
+    }
+
+    return window.innerWidth < 600 || shouldShowNav ? (
         <div>
             <BootstrapNavbar
                 id="navbar"
@@ -37,12 +67,13 @@ const Navbar: React.FC = () => {
                 bg="dark"
                 variant="dark"
                 className="py-1 fixed-top"
+                expanded={isNavbarCollapsed} // Pass the collapsed state to BootstrapNavbar
             >
                 <div className="container">
                     <Link to="/" className="navbar-brand">
                         Elm Aperture
                     </Link>
-                    <BootstrapNavbar.Toggle aria-controls="navmenu" />
+                    <BootstrapNavbar.Toggle aria-controls="navmenu" onClick={handleToggleNavbar} />
                     <BootstrapNavbar.Collapse id="navmenu">
                         <Nav.Link disabled className={'invisible'}>
                             __________________
@@ -57,6 +88,7 @@ const Navbar: React.FC = () => {
                                         key={category}
                                         as={Link}
                                         to={`/${category.toLowerCase()}`}
+                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
                                     >
                                         {category}
                                     </NavDropdown.Item>
@@ -68,6 +100,7 @@ const Navbar: React.FC = () => {
                                         key={category}
                                         as={Link}
                                         to={`/${category.toLowerCase()}`}
+                                        onClick={handleTopLevelMenuItemClick}
                                     >
                                         {category}
                                     </NavDropdown.Item>
@@ -79,6 +112,7 @@ const Navbar: React.FC = () => {
                                         key={category}
                                         as={Link}
                                         to={`/${category.toLowerCase()}`}
+                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
                                     >
                                         {category}
                                     </NavDropdown.Item>
@@ -90,6 +124,7 @@ const Navbar: React.FC = () => {
                                         key={name}
                                         as={Link}
                                         to={`/${name.toLowerCase()}`}
+                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
                                     >
                                         {name}
                                     </NavDropdown.Item>
