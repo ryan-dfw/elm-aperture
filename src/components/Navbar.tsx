@@ -29,7 +29,7 @@ const Photographers = {
 const Navbar: React.FC = () => {
     const { shouldShowNav } = useContextValue();
     const [showNavbar, setShowNavbar] = useState(true);
-    const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(false); // Track the collapsed state
+    const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,11 +46,11 @@ const Navbar: React.FC = () => {
     }, []);
 
     const handleToggleNavbar = () => {
-        setIsNavbarCollapsed(!isNavbarCollapsed); // Update the collapsed state
+        setIsNavbarCollapsed(!isNavbarCollapsed);
     };
 
     const handleTopLevelMenuItemClick = () => {
-        if (isNavbarCollapsed) { // Only collapse the navbar if it's already collapsed
+        if (isNavbarCollapsed) {
             handleToggleNavbar();
         }
     };
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                 bg="dark"
                 variant="dark"
                 className="py-1 fixed-top"
-                expanded={isNavbarCollapsed} // Pass the collapsed state to BootstrapNavbar
+                expanded={isNavbarCollapsed}
             >
                 <div className="container">
                     <Link to="/" className="navbar-brand">
@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
                                         key={category}
                                         as={Link}
                                         to={`/${category.toLowerCase()}`}
-                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
+                                        onClick={handleTopLevelMenuItemClick}
                                     >
                                         {category}
                                     </NavDropdown.Item>
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
                                         key={category}
                                         as={Link}
                                         to={`/${category.toLowerCase()}`}
-                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
+                                        onClick={handleTopLevelMenuItemClick}
                                     >
                                         {category}
                                     </NavDropdown.Item>
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
                                         key={name}
                                         as={Link}
                                         to={`/${name.toLowerCase()}`}
-                                        onClick={handleTopLevelMenuItemClick} // Add onClick handler
+                                        onClick={handleTopLevelMenuItemClick}
                                     >
                                         {name}
                                     </NavDropdown.Item>
