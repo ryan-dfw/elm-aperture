@@ -1,30 +1,10 @@
+import HeadshotLightBoxWithStyles from "../../components/lightboxes/HeadshotLightBox";
 const Headshot = () => {
-
-    return (
-        <div>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-            <h1>HEADSHOT PORTRAITS</h1>
-        </div>
-    );
+        return (
+            <>
+                    <HeadshotLightBoxWithStyles/>
+            </>
+        );
 }
 
 export default Headshot;

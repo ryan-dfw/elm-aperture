@@ -3,25 +3,25 @@ import LightBox from "../Lightbox.tsx";
 const Hotel = () => {
     const directory = 'realestate';
     const subDirectory = 'hotel';
-    const details = [
-        ['Hotel Bliss', ', Kemah TX', 'Rain'],
-        ['OYO', ', Corpus Christi TX', 'Rain'],
-        ['Hotel Bliss', ', Kemah TX', 'Rain'],
-        ['Stamford Inn', ', Stamford TX', 'Rain'],
-        ['Budget Inn', ', Corpus Christi TX', 'Rain'],
-        ['Hotel Bliss', ', Kemah TX', 'Rain'],
-        ['OYO', ', Midland TX', 'Rain'],
-        ['Plaza Motel', ', Corpus Christi TX', 'Rain'],
-        ['Vali Ho', ', Weslaco TX', 'Rain'],
-        ['OYO', ', Kingsville TX', 'Rain'],
-        ['OYO', ', Kingsville TX', 'Rain'],
-        ["America's Best Value Inn", ', Wichita Falls TX', 'Rain'],
-        ['Hometown Inn', ', Texhoma TX', 'Rain'],
-        ['Grand Eagle Ford Lodge', ', Tilden TX', 'Rain'],
-        ['Monterrey Motel', ', Corpus Christi TX', 'Rain'],
-        ['Stamford Inn', ', Stamford TX', 'Rain'],
-        ['Budget Inn', ', Corpus Christi TX', 'Rain'],
-        ['Hometown Inn', ', Lakin, KS', 'Rain']
+    const details: [string, string, string, number, number][] = [
+        ['Hotel Bliss', ', Kemah TX', 'Rain', 0, 0],
+        ['OYO', ', Corpus Christi TX', 'Rain', 0, 0],
+        ['Hotel Bliss', ', Kemah TX', 'Rain', 0, 0],
+        ['Stamford Inn', ', Stamford TX', 'Rain', 0, 0],
+        ['Budget Inn', ', Corpus Christi TX', 'Rain', 0, 0],
+        ['Hotel Bliss', ', Kemah TX', 'Rain', 0, 0],
+        ['OYO', ', Midland TX', 'Rain', 0, 0],
+        ['Plaza Motel', ', Corpus Christi TX', 'Rain', 0, 0],
+        ['Vali Ho', ', Weslaco TX', 'Rain', 0, 0],
+        ['OYO', ', Kingsville TX', 'Rain', 0, 0],
+        ['OYO', ', Kingsville TX', 'Rain', 0, 0],
+        ["America's Best Value Inn", ', Wichita Falls TX', 'Rain', 0, 0],
+        ['Hometown Inn', ', Texhoma TX', 'Rain', 0, 0],
+        ['Grand Eagle Ford Lodge', ', Tilden TX', 'Rain', 0, 0],
+        ['Monterrey Motel', ', Corpus Christi TX', 'Rain', 0, 0],
+        ['Stamford Inn', ', Stamford TX', 'Rain', 0, 0],
+        ['Budget Inn', ', Corpus Christi TX', 'Rain', 0, 0],
+        ['Hometown Inn', ', Lakin, KS', 'Rain', 0, 0]
     ];
 
     return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;

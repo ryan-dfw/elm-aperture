@@ -3,25 +3,25 @@ import LightBox from "../Lightbox.tsx";
 const Wedding = () => {
     const directory = 'events';
     const subDirectory = 'wedding';
-    const details = [
-        ['Palos Verdes', ', Wedding', 'Rain'],
-        ['Serene Lakeside', ', Wedding Party', 'Maivy'],
-        ['Palos Verdes', ', Wedding', 'Rain'],
-        ['Serene Lakeside', ', Wedding Portrait', 'Maivy'],
-        ['Mandalay Canal', ', Engagement', 'Rain'],
-        ['Japanese Garden', ', Wedding Ceremony', 'Rain'],
-        ['Japanese Garden', ', Wedding Portrait', 'Rain'],
-        ['Japanese Garden', ', Wedding Portrait', 'Rain'],
-        ['Garden Hall', ', Wedding Reception', 'Rain'],
-        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain'],
-        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain'],
-        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain'],
-        ['Venue Nine-Twenty', ', Wedding Portrait', 'Rain'],
-        ['Thanksgiving Square', ', Family Photos', 'Rain'],
-        ['Thanksgiving Square', ', Wedding Portrait', 'Rain'],
-        ['Thanksgiving Square', ', Wedding Portrait', 'Rain'],
-        ['Pilgrim Rest Church', ', Wedding Ceremony', 'Maivy'],
-        ['Pilgrim Rest Church', ', Wedding Ceremony', 'Maivy']
+    const details: [string, string, string, number, number][] = [
+        ['Palos Verdes', ', Wedding', 'Rain', 0, 0],
+        ['Serene Lakeside', ', Wedding Party', 'Maivy', 0, 0],
+        ['Palos Verdes', ', Wedding', 'Rain', 0, 0],
+        ['Serene Lakeside', ', Wedding Portrait', 'Maivy', 0, 0],
+        ['Mandalay Canal', ', Engagement', 'Rain', 0, 0],
+        ['Japanese Garden', ', Wedding Ceremony', 'Rain', 0, 0],
+        ['Japanese Garden', ', Wedding Portrait', 'Rain', 0, 0],
+        ['Japanese Garden', ', Wedding Portrait', 'Rain', 0, 0],
+        ['Garden Hall', ', Wedding Reception', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Wedding Ceremony', 'Rain', 0, 0],
+        ['Venue Nine-Twenty', ', Wedding Portrait', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Family Photos', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Wedding Portrait', 'Rain', 0, 0],
+        ['Thanksgiving Square', ', Wedding Portrait', 'Rain', 0, 0],
+        ['Pilgrim Rest Church', ', Wedding Ceremony', 'Maivy', 0, 0],
+        ['Pilgrim Rest Church', ', Wedding Ceremony', 'Maivy', 0, 0]
     ];
 
     return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;

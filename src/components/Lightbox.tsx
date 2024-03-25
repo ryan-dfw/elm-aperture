@@ -5,13 +5,15 @@ import { useContextValue } from '../contexts/Context.tsx';
 interface LightBoxProps {
     directory: string;
     subDirectory: string;
-    details: string[][];
+    details: [string, string, string, number, number][];
 }
 
 const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details }) => {
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const offsetDesktop = details.map(item => item[3]);
+    const offsetMobile = details.map(item => item[4]);
 
     const imagesData = details.map(([title, detail, photographer], index) => ({
         src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
@@ -32,6 +34,48 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex === imagesData.length - 1 ? 0 : prevIndex + 1));
     };
+
+    const applyOffset = (offsetDesktop: number[], offsetMobile: number[]) => {
+        const windowWidth = window.innerWidth;
+        const galleryImages = document.querySelectorAll('.galleryimage img');
+
+        const applyFullOffset = () => {
+            galleryImages.forEach((image, i) => {
+                const imgElement = image as HTMLImageElement;
+                imgElement.style.marginTop = `${offsetDesktop[i]}px`;
+            });
+        };
+
+        const applyMediumOffset = () => {
+            const midOffsets = offsetDesktop.map(offset => offset / 2);
+            galleryImages.forEach((image, i) => {
+                const imgElement = image as HTMLImageElement;
+                imgElement.style.marginTop = `${midOffsets[i]}px`;
+            });
+        };
+
+        const applyMobileOffset = () => {
+            galleryImages.forEach((image, i) => {
+                const imgElement = image as HTMLImageElement;
+                imgElement.style.marginTop = `${offsetMobile[i]}px`;
+            });
+        };
+
+        if (windowWidth > 1080) {
+            applyFullOffset();
+        } else if (windowWidth >= 800) {
+            applyMediumOffset();
+        } else {
+            applyMobileOffset();
+        }
+    };
+
+    window.addEventListener('resize', () => {
+        applyOffset(offsetDesktop, offsetMobile);
+    });
+
+
+
 
     useEffect(() => {
         const galleryImages = document.querySelectorAll('.galleryimage');
@@ -86,6 +130,10 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
             document.removeEventListener('keydown', handleKeyPress);
         };
     }, [imagesData.length, closeLightbox, setShouldShowNav]);
+
+    useEffect(() => {
+        applyOffset(offsetDesktop, offsetMobile);
+    }, [offsetDesktop, offsetMobile]);
 
     if (currentIndex + 1 - currentIndex === 0) {
         console.log(currentIndex);
