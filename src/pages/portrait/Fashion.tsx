@@ -1,30 +1,11 @@
-const Fashion = () => {
+import FashionLightBoxWithStyles from "../../components/lightboxes/FashionLightBox";
 
-    return (
-        <div>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-            <h1>FASHION PORTRAITS</h1>
-        </div>
-    );
+const Fashion = () => {
+        return (
+            <>
+                    <FashionLightBoxWithStyles/>
+            </>
+        );
 }
 
 export default Fashion;
