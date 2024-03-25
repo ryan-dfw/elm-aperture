@@ -1,0 +1,27 @@
+.gallery-container {
+  margin: 5px;
+  position: relative;
+
+  $marginValuesLarge: (25%, 0%, 40%, 0%, 40%, 60%, 40%, 60%, 40%, 70%, 10%, 10%, 0%, 10%, 10%, 10%, 10%, 10%);
+  $marginValuesSmall: (60%, 40%, 60%, 50%, 50%, 80%, 50%, 65%, 50%, 70%, 15%, 15%, 10%, 15%, 15%, 15%, 15%, 15%);
+
+  @media (max-width: 800px) {
+    .gallery {
+      @for $i from 1 through length($marginValuesSmall) {
+        & > div:nth-child(#{$i}) > img {
+          margin-top: nth($marginValuesSmall, $i);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 801px) {
+    .gallery {
+      @for $i from 1 through length($marginValuesLarge) {
+        & > div:nth-child(#{$i}) > img {
+          margin-top: nth($marginValuesLarge, $i);
+        }
+      }
+    }
+  }
+}
