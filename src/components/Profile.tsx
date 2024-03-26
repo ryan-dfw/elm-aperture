@@ -19,17 +19,14 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus}) => {
             setAdjustedMarginTop(newAdjustedMarginTop);
         };
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
-        // Initial calculation on component mount
         handleResize();
 
-        // Clean up event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [vFocus]); // Re-run effect when vFocus changes
+    }, [vFocus]);
 
     return (
         <>
@@ -38,9 +35,9 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus}) => {
                     <header>
                         <a>
                             <img
-                                src={`public/res/img/profile/${photographerLC}/${photographerLC}_thumb.webp`}
+                                src={`res/img/profile/${photographerLC}/${photographerLC}_thumb.webp`}
                                 alt={`${photographer}'s profile picture`}
-                                style={{marginTop: `${adjustedMarginTop}px`}} // Apply adjustedMarginTop
+                                style={{marginTop: `${adjustedMarginTop}px`}}
                             />
                         </a>
                     </header>
