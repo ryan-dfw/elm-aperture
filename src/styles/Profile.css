@@ -1,0 +1,132 @@
+.ProfileBioContainer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: #1a1a1e;
+    width: 80vw;
+    height: 20vw;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.profile-card header {
+    width: 30%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 10%;
+}
+
+.profile-body {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.profile-card h1 {
+    color: #dbe5f1;
+    font-family: "Cinzel", serif;
+    margin: 0;
+}
+
+.profile-card h2 {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #676786;
+}
+
+.profile-card header a > img {
+    max-width: 100%;
+}
+
+.profile-description-container {
+    width: 100%;
+    margin-left: 10%;
+}
+
+.profile-bio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-unstyled {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+.list-inline li {
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.social-icons .fa {
+    font-size: 1.8em;
+    line-height: 0px;
+    text-align: center;
+    color: #fdbbaf;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.social-icons .fa:hover,
+.social-icons .fa:active {
+    font-size: 3em;
+    -webkit-box-shadow: 1px 1px 3px #333;
+    -moz-box-shadow: 1px 1px 3px #333;
+    box-shadow: 1px 1px 3px #333;
+}
+
+@media screen and (min-aspect-ratio: 4/3) {
+    body {
+        background-size: cover;
+    }
+    body:before {
+        width: 0px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .profile-card header {
+        width: auto;
+        height: auto;
+        padding: 45px 0 30px 0;
+        display: block;
+        float: none;
+        border-right: none;
+    }
+
+    .profile-card header a > img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .profile-card header a > img {
+        width: 100px;
+    }
+
+    .profile-card .profile-bio {
+        width: auto;
+        height: auto;
+        padding: 0px 10px 10px 10px;
+        display: block;
+        float: none;
+    }
+}

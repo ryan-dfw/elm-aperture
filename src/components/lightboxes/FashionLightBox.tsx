@@ -5,11 +5,11 @@ const Fashion = () => {
     const subDirectory: string = 'fashion';
     const details: [string, string, string, number, number][] = [
         ['Anonymous Model', ' at Habitat Commons', 'Rain', 100, 240],
-        ['Demi', ' at Ambishen Studio', 'Rain', 0, 160],
+        ['Demi', ' at Ambishen Studio', 'Rain', 0, 100],
         ['Ella', ' at Lake White Rock', 'Rain', 80, 240],
         ['Anonymous Model', ' at Habitat Commons', 'Rain', 0, 200],
         ['Anonymous Model', ' at Habitat Commons', 'Rain', 80, 200],
-        ['Selia', ' at Fountain Square', 'Rain', 120, 320],
+        ['Selia', ' at Fountain Square', 'Rain', 120, 300],
         ['Lilian', ' at Ambishen Studio', 'Rain', 80, 200],
         ['Thuan', ' at Downtown Fort Worth', 'Rain', 120, 260],
         ['Alyssa', ' at Ambishen Studio', 'Rain', 80, 200],
