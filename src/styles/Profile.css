@@ -40,13 +40,13 @@
 .profile-card h1 {
     color: #dbe5f1;
     font-family: "Cinzel", serif;
-    margin: 0;
+    margin: 0 0 -8px 0;
 }
 
 .profile-card h2 {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 20px;
-    color: #676786;
+    color: #5a5a85;
 }
 
 .profile-card header a > img {
