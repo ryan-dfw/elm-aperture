@@ -82,18 +82,6 @@ const Navbar: React.FC = () => {
                             Under Construction
                         </Nav.Link>
                         <Nav className="ms-auto" data-bs-theme="dark">
-                            <NavDropdown title="Portraits" id="portraitsDropdown">
-                                {Object.values(PortraitLinks).map((category) => (
-                                    <NavDropdown.Item
-                                        key={category}
-                                        as={Link}
-                                        to={`/${category.toLowerCase()}`}
-                                        onClick={handleTopLevelMenuItemClick}
-                                    >
-                                        {category}
-                                    </NavDropdown.Item>
-                                ))}
-                            </NavDropdown>
                             <NavDropdown title="Real Estate" id="realEstateDropdown">
                                 {Object.values(RealEstateLinks).map((category) => (
                                     <NavDropdown.Item
@@ -108,6 +96,18 @@ const Navbar: React.FC = () => {
                             </NavDropdown>
                             <NavDropdown title="Events" id="eventsDropdown">
                                 {Object.values(EventLinks).map((category) => (
+                                    <NavDropdown.Item
+                                        key={category}
+                                        as={Link}
+                                        to={`/${category.toLowerCase()}`}
+                                        onClick={handleTopLevelMenuItemClick}
+                                    >
+                                        {category}
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
+                            <NavDropdown title="Portraits" id="portraitsDropdown">
+                                {Object.values(PortraitLinks).map((category) => (
                                     <NavDropdown.Item
                                         key={category}
                                         as={Link}

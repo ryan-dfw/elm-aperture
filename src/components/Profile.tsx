@@ -5,9 +5,12 @@ interface ProfileProps {
     photographer: string;
     position: string;
     vFocus: number;
+    bioText: string;
+    urlIG: string;
+    urlVimeo: string;
 }
 
-const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus}) => {
+const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioText, urlIG, urlVimeo}) => {
     const photographerLC = photographer.toLowerCase();
     const [adjustedMarginTop, setAdjustedMarginTop] = useState(0);
 
@@ -46,16 +49,22 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus}) => {
                             <h1>{photographer}</h1>
                             <h2>{position}</h2>
                         </div>
+                        <div className="profile-icons-container">
+                            <div className="social-icons-container">
+                                <a href={`https://www.instagram.com/${urlIG}`} target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i className="fab fa-instagram"></i>
+                                </a>
+                                <span className="icons-divider">|</span>
+                                <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank" rel="noopener noreferrer">
+                                    <i className="fab fa-vimeo"></i>
+                                </a>
+                            </div>
+                        </div>
                         <div className="profile-bio">
                             <div className="profile-description-container">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis velit ante, accumsan quis purus id, convallis tempus diam. Morbi nulla magna, efficitur quis mollis vel, luctus eu libero. </p>
+                                <p>{bioText}</p>
                             </div>
-                            <ul className="social-icons list-unstyled list-inline">
-                                <li><a href="/"><i className="fa fa-behance"></i></a></li>
-                                <li><a href="/"><i className="fa fa-codepen"></i></a></li>
-                                <li><a href="/"><i className="fa fa-github"></i></a></li>
-                                <li><a href="/"><i className="fa fa-twitter"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </aside>
