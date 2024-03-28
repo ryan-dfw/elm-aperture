@@ -35,35 +35,39 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
         <>
             <div className="ProfileBioContainer">
                 <aside className="profile-card">
-                    <header>
-                        <div className="profile-picture-sizer">
-                            <img
-                                src={`res/img/profile/${photographerLC}/${photographerLC}_thumb.webp`}
-                                alt={`${photographer}'s profile picture`}
-                                style={{marginTop: `${adjustedMarginTop}px`}}
-                            />
-                        </div>
-                    </header>
-                    <div className="profile-body">
-                        <div className="profile-titles">
-                            <h1>{photographer}</h1>
-                            <h2>{position}</h2>
-                        </div>
-                        <div className="profile-icons-container">
-                            <div className="social-icons-container">
-                                <a href={`https://www.instagram.com/${urlIG}`} target="_blank"
-                                   rel="noopener noreferrer">
-                                    <i className="fab fa-instagram"></i>
-                                </a>
-                                <span className="icons-divider">|</span>
-                                <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-vimeo"></i>
-                                </a>
+                    <div className="profile-card-2">
+                        <header className="profile-card-3">
+                            <div className="profile-picture-sizer">
+                                <img
+                                    src={`res/img/profile/${photographerLC}/${photographerLC}_thumb.webp`}
+                                    alt={`${photographer}'s profile picture`}
+                                    style={{marginTop: `${adjustedMarginTop}px`}}
+                                />
                             </div>
-                        </div>
-                        <div className="profile-bio">
-                            <div className="profile-description-container">
-                                <p>{bioText}</p>
+                        </header>
+                        <div className="profile-body">
+                            <div className="profile-body-top-half">
+                                <div className="profile-titles">
+                                    <h1>{photographer}</h1>
+                                    <h2>{position}</h2>
+                                </div>
+                                <div className="profile-icons-container">
+                                    <div className="social-icons-container">
+                                        <a href={`https://www.instagram.com/${urlIG}`} target="_blank"
+                                           rel="noopener noreferrer">
+                                            <i className="fab fa-instagram"></i>
+                                        </a>
+                                        <span className="icons-divider">|</span>
+                                        <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank" rel="noopener noreferrer">
+                                            <i className="fab fa-vimeo"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="profile-body-bottom-half">
+                                <div className="profile-description-container">
+                                    <p>{bioText}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
