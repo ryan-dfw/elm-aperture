@@ -8,9 +8,11 @@ interface ProfileProps {
     bioText: string;
     urlIG: string;
     urlVimeo: string;
+    email: string;
+    phoneNumber: string;
 }
 
-const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioText, urlIG, urlVimeo}) => {
+const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioText, urlIG, urlVimeo, email, phoneNumber}) => {
     const photographerLC = photographer.toLowerCase();
     const [adjustedMarginTop, setAdjustedMarginTop] = useState(0);
 
@@ -58,14 +60,23 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
                                             <i className="fab fa-instagram"></i>
                                         </a>
                                         <span className="icons-divider">|</span>
-                                        <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank" rel="noopener noreferrer">
+                                        <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank"
+                                           rel="noopener noreferrer">
                                             <i className="fab fa-vimeo"></i>
+                                        </a>
+                                        <span className="icons-divider">|</span>
+                                        <a href={`mailto:${email}`}>
+                                            <i className="fas fa-envelope"></i>
+                                        </a>
+                                        <span className="icons-divider">|</span>
+                                        <a href={`tel:${phoneNumber}`}>
+                                            {phoneNumber}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div className="profile-body-bottom-half">
-                                <div className="profile-description-container">
+                            <div className="profile-description-container">
                                     <p>{bioText}</p>
                                 </div>
                             </div>

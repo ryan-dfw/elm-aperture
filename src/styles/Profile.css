@@ -68,12 +68,27 @@
     padding-bottom: 3px;
 }
 
-.fab, .icons-divider {
+.fab,
+.icons-divider,
+.social-icons-container a[href^="mailto"] {
     color: white;
     font-size: 120%;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 3px;
+}
+
+a[href^="tel"] {
+    color: white;
+}
+
+.profile-titles h2:hover,
+.fab:hover,
+.icons-divider:hover,
+a[href^="tel"]:hover,
+.social-icons-container a[href^="mailto"]:hover {
+    transition: color 0.5s ease;
+    color: lightblue;
 }
 
 .list-unstyled {
@@ -177,6 +192,26 @@
         margin-top: 50px;
     }
 
+}
+
+@media (max-width: 500px) {
+    .fab,
+    .icons-divider,
+    .social-icons-container a[href^="mailto"]{
+        font-size: 90%;
+    }
+
+    a[href^="tel"] {
+        font-size: 75%;
+    }
+
+    .profile-titles h2:hover,
+    .fab:hover,
+    .icons-divider:hover,
+    a[href^="tel"]:hover,
+    .social-icons-container a[href^="mailto"]:hover {
+        color: lightblue;
+    }
 }
 
 @media (max-width: 360px) {
