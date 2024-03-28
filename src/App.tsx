@@ -28,13 +28,13 @@ const App: React.FC = () => {
             const handleTouchEnd = (event: TouchEvent) => {
                 const endX = event.changedTouches[0].clientX;
                 const diffX = endX - startX;
-                if (Math.abs(diffX) > 50) { // Adjust the threshold as needed
+                if (Math.abs(diffX) > 50) {
                     if (diffX > 0) {
-                        const rightKeyPressEvent = new KeyboardEvent('keydown', { key: 'ArrowRight' });
-                        document.dispatchEvent(rightKeyPressEvent);
-                    } else {
                         const leftKeyPressEvent = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
                         document.dispatchEvent(leftKeyPressEvent);
+                    } else {
+                        const rightKeyPressEvent = new KeyboardEvent('keydown', { key: 'ArrowRight' });
+                        document.dispatchEvent(rightKeyPressEvent);
                     }
                 }
             };
