@@ -55,28 +55,34 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
                                 </div>
                                 <div className="profile-icons-container">
                                     <div className="social-icons-container">
-                                        <a href={`https://www.instagram.com/${urlIG}`} target="_blank"
-                                           rel="noopener noreferrer">
-                                            <i className="fab fa-instagram"></i>
-                                        </a>
-                                        <span className="icons-divider">|</span>
-                                        <a href={`https://www.vimeo.com/${urlVimeo}`} target="_blank"
-                                           rel="noopener noreferrer">
-                                            <i className="fab fa-vimeo"></i>
-                                        </a>
-                                        <span className="icons-divider">|</span>
-                                        <a href={`mailto:${email}`}>
-                                            <i className="fas fa-envelope"></i>
-                                        </a>
-                                        <span className="icons-divider">|</span>
-                                        <a href={`tel:${phoneNumber}`}>
-                                            {phoneNumber}
-                                        </a>
+                                        {[
+                                            {
+                                                value: urlIG,
+                                                prefix: "https://www.instagram.com/",
+                                                icon: "fab fa-instagram"
+                                            },
+                                            {value: urlVimeo, prefix: "https://www.vimeo.com/", icon: "fab fa-vimeo"},
+                                            {value: email, prefix: "mailto:", icon: "fas fa-envelope"},
+                                            {value: phoneNumber, prefix: "tel:", icon: ""}
+                                        ].map((item, index) => (
+                                            item.value && typeof item.value === 'string' && item.value.trim() !== '' ? (
+                                                <React.Fragment key={index}>
+                                                    {index !== 0 && <span className="icons-divider">|</span>}
+                                                    <a href={`${item.prefix}${item.value}`} target="_blank"
+                                                       rel="noopener noreferrer">
+                                                        {item.icon && <i className={item.icon}></i>}
+                                                        {item.icon === "" ? item.value : null}
+                                                    </a>
+                                                </React.Fragment>
+                                            ) : null
+                                        ))}
                                     </div>
+
                                 </div>
+
                             </div>
                             <div className="profile-body-bottom-half">
-                            <div className="profile-description-container">
+                                <div className="profile-description-container">
                                     <p>{bioText}</p>
                                 </div>
                             </div>
