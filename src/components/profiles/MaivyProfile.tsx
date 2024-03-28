@@ -5,10 +5,10 @@ const MaivyProfile = () => {
     const photographer = "Maivy"
     const position = "PHOTOGRAPHER"
     const vFocus = 70;
-    const bioText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-        "Donec ullamcorper dui sit amet dolor pulvinar, at vulputate leo tempor." +
-        "Curabitur varius ornare ante finibus imperdiet." +
-        "Phasellus ut lorem id massa malesuada scelerisque at non neque.Cras ut neque at neque sagittis mattis." +
+    const bioText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+        "Donec ullamcorper dui sit amet dolor pulvinar, at vulputate leo tempor. " +
+        "Curabitur varius ornare ante finibus imperdiet. " +
+        "Phasellus ut lorem id massa malesuada scelerisque at non neque.Cras ut neque at neque sagittis mattis. " +
         "Fusce accumsan vehicula gravida. Vivamus posuere lacus sed varius tempor.";
     const urlIG = "maivyphotos"
     const urlVimeo = "user204045381"
