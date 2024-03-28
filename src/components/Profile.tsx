@@ -33,6 +33,7 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
         };
     }, [vFocus]);
 
+
     return (
         <>
             <div className="ProfileBioContainer">

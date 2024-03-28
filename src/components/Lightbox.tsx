@@ -8,12 +8,22 @@ interface LightBoxProps {
     details: [string, string, string, number, number][];
 }
 
+enum InitialOfPhotographers {
+    Rain = "R",
+    Maivy = "M"
+}
+
 const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details }) => {
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
     const offsetDesktop = details.map(item => item[3]);
     const offsetMobile = details.map(item => item[4]);
+    const getInitial = (photographer: string): string => {
+        const photographerKey = photographer as keyof typeof InitialOfPhotographers;
+        return InitialOfPhotographers[photographerKey];
+    };
+    const initial = details.map(item => getInitial(item[2]));
 
     const imagesData = details.map(([title, detail, photographer], index) => ({
         src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
@@ -143,8 +153,9 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
         <div className="gallery-container">
             <div className="gallery">
                 {imagesData.map((image, index: number) => (
-                    <div className="galleryimage" key={index}>
-                        <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy" />
+                    <div className="galleryimage" key={index} style={{position: 'relative'}}>
+                        <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy"/>
+                        <div className="initial-overlay">{initial[index]}</div>
                         <a href={`#img-${index + 1}`}>{image.title}</a>
                     </div>
                 ))}
@@ -171,10 +182,10 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
                 </div>
             ))}
 
-            <button className="carousel-btn prev" onClick={handlePrev} style={{ display: 'none' }}>
+            <button className="carousel-btn prev" onClick={handlePrev} style={{display: 'none'}}>
                 &lt;
             </button>
-            <button className="carousel-btn next" onClick={handleNext} style={{ display: 'none' }}>
+            <button className="carousel-btn next" onClick={handleNext} style={{display: 'none'}}>
                 &gt;
             </button>
         </div>
