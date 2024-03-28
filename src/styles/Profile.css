@@ -42,12 +42,19 @@
         height: auto;
     }
     .profile-card header {
-        height: 100px;
-        width: 100px;
+        height: 100px !important;
+        width: 100px !important;
         overflow: hidden;
         border-radius: 0;
         margin-bottom: -35px;
     }
+    
+    .profile-picture-sizer {
+        margin-top: 10px;
+        height: 100px !important;
+
+    }
+    
     .profile-card header img {
         border-radius: 50%;
         width: 100%;
@@ -62,6 +69,12 @@
     .profile-description-container {
         margin-left: 0 !important;
         width: 70vw !important;
+    }
+}
+
+@media (max-width: 460px) {
+    .profile-picture-sizer {
+        margin-top: -50px;
     }
 }
 
@@ -82,7 +95,7 @@
     color: #dbe5f1;
 }
 
-.profile-card header a > img {
+.profile-picture-sizer > img {
     max-width: 100%;
 }
 

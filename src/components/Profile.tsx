@@ -36,13 +36,13 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
             <div className="ProfileBioContainer">
                 <aside className="profile-card">
                     <header>
-                        <a>
+                        <div className="profile-picture-sizer">
                             <img
                                 src={`res/img/profile/${photographerLC}/${photographerLC}_thumb.webp`}
                                 alt={`${photographer}'s profile picture`}
                                 style={{marginTop: `${adjustedMarginTop}px`}}
                             />
-                        </a>
+                        </div>
                     </header>
                     <div className="profile-body">
                         <div className="profile-titles">

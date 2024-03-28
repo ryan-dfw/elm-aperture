@@ -84,6 +84,12 @@
     }
 }
 
+@media (max-width: 370px) {
+    .navbar-brand {
+        font-size: 20px !important;
+    }
+}
+
 .photographer-navbar {
     height: 30px;
     margin-top: 59px;
