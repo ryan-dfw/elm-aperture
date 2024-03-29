@@ -5,14 +5,14 @@ const MaivyProfile = () => {
     const photographer = "Maivy"
     const position = "PHOTOGRAPHER"
     const vFocus = 70;
-    const bioText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-        "Donec ullamcorper dui sit amet dolor pulvinar, at vulputate leo tempor. " +
-        "Curabitur varius ornare ante finibus imperdiet. " +
-        "Phasellus ut lorem id massa malesuada scelerisque at non neque.Cras ut neque at neque sagittis mattis. " +
-        "Fusce accumsan vehicula gravida. Vivamus posuere lacus sed varius tempor.";
+    const bioText = "I've been a photographer for the past two years. " +
+        "What drew me to this art form was the ability to connect with people and places in a unique way, " +
+        "capturing moments to tell the stories of the people I meet along the way. " +
+        "As I refine my skills and build my portfolio, " +
+        "I'm especially interested in working more in weddings and with couples.";
     const urlIG = "maivyphotos"
     const urlVimeo = "user204045381"
-    const email = ""
+    const email = "kimirius1999@gmail.com"
     const phoneNumber = ""
     return <Profile photographer={photographer} position={position} vFocus={vFocus} bioText={bioText} urlIG={urlIG}
                     urlVimeo={urlVimeo} email={email} phoneNumber={phoneNumber}/>;
