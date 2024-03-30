@@ -7,7 +7,7 @@ import { useContextValue } from '../contexts/Context';
 const PortraitLinks = {
     Headshots: 'Headshot',
     Professional: 'Professional',
-    Fashion: 'Fashion',
+    Lifestyle: 'Lifestyle',
 };
 
 const RealEstateLinks = {

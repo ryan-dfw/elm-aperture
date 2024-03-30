@@ -8,11 +8,11 @@ import Maivy from './pages/photographers/Maivy.tsx';
 import Commercial from './pages/realestate/Commercial.tsx';
 import Hotel from './pages/realestate/Hotel.tsx';
 import Residential from './pages/realestate/Residential.tsx';
-import Professional from './pages/portrait/Professional.tsx';
-import Headshot from './pages/portrait/Headshot.tsx';
-import Fashion from './pages/portrait/Fashion.tsx';
 import Wedding from './pages/event/Wedding.tsx';
 import Events from './pages/event/Events.tsx';
+import Headshot from './pages/portrait/Headshot.tsx';
+import Professional from './pages/portrait/Professional.tsx';
+import Lifestyle from './pages/portrait/Lifestyle.tsx'
 
 const App: React.FC = () => {
     useEffect(() => {
@@ -56,7 +56,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/headshot" element={<Headshot />} />
                     <Route path="/professional" element={<Professional />} />
-                    <Route path="/fashion" element={<Fashion />} />
+                    <Route path="/lifestyle" element={<Lifestyle />} />
                     <Route path="/commercial" element={<Commercial />} />
                     <Route path="/hotel" element={<Hotel />} />
                     <Route path="/residential" element={<Residential />} />

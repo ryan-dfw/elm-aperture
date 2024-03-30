@@ -1,8 +1,8 @@
 import LightBox from "../Lightbox.tsx";
 
-const Fashion = () => {
+const Lifestyle = () => {
     const directory: string = 'portrait';
-    const subDirectory: string = 'fashion';
+    const subDirectory: string = 'lifestyle';
     const details: [string, string, string, number, number][] = [
         ['Anonymous Model', ' at Habitat Commons', 'Rain', 100, 240],
         ['Demi', ' at Ambishen Studio', 'Rain', 0, 100],
@@ -26,4 +26,4 @@ const Fashion = () => {
     return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
-export default Fashion;
+export default Lifestyle;
