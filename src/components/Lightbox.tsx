@@ -84,9 +84,6 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
         applyOffset(offsetDesktop, offsetMobile);
     });
 
-
-
-
     useEffect(() => {
         const galleryImages = document.querySelectorAll('.galleryimage');
 
@@ -150,7 +147,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     }
 
     return (
-        <div className="gallery-container">
+        <div className={`gallery-container ${directory === "portrait" ? "portrait" : ""}`}>
             <div className="gallery">
                 {imagesData.map((image, index: number) => (
                     <div className="galleryimage" key={index} style={{position: 'relative'}}>
