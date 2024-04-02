@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import '../styles/Lightbox.scss'
+import '../styles/Lightbox.scss';
 import { useContextValue } from '../contexts/Context.tsx';
 
 interface LightBoxProps {
@@ -146,6 +146,25 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
         console.log(currentIndex);
     }
 
+    useEffect(() => {
+        const handleOutsideClick = (event: Event) => {
+            const lightboxImg = document.querySelector('.lightboxIMG');
+            if (lightboxImg && !lightboxImg.contains(event.target as Node)) {
+                const closeButtons = document.querySelectorAll('.close');
+                if (closeButtons.length > 0) {
+                    const firstCloseButton = closeButtons[0] as HTMLAnchorElement;
+                    firstCloseButton.click();
+                }
+            }
+        };
+
+        document.addEventListener('click', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, []);
+
     return (
         <div className={`gallery-container ${directory === "portrait" ? "portrait" : ""}`}>
             <div className="gallery">
@@ -162,6 +181,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
                 <div className="img" id={`img-${index + 1}`} key={`img-${index + 1}`}>
                     <div className="content">
                         <img
+                            className="lightboxIMG"
                             src={image.src}
                             alt={`Large Image ${index + 1}`}
                             loading="lazy"
