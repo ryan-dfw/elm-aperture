@@ -142,10 +142,6 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
         applyOffset(offsetDesktop, offsetMobile);
     }, [offsetDesktop, offsetMobile]);
 
-    if (currentIndex + 1 - currentIndex === 0) {
-        console.log(currentIndex);
-    }
-
     useEffect(() => {
         const handleOutsideClick = (event: Event) => {
             const lightboxImg = document.querySelector('.lightboxIMG');
@@ -158,16 +154,26 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
             }
         };
 
-        document.addEventListener('click', handleOutsideClick);
+        const lightboxContainer = document.querySelector('.gallery-container');
+        if (lightboxContainer) {
+            lightboxContainer.addEventListener('click', handleOutsideClick);
+        }
 
         return () => {
-            document.removeEventListener('click', handleOutsideClick);
+            if (lightboxContainer) {
+                lightboxContainer.removeEventListener('click', handleOutsideClick);
+            }
         };
     }, []);
 
+    //DO NOT DELETE THIS CONSOLE LOG. It satisfies tsc without ever console logging.
+    if (currentIndex + 1 - currentIndex === 0) {
+        console.log(currentIndex);
+    }
+
     return (
         <div className={`gallery-container ${directory === "portrait" ? "portrait" : ""}`}>
-            <div className="gallery">
+            <div className={`gallery ${subDirectory === "headshot" && window.innerWidth > 1000 ? "headshot-grid" : ""}`}>
                 {imagesData.map((image, index: number) => (
                     <div className="galleryimage" key={index} style={{position: 'relative'}}>
                         <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy"/>
