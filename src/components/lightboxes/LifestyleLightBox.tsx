@@ -18,7 +18,7 @@ const Lifestyle = () => {
         ['Christi Lux', " at Texas Kill City's premiere" , 'Rain', 180, 0],
         ['Lilian', ' at Ambishen Studio', 'Rain', 120, 0],
         ['Maivy', ' at the Arboretum', 'Rain', 10, 0],
-        ['filler image', '', 'no one', 20, 0],
+        ['Sarah', ' with her horse', 'Meraki', 110, 0],
         ['filler image', '', 'no one', 20, 0],
         ['filler image', '', 'no one', 20, 0],
         ['filler image', '', 'no one', 20, 0]
