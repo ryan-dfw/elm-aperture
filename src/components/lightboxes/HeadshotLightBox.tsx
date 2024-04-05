@@ -4,13 +4,13 @@ const Headshot = () => {
     const directory = 'portrait';
     const subDirectory = 'headshot';
     const details: [string, string, string, number, number][] = [
-        ['Annie', ', from Light of the World', 'Rain', 0, 0],
-        ['Allison', ', from Light of the World', 'Rain', 0, 0],
-        ['Angel', ', from Light of the World', 'Rain', 0, 0],
-        ['Zimo', ', from Light of the World', 'Rain', 0, 0],
-        ['Zadie', ', from Light of the World', 'Rain', 0, 0],
-        ['filler image', '', 'no one', 0, 0],
-        ['filler image', '', 'no one', 0, 0],
+        ['Annie', '', 'Rain', 0, 0],
+        ['Allison', '', 'Rain', 0, 0],
+        ['Angel', '', 'Rain', 0, 0],
+        ['Zimo', '', 'Rain', 0, 0],
+        ['Zadie', '', 'Rain', 0, 0],
+        ['Lucinda', '', 'Rain', 0, 0],
+        ['Julie', '', 'Maivy', 0, 0],
         ['filler image', '', 'no one', 0, 0],
         ['filler image', '', 'no one', 0, 0],
         ['filler image', '', 'no one', 0, 0],

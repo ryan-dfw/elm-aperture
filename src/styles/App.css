@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+.noto-sans-line-italic {
+              font-family: "Noto Sans", sans-serif;
+              font-optical-sizing: auto;
+              font-weight: 100;
+              font-style: normal;
+              font-variation-settings: "wdth" 100;
+}
+
 .behold-container {
   width: 80vw;
   margin-top: 50px;
