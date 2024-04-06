@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid'
+import timeGridPlugin from '@fullcalendar/timegrid';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import bootstrap5Plugin from '@fullcalendar/bootstrap5'
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const RainCalendar = () => {
     const calendarRef = useRef<HTMLDivElement>(null);
@@ -42,12 +42,15 @@ const RainCalendar = () => {
                 {
                     googleCalendarId: cal2
                 }
-            ]
+            ],
+            // Disable event clicking
+            eventClick: function(info) {
+                info.jsEvent.preventDefault();
+            }
         });
 
         calendar.render();
 
-        // Cleanup function
         return () => {
             calendar.destroy();
         };
