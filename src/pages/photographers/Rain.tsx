@@ -1,6 +1,7 @@
 import BeholdWidget from "@behold/react";
 import RainProfile from "../../components/profiles/RainProfile.tsx";
 import '../../styles/PhotographerPage.css'
+import RainCalendar from "../../components/calendars/RainCalendar.tsx";
 
 const Rain = () => {
     return (
@@ -26,6 +27,8 @@ const Rain = () => {
                         title="Rain Showcase" allowFullScreen
                 ></iframe>
             </div>
+            <div style={{margin: '50px'}}></div>
+            <RainCalendar/>
         </>
     )
 }
