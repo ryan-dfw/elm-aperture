@@ -28,7 +28,9 @@ const Rain = () => {
                 ></iframe>
             </div>
             <div style={{margin: '50px'}}></div>
-            <RainCalendar/>
+            <div className='calendar-container'>
+                <RainCalendar/>
+            </div>
         </>
     )
 }
