@@ -51,8 +51,7 @@ const RainCalendar = () => {
                 if (arg.event.extendedProps.busy) {
                     return { domNodes: [] };
                 } else {
-                    // Remove dashes from time text if isMobile is true
-                    const timeText = isMobile ? arg.timeText.replace(/-/g, '') : arg.timeText;
+                    const timeText = isMobile ? arg.timeText.replace(/:00/g, '') : arg.timeText;
                     return createElement('div', {}, timeText);
                 }
             },
