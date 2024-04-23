@@ -42,4 +42,8 @@
     .calendar-container {
         height: 79vh;
     }
+    .fc-event-mirror {
+        border: 1px solid red;
+        overflow: hidden;
+    }
 }

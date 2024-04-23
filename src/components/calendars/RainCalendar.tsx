@@ -25,7 +25,7 @@ const RainCalendar = () => {
             initialView: 'timeGridWeek',
             editable: true,
             selectable: true,
-            unselectAuto: true,
+            unselectAuto: false,
             selectMirror: true,
             selectOverlap: false,
             headerToolbar: {
@@ -51,7 +51,9 @@ const RainCalendar = () => {
                 if (arg.event.extendedProps.busy) {
                     return { domNodes: [] };
                 } else {
-                    return createElement('div', {}, arg.timeText);
+                    // Remove dashes from time text if isMobile is true
+                    const timeText = isMobile ? arg.timeText.replace(/-/g, '') : arg.timeText;
+                    return createElement('div', {}, timeText);
                 }
             },
             eventSources: [
@@ -67,6 +69,7 @@ const RainCalendar = () => {
                     info.jsEvent.preventDefault();
                 }
             },
+            selectLongPressDelay: 20
         });
 
         calendar.render();
