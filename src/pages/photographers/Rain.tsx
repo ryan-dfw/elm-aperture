@@ -27,6 +27,11 @@ const Rain = () => {
                         title="Rain Showcase" allowFullScreen
                 ></iframe>
             </div>
+            <div className={"portfolio-section-header"}>
+                <div className={"horizontal-line"}></div>
+                <h4>AVAILABILITY</h4>
+                <div className={"horizontal-line"}></div>
+            </div>
             <div style={{margin: '50px'}}></div>
             <div className='calendar-container'>
                 <RainCalendar/>

@@ -34,5 +34,12 @@
 }
 
 .calendar-container {
-    height: 95vh;
+    height: 91vh;
+    margin-top: -50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .calendar-container {
+        height: 79vh;
+    }
 }
