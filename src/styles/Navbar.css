@@ -36,6 +36,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
+@media only screen and (max-width: 768px) {
+    #navbar a {
+        font-size: 20px;
+    }
+}
+
 #navbar a:hover {
     color: #b7d2e7;
     transition: 300ms;

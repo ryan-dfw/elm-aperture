@@ -163,11 +163,10 @@ a[href^="tel"]:hover,
     .profile-titles h1 {
         color: #e3eaf5;
         font-family: "Cinzel", serif;
-        margin: 0 0 -8px 0;
-        padding-top: 0px;
     }
 
     .profile-entire h2 {
+        margin-top: -10px;
         margin-bottom: -5px;
     }
 
