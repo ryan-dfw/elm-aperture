@@ -77,11 +77,8 @@ const Navbar: React.FC = () => {
                     </Link>
                     <BootstrapNavbar.Toggle aria-controls="navmenu" onClick={handleToggleNavbar} />
                     <BootstrapNavbar.Collapse id="navmenu">
-                        <Nav.Link disabled className={'invisible'}>
-                            __________________
-                        </Nav.Link>
-                        <Nav.Link disabled className={'text-danger'}>
-                            Under Construction
+                        <Nav.Link as={Link} to="/booking" className={'text-info'}>
+                            Booking
                         </Nav.Link>
                         <Nav className="ms-auto" data-bs-theme="dark">
                             <NavDropdown title="Real Estate" id="realEstateDropdown">

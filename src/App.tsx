@@ -15,6 +15,7 @@ import Events from './pages/event/Events.tsx';
 import Headshot from './pages/portrait/Headshot.tsx';
 import Professional from './pages/portrait/Professional.tsx';
 import Lifestyle from './pages/portrait/Lifestyle.tsx'
+import Booking from "./pages/Booking.tsx";
 
 const App: React.FC = () => {
     useEffect(() => {
@@ -60,6 +61,7 @@ const App: React.FC = () => {
             <ContextProvider>
                 <Navbar />
                 <Routes>
+                    <Route path="/booking" element={<Booking />} />
                     <Route path="/headshot" element={<Headshot />} />
                     <Route path="/professional" element={<Professional />} />
                     <Route path="/lifestyle" element={<Lifestyle />} />

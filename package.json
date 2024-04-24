@@ -18,6 +18,7 @@
     "@fullcalendar/google-calendar": "^6.1.11",
     "@fullcalendar/list": "^6.1.11",
     "@fullcalendar/react": "^6.1.11",
+    "@netlify/functions": "^2.6.0",
     "@types/pug": "^2.0.10",
     "agent-base": "^7.1.1",
     "axios": "^1.6.8",
