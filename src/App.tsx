@@ -4,6 +4,7 @@ import { ContextProvider } from './contexts/Context.tsx';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Rain from './pages/photographers/Rain.tsx';
+import Scott from './pages/photographers/Scott.tsx';
 import Maivy from './pages/photographers/Maivy.tsx';
 import Meraki from './pages/photographers/Meraki.tsx'
 import Commercial from './pages/realestate/Commercial.tsx';
@@ -17,7 +18,7 @@ import Lifestyle from './pages/portrait/Lifestyle.tsx'
 
 const App: React.FC = () => {
     useEffect(() => {
-        const isMobile = window.innerWidth <= 768; // Adjust the threshold as needed
+        const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
             let startX: number;
@@ -31,10 +32,14 @@ const App: React.FC = () => {
                 const diffX = endX - startX;
                 if (Math.abs(diffX) > 50) {
                     if (diffX > 0) {
-                        const leftKeyPressEvent = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
+                        const leftKeyPressEvent = new KeyboardEvent(
+                            'keydown', { key: 'ArrowLeft' }
+                        );
                         document.dispatchEvent(leftKeyPressEvent);
                     } else {
-                        const rightKeyPressEvent = new KeyboardEvent('keydown', { key: 'ArrowRight' });
+                        const rightKeyPressEvent = new KeyboardEvent(
+                            'keydown', { key: 'ArrowRight' }
+                        );
                         document.dispatchEvent(rightKeyPressEvent);
                     }
                 }
@@ -64,6 +69,7 @@ const App: React.FC = () => {
                     <Route path="/wedding" element={<Wedding />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/rain" element={<Rain />} />
+                    <Route path="/scott" element={<Scott />} />
                     <Route path="/maivy" element={<Maivy />} />
                     <Route path="/meraki" element={<Meraki />} />
                     <Route path="/" element={<Homepage />} />
