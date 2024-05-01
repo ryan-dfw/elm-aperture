@@ -2,7 +2,7 @@ import '../styles/Booking.css'
 
 const BookingForm = () => {
     return (
-        <form name="booking" data-netlify="true">
+        <form name="booking" method="post" data-netlify="true" action="/">
             <div className="mb-3 book-form-item">
                 <label>Name:</label>
                 <input type="text" name="name" required />
