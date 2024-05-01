@@ -49,11 +49,13 @@
     }
 
     &:hover {
-      img {
-        filter: blur(4px);
-      }
-      a {
-        opacity: 1;
+      @media (min-width: 768px) {
+        img {
+          filter: blur(4px);
+        }
+        a {
+          opacity: 1;
+        }
       }
     }
 
