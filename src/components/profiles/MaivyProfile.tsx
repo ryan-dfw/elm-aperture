@@ -9,7 +9,8 @@ const MaivyProfile = () => {
         "What drew me to this art form was the ability to connect with people and places in a unique way, " +
         "capturing moments to tell the stories of the people I meet along the way. " +
         "As I refine my skills and build my portfolio, " +
-        "I'm especially interested in working more in weddings and with couples.";
+        "I'm especially interested in working more in weddings and with couples, " +
+        "as well as capturing shows and events.";
     const urlIG = "maivyphotos"
     const urlVimeo = "user204045381"
     const email = "kimirius1999@gmail.com"

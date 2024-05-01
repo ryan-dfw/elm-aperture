@@ -5,7 +5,12 @@ const ScottProfile = () => {
     const photographer = "Scott"
     const position = "PHOTOGRAPHER"
     const vFocus = 70;
-    const bioText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    const bioText = "Since 2020, my camera has been my constant companion, " +
+        "as I travel the world and share my perspective with others. " +
+        "What sets my work apart is my commitment to authenticity and connection, " +
+        "as I forge genuine relationships with my clients, subjects, and places. " +
+        "I believe in the power of photography to inspire and provoke thought. " +
+        "With each image, I hope to evoke emotions and ignite imaginations.";
     const urlIG = "xholografix"
     const urlVimeo = ""
     const email = "scottxbandz@gmail.com"

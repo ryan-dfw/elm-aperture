@@ -10,6 +10,7 @@ interface LightBoxProps {
 
 enum InitialOfPhotographers {
     Rain = "R",
+    Scott = "S",
     Maivy = "M",
     Meraki = "I"
 }
