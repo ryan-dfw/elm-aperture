@@ -3,21 +3,23 @@ import '../styles/Booking.css'
 const BookingForm = () => {
     return (
         <form name="booking" method="post" data-netlify="true" action="/">
+            <input type="hidden" name="form-name" value="booking" />
+
             <div className="mb-3 book-form-item">
-                <label>Name:</label>
-                <input type="text" name="name" required />
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" name="name" required />
             </div>
             <div className="mb-3 book-form-item">
-                <label>Telephone Number:</label>
-                <input type="tel" name="telNo" required/>
+                <label htmlFor="telNo">Telephone Number:</label>
+                <input type="tel" id="telNo" name="telNo" required/>
             </div>
             <div className="mb-3 book-form-item">
-                <label>Email:</label>
-                <input type="email" name="email" required/>
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" required/>
             </div>
             <div className="mb-3 book-form-item">
-                <label>Photographer Requested:</label>
-                <select name="photographerRequested">
+                <label htmlFor="photographerRequested">Photographer Requested:</label>
+                <select id="photographerRequested" name="photographerRequested">
                     <option value="No Preference">No Preference</option>
                     <option value="Rain">Rain</option>
                     <option value="Scott">Scott</option>
@@ -26,20 +28,20 @@ const BookingForm = () => {
                 </select>
             </div>
             <div className="mb-3 book-form-item">
-                <label>Day Requested:</label>
-                <input type="date" name="dayRequested" required/>
+                <label htmlFor="dayRequested">Day Requested:</label>
+                <input type="date" id="dayRequested" name="dayRequested" required/>
             </div>
             <div className="mb-3 book-form-item">
-                <label>Hours Requested:</label>
-                <input type="text" name="hoursRequested"/>
+                <label htmlFor="hoursRequested">Hours Requested:</label>
+                <input type="text" id="hoursRequested" name="hoursRequested"/>
             </div>
             <div className="mb-3 book-form-item">
-                <label>City:</label>
-                <input type="text" name="city" required/>
+                <label htmlFor="city">City:</label>
+                <input type="text" id="city" name="city" required/>
             </div>
             <div className="mb-3 book-form-item">
-                <label>Description of the Shoot:</label>
-                <textarea name="description" required/>
+                <label htmlFor="description">Description of the Shoot:</label>
+                <textarea id="description" name="description" required></textarea>
             </div>
             <button type="submit" className="btn btn-primary" >Submit</button>
         </form>
@@ -47,3 +49,4 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
+
