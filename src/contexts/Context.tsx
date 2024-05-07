@@ -23,7 +23,8 @@ export const useContextValue = () => {
 
 export const ContextProvider: React.FC<ContextProps> = ({ children }) => {
     const [shouldShowNav, setShouldShowNav] = useState(true);
-    const [selectedDateTime, setSelectedDateTime] = useState<{ date: string, start: string, end: string }>({ date: '', start: '', end: '' });
+    const [selectedDateTime, setSelectedDateTime] =
+        useState<{ date: string, start: string, end: string }>({ date: '', start: '', end: '' });
 
     const contextValue: ContextValue = {
         shouldShowNav,
