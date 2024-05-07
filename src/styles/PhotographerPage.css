@@ -34,8 +34,10 @@
 }
 
 .calendar-container {
-    height: 91vh;
+    height: calc(100vh - 68px);
+    max-height: 686px;
     margin-top: -50px;
+    margin-bottom: -50px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -43,7 +45,6 @@
         height: 79vh;
     }
     .fc-event-mirror {
-        border: 1px solid red;
         overflow: hidden;
     }
 }

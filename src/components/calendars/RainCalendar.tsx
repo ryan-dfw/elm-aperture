@@ -34,7 +34,7 @@ const RainCalendar = () => {
                 end: 'prev,next'
             },
             titleFormat: { month: 'short', day: 'numeric' },
-            height: isMobile ? '79vh' : '91vh',
+            height: '686px',
             slotLabelInterval: '01:00',
             slotDuration: '01:00',
             allDaySlot: false,
