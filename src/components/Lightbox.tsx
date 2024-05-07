@@ -16,6 +16,7 @@ enum InitialOfPhotographers {
 }
 
 const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details }) => {
+    const [imageOpen, setImageOpen] = useState(false);
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,6 +92,9 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
 
         galleryImages.forEach((image) => {
             image.addEventListener('click', () => {
+                setTimeout(() => {
+                    setImageOpen(true);
+                }, 500);
                 setShouldShowNav(false);
             });
         });
@@ -138,7 +142,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
             }
             document.removeEventListener('keydown', handleKeyPress);
         };
-    }, [imagesData.length, closeLightbox, setShouldShowNav]);
+    }, [imagesData.length, closeLightbox, setShouldShowNav, imageOpen]);
 
     useEffect(() => {
         applyOffset(offsetDesktop, offsetMobile);
@@ -199,9 +203,19 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
                         </div>
                         <a
                             id={`closeButton-${index + 1}`}
-                            className="close"
+                            className={`close`}
                             href="#gallery"
-                            onClick={() => setShouldShowNav(true)}
+                            onClick={() => {
+                                if (imageOpen) {
+                                    setShouldShowNav(true);
+                                    setImageOpen(false);
+                                }
+                            }}
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                            }}
                         ></a>
                     </div>
                 </div>
