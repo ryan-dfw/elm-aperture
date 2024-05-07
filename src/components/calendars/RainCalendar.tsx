@@ -5,11 +5,14 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useMediaQuery } from 'react-responsive';
+import { useContextValue } from '../../contexts/Context.tsx';
 import '../../styles/Calendars.css';
 
 const RainCalendar = () => {
     const calendarRef = useRef<HTMLDivElement>(null);
-    const isMobile = useMediaQuery({ maxWidth: 768 }); // Adjust the max width for your definition of mobile
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+
+    const { setSelectedDateTime } = useContextValue();
 
     const api = import.meta.env.VITE_GOOGLE_API_KEY;
     const cal1 = import.meta.env.VITE_GOOGLE_CAL_1;
@@ -68,7 +71,14 @@ const RainCalendar = () => {
                     info.jsEvent.preventDefault();
                 }
             },
-            selectLongPressDelay: 20
+            selectLongPressDelay: 20,
+            select: function(info) {
+                const selectedDate = info.start.toISOString().split('T')[0];
+                const selectedStart = info.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                const selectedEnd = info.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                setSelectedDateTime({ date: selectedDate, start: selectedStart, end: selectedEnd });
+                console.log(`date: ${selectedDate}, time: ${selectedStart}, end: ${selectedEnd}`);
+            }
         });
 
         calendar.render();
@@ -76,10 +86,11 @@ const RainCalendar = () => {
         return () => {
             calendar.destroy();
         };
-    }, [api, cal1, cal2, isMobile]);
+    }, [api, cal1, cal2, isMobile, setSelectedDateTime]);
 
     return (
-        <div id='calendar' ref={calendarRef}></div>
+        <div id='calendar' ref={calendarRef}>
+        </div>
     );
 };
 

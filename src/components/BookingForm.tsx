@@ -1,6 +1,11 @@
-import '../styles/Booking.css'
+import { useContextValue } from '../contexts/Context';
+import '../styles/Booking.css';
 
 const BookingForm = () => {
+    const { selectedDateTime } = useContextValue();
+    const { date = '', start = '', end = '' } = selectedDateTime || {};
+    console.log(selectedDateTime);
+
     return (
         <form name="booking" method="post" data-netlify="true" action="/">
             <input type="hidden" name="form-name" value="booking" />
@@ -29,11 +34,16 @@ const BookingForm = () => {
             </div>
             <div className="mb-3 book-form-item">
                 <label htmlFor="dayRequested">Day Requested:</label>
-                <input type="date" id="dayRequested" name="dayRequested" required/>
+                <input type="date" id="dayRequested" name="dayRequested" value={date} required/>
             </div>
             <div className="mb-3 book-form-item">
                 <label htmlFor="hoursRequested">Hours Requested:</label>
-                <input type="text" id="hoursRequested" name="hoursRequested"/>
+                <input
+                    type="text"
+                    id="hoursRequested"
+                    name="hoursRequested"
+                    value={`${start} to ${end}`}
+                />
             </div>
             <div className="mb-3 book-form-item">
                 <label htmlFor="city">City:</label>
@@ -49,4 +59,3 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
-
