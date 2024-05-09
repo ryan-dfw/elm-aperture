@@ -9,6 +9,8 @@ interface ContextValue {
     setShouldShowNav: (value: boolean) => void;
     selectedDateTime: { date: string, start: string, end: string };
     setSelectedDateTime: (value: { date: string; start: string; end: string }) => void;
+    photographer: string;
+    setPhotographer: (value: string) => void;
 }
 
 const Context = createContext<ContextValue | undefined>(undefined);
@@ -25,12 +27,15 @@ export const ContextProvider: React.FC<ContextProps> = ({ children }) => {
     const [shouldShowNav, setShouldShowNav] = useState(true);
     const [selectedDateTime, setSelectedDateTime] =
         useState<{ date: string, start: string, end: string }>({ date: '', start: '', end: '' });
+    const [photographer, setPhotographer] = useState('');
 
     const contextValue: ContextValue = {
         shouldShowNav,
         setShouldShowNav,
         selectedDateTime,
         setSelectedDateTime,
+        photographer,
+        setPhotographer,
     };
 
     return (

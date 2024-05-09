@@ -2,8 +2,15 @@ import BeholdWidget from "@behold/react";
 import RainProfile from "../../components/profiles/RainProfile.tsx";
 import '../../styles/PhotographerPage.css'
 import RainCalendar from "../../components/calendars/RainCalendar.tsx";
+import { useContextValue } from "../../contexts/Context.tsx";
+import {useEffect} from "react";
 
 const Rain = () => {
+    const { setPhotographer } = useContextValue();
+    useEffect(() => {
+        setPhotographer('Rain');
+    }, [setPhotographer]);
+
     return (
         <>
             <RainProfile/>

@@ -1,7 +1,14 @@
 import BeholdWidget from "@behold/react";
 import MaivyProfile from "../../components/profiles/MaivyProfile.tsx";
+import {useContextValue} from "../../contexts/Context.tsx";
+import {useEffect} from "react";
 
 const Maivy = () => {
+    const { setPhotographer } = useContextValue();
+    useEffect(() => {
+        setPhotographer('Maivy');
+    }, [setPhotographer]);
+
     return (
         <>
             <MaivyProfile />

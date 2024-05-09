@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useContextValue } from "../contexts/Context";
 import "../styles/Booking.css";
 
 const BookingForm = () => {
-    const { selectedDateTime } = useContextValue();
+    const { selectedDateTime, photographer } = useContextValue();
     const { start: contextStart = "", end: contextEnd = "", date: contextDate = "" } = selectedDateTime || {};
 
     let hoursString = "";
@@ -13,16 +13,24 @@ const BookingForm = () => {
 
     const [formValues, setFormValues] = useState({
         date: contextDate,
-        hoursRequested: hoursString
+        hoursRequested: hoursString,
+        photographerRequested: photographer || "NoPreference" // Set default value to photographer or "NoPreference"
     });
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => { // Union type
         const { name, value } = e.target;
         setFormValues(prevState => ({
             ...prevState,
             [name]: value
         }));
     };
+
+    useEffect(() => {
+        setFormValues(prevState => ({
+            ...prevState,
+            photographerRequested: photographer || "NoPreference" // Default to "NoPreference" if photographer is not available
+        }));
+    }, [photographer]);
 
     return (
         <form name="booking" method="post" data-netlify="true" action="/">
@@ -42,8 +50,13 @@ const BookingForm = () => {
             </div>
             <div className="mb-3 book-form-item">
                 <label htmlFor="photographerRequested">Photographer Requested:</label>
-                <select id="photographerRequested" name="photographerRequested">
-                    <option value="No Preference">No Preference</option>
+                <select
+                    id="photographerRequested"
+                    name="photographerRequested"
+                    value={formValues.photographerRequested}
+                    onChange={handleInputChange}
+                >
+                    <option value="NoPreference">No Preference</option>
                     <option value="Rain">Rain</option>
                     <option value="Scott">Scott</option>
                     <option value="Maivy">Maivy</option>
@@ -88,3 +101,4 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
+``

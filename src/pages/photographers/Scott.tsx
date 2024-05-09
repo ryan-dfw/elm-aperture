@@ -2,8 +2,15 @@ import BeholdWidget from "@behold/react";
 import '../../styles/PhotographerPage.css';
 import ScottProfile from "../../components/profiles/ScottProfile.tsx"
 import ScottCalendar from "../../components/calendars/ScottCalendar.tsx";
+import {useContextValue} from "../../contexts/Context.tsx";
+import {useEffect} from "react";
 
 const Scott = () => {
+    const { setPhotographer } = useContextValue();
+    useEffect(() => {
+        setPhotographer('Scott');
+    }, [setPhotographer]);
+
     return (
         <>
             <ScottProfile />
