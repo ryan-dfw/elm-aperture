@@ -4,6 +4,7 @@ import '../../styles/PhotographerPage.css'
 import RainCalendar from "../../components/calendars/RainCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
+import BookingButton from "../../components/BookingButton.tsx";
 
 const Rain = () => {
     const { setPhotographer } = useContextValue();
@@ -42,6 +43,9 @@ const Rain = () => {
             <div style={{margin: '50px'}}></div>
             <div className='calendar-container'>
                 <RainCalendar/>
+            </div>
+            <div className="booking-button-container">
+                <BookingButton/>
             </div>
         </>
     )

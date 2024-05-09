@@ -48,3 +48,32 @@
         overflow: hidden;
     }
 }
+
+.booking-button-container {
+    position: fixed;
+    bottom: 15px;
+    right: 3vw;
+    z-index: 9999;
+}
+
+.booking-button-container button {
+    background-color: #4e6985;
+    color: white;
+    border: none;
+    border-radius: 15%;
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.booking-button-container button:hover {
+    background-color: #0056b3;
+}
+
+.booking-button-container button:focus {
+    outline: none;
+}
