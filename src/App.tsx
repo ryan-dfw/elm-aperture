@@ -4,7 +4,6 @@ import { ContextProvider } from './contexts/Context.tsx';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Rain from './pages/photographers/Rain.tsx';
-import Scott from './pages/photographers/Scott.tsx';
 import Maivy from './pages/photographers/Maivy.tsx';
 import Meraki from './pages/photographers/Meraki.tsx'
 import Commercial from './pages/realestate/Commercial.tsx';
@@ -71,7 +70,6 @@ const App: React.FC = () => {
                     <Route path="/wedding" element={<Wedding />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/rain" element={<Rain />} />
-                    <Route path="/scott" element={<Scott />} />
                     <Route path="/maivy" element={<Maivy />} />
                     <Route path="/meraki" element={<Meraki />} />
                     <Route path="/" element={<Homepage />} />
