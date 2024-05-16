@@ -12,9 +12,10 @@ interface CalendarProps {
     calName: string;
     calSourceA: string;
     calSourceB: string;
+    fullscreen: boolean;
 }
 
-const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB}) => {
+const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB, fullscreen}) => {
     const calendarRef = useRef<HTMLDivElement>(null);
     const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -44,7 +45,7 @@ const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB}
                 end: 'prev,next'
             },
             titleFormat: { month: 'short', day: 'numeric' },
-            height: '686px',
+            height: (isMobile && fullscreen) ? '700px' : '686px',
             slotLabelInterval: '01:00',
             slotDuration: '01:00',
             allDaySlot: false,

@@ -42,7 +42,7 @@ const Rain = () => {
             </div>
             <div style={{margin: '50px'}}></div>
             <div className='calendar-container'>
-                <RainCalendar/>
+                <RainCalendar fullscreen={false}/>
             </div>
             <div className="booking-button-container">
                 <BookingButton/>

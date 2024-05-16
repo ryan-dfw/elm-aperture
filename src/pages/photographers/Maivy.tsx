@@ -24,7 +24,7 @@ const Maivy = () => {
             </div>
             <div style={{margin: '50px'}}></div>
             <div className='calendar-container'>
-                <MaivyCalendar/>
+                <MaivyCalendar fullscreen={false}/>
             </div>
             <div className="booking-button-container">
                 <BookingButton/>
