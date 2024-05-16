@@ -1,7 +1,7 @@
-import BeholdWidget from "@behold/react";
 import MerakiProfile from "../../components/profiles/MerakiProfile.tsx";
 import {useContextValue} from "../../contexts/Context.tsx";
 import {useEffect} from "react";
+import BookingButton from "../../components/BookingButton.tsx";
 
 const Meraki = () => {
     const { setPhotographer } = useContextValue();
@@ -11,11 +11,12 @@ const Meraki = () => {
 
     return (
         <>
-            <MerakiProfile />
-            <div className="behold-container">
-                <BeholdWidget feedId="syNVYHnSVDdzLimybtdc"/>
+            <MerakiProfile/>
+            <div className="booking-button-container">
+                <BookingButton/>
             </div>
         </>
+
     )
 }
 
