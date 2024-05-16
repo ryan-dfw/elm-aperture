@@ -1,0 +1,29 @@
+.carousel-container {
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-controls {
+    overflow: visible;
+}
+
+.carousel-control-prev {
+    margin-left: -10vw;
+}
+
+.carousel-control-next {
+    margin-right: -10vw;
+}
