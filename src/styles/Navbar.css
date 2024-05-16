@@ -37,6 +37,15 @@
     letter-spacing: 0.05em;
 }
 
+@media only screen and (max-width: 1180px) {
+    .navbar-brand {
+        font-size: 20px !important;
+    }
+    #navbar a {
+        font-size: 14px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     #navbar a {
         margin-top: 1px;

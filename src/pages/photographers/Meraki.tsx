@@ -15,6 +15,7 @@ const Meraki = () => {
             <div className="booking-button-container">
                 <BookingButton/>
             </div>
+            <div className="empty-photographer-spacer" style={{height: '40vh'}}></div>
         </>
 
     )

@@ -15,6 +15,7 @@ import Headshot from './pages/portrait/Headshot.tsx';
 import Professional from './pages/portrait/Professional.tsx';
 import Lifestyle from './pages/portrait/Lifestyle.tsx'
 import Booking from "./pages/Booking.tsx";
+import RainCal from "./pages/calendars/RainCal.tsx";
 
 const App: React.FC = () => {
     useEffect(() => {
@@ -72,6 +73,7 @@ const App: React.FC = () => {
                     <Route path="/rain" element={<Rain />} />
                     <Route path="/maivy" element={<Maivy />} />
                     <Route path="/meraki" element={<Meraki />} />
+                    <Route path="/raincal" element={<RainCal />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>
             </ContextProvider>
