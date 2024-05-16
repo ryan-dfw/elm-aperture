@@ -7,7 +7,7 @@ const Homepage = () => {
         <>
             <div className={"portfolio-section-header"}>
                 <div className={"horizontal-line"}></div>
-                <h4>FEATURED SHOTS ON INSTAGRAM</h4>
+                <h4>ELM APERTURE ON INSTAGRAM</h4>
                 <div className={"horizontal-line"}></div>
             </div>
             <div className="behold-container">

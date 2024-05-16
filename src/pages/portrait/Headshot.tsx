@@ -1,4 +1,4 @@
-import HeadshotLightBoxWithStyles from "../../components/lightboxes/HeadshotLightBox";
+import HeadshotLightBoxWithStyles from "../../datasets/lightboxes/HeadshotLightBox";
 const Headshot = () => {
         return (
             <>

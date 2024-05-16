@@ -1,4 +1,4 @@
-import WeddingLightBoxWithStyles from "../../components/lightboxes/WeddingLightBox";
+import WeddingLightBoxWithStyles from "../../datasets/lightboxes/WeddingLightBox";
 
 const Wedding = () => {
         return (

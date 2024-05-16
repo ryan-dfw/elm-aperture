@@ -1,4 +1,4 @@
-import CalendarItem from "../Calendar.tsx";
+import CalendarItem from "../../components/Calendar.tsx";
 
 const RainCalendar = () => {
 

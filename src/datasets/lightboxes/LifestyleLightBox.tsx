@@ -1,4 +1,4 @@
-import LightBox from "../Lightbox.tsx";
+import LightBox from "../../components/Lightbox.tsx";
 
 const Lifestyle = () => {
     const directory: string = 'portrait';

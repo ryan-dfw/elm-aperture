@@ -1,4 +1,4 @@
-import ResidentialLightBoxWithStyles from "../../components/lightboxes/ResidentialLightBox";
+import ResidentialLightBoxWithStyles from "../../datasets/lightboxes/ResidentialLightBox";
 
 const Residential = () => {
         return (

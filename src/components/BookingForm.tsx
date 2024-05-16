@@ -58,7 +58,6 @@ const BookingForm = () => {
                 >
                     <option value="NoPreference">No Preference</option>
                     <option value="Rain">Rain</option>
-                    <option value="Scott">Scott</option>
                     <option value="Maivy">Maivy</option>
                     <option value="Meraki">Meraki</option>
                 </select>

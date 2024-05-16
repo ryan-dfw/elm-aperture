@@ -1,4 +1,4 @@
-import HotelLightBoxWithStyles from "../../components/lightboxes/HotelLightBox";
+import HotelLightBoxWithStyles from "../../datasets/lightboxes/HotelLightBox";
 
 const Hotel = () => {
         return (

@@ -1,4 +1,4 @@
-import MerakiProfile from "../../components/profiles/MerakiProfile.tsx";
+import MerakiProfile from "../../datasets/profiles/MerakiProfile.tsx";
 import {useContextValue} from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";

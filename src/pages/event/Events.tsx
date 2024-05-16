@@ -1,4 +1,4 @@
-import EventsLightBoxWithStyles from "../../components/lightboxes/EventsLightBox";
+import EventsLightBoxWithStyles from "../../datasets/lightboxes/EventsLightBox";
 
 const Events = () => {
         return (

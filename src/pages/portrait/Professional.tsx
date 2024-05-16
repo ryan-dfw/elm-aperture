@@ -1,4 +1,4 @@
-import ProfessionalLightBoxWithStyles from "../../components/lightboxes/ProfessionalLightBox";
+import ProfessionalLightBoxWithStyles from "../../datasets/lightboxes/ProfessionalLightBox";
 const Professional = () => {
         return (
             <>
