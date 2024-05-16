@@ -37,20 +37,18 @@ const Carousel: React.FC = () => {
                         <img src="/res/img/carousel/homepage_05.webp" className="d-block w-100" alt="Image 5"/>
                     </div>
                 </div>
-                {!mobile && (
-                    <div className="carousel-controls">
-                        <button className="carousel-control-prev" type="button" data-bs-target="#homepageCarousel"
-                                data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#homepageCarousel"
-                                data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                )}
+                <div className="carousel-controls" style={{ visibility: mobile ? 'hidden' : 'visible' }}>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#homepageCarousel"
+                            data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#homepageCarousel"
+                            data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     );
