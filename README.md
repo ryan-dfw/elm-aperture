@@ -1,3 +1,5 @@
+elmapt.com
+
 a homepage for photography group Elm Aperture.
 
 As i'd like this site to be quickly editable and updatable by any photographer using it, whether or not they're used to Typescript themselves, i've pursued a three-layered approach between data entry and rendering.
