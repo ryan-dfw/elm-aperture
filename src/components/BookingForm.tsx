@@ -4,7 +4,9 @@ import "../styles/Booking.css";
 
 const BookingForm = () => {
     const { selectedDateTime, photographer } = useContextValue();
-    const { start: contextStart = "", end: contextEnd = "", date: contextDate = "" } = selectedDateTime || {};
+    const {
+        start: contextStart = "", end: contextEnd = "", date: contextDate = ""
+    } = selectedDateTime || {};
 
     let hoursString = "";
     if (contextStart && contextEnd) {
@@ -14,10 +16,10 @@ const BookingForm = () => {
     const [formValues, setFormValues] = useState({
         date: contextDate,
         hoursRequested: hoursString,
-        photographerRequested: photographer || "NoPreference" // Set default value to photographer or "NoPreference"
+        photographerRequested: photographer || "NoPreference"
     });
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => { // Union type
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormValues(prevState => ({
             ...prevState,
@@ -28,7 +30,7 @@ const BookingForm = () => {
     useEffect(() => {
         setFormValues(prevState => ({
             ...prevState,
-            photographerRequested: photographer || "NoPreference" // Default to "NoPreference" if photographer is not available
+            photographerRequested: photographer || "NoPreference"
         }));
     }, [photographer]);
 
