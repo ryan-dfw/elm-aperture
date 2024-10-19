@@ -125,7 +125,7 @@ a[href^="tel"]:hover,
 .profile-description-container {
     height: 90%;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: clip;
 }
 
 .profile-description-container p {
@@ -133,6 +133,54 @@ a[href^="tel"]:hover,
     color: #dbe5f1;
     white-space: normal;
     word-wrap: break-word;
+}
+
+@media (min-width: 1400px) {
+    .profile-description-container p {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 1232px) {
+    .profile-description-container p {
+        font-size: 110%;
+    }
+}
+
+@media (max-width: 1231px) {
+    .profile-description-container p {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 1137px) {
+    .profile-description-container p {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 615px) {
+    .profile-description-container p {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 492px) {
+    .profile-description-container p {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 397px) {
+    .profile-description-container p {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 362px) {
+    .profile-description-container p {
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 1200px) {

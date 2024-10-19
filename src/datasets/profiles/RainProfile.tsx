@@ -11,7 +11,7 @@ const RainProfile = () => {
         "so i shoot everything from models to hotels to testimonials with this in mind. " +
         "My works tend to chase strong colour with even lighting and an emphasis on balance. ";
     const urlIG = "raindfwphotos"
-    const email = "raindfwphotos@gmail.com"
+    const email = "rain@elmapt.com"
     const phoneNumber = "469.620.0579"
     return <Profile photographer={photographer} position={position} vFocus={vFocus} bioText={bioText} urlIG={urlIG}
                     urlVimeo={urlIG} email={email} phoneNumber={phoneNumber}/>;
