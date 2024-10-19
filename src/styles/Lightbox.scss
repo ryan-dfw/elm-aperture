@@ -111,6 +111,26 @@
   }
 }
 
+@media (max-width: 800px) {
+  .gallery-container.events {
+    margin: 0 auto;
+  }
+
+  .gallery-container.events .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .gallery-container.events .gallery > div {
+    height: 200px;
+    margin-bottom: 5px;
+  }
+}
+
 .headshot-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
