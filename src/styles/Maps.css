@@ -1,0 +1,16 @@
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.embedmap {
+    width: 100%;
+    height: 70vh;
+}
+
+@media (min-width: 600px) {
+    .embedmap {
+        width: 80vw;
+    }
+}
