@@ -7,6 +7,7 @@
 .embedmap {
     width: 100%;
     height: 70vh;
+    pointer-events: none;
 }
 
 @media (min-width: 600px) {
