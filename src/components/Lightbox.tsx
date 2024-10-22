@@ -10,8 +10,7 @@ interface LightBoxProps {
 
 enum InitialOfPhotographers {
     Rain = "R",
-    Maivy = "M",
-    Meraki = "I"
+    Maivy = "M"
 }
 
 const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details }) => {

@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Rain from './pages/photographers/Rain.tsx';
 import Maivy from './pages/photographers/Maivy.tsx';
-import Meraki from './pages/photographers/Meraki.tsx'
 import Commercial from './pages/realestate/Commercial.tsx';
 import Hotel from './pages/realestate/Hotel.tsx';
 import Residential from './pages/realestate/Residential.tsx';
@@ -72,7 +71,6 @@ const App: React.FC = () => {
                     <Route path="/events" element={<Events />} />
                     <Route path="/rain" element={<Rain />} />
                     <Route path="/maivy" element={<Maivy />} />
-                    <Route path="/meraki" element={<Meraki />} />
                     <Route path="/raincal" element={<RainCal />} />
                     <Route path="/" element={<Homepage />} />
                 </Routes>

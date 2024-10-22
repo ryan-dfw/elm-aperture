@@ -23,8 +23,7 @@ const EventLinks = {
 
 const Photographers = {
     Rain: 'Rain',
-    Maivy: 'Maivy',
-    Meraki: 'Meraki'
+    Maivy: 'Maivy'
 };
 
 const Navbar: React.FC = () => {
