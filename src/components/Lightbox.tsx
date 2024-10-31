@@ -26,9 +26,12 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     };
     const initial = details.map(item => getInitial(item[2]));
 
-    const imagesData = details.map(([title, detail, photographer], index) => ({
-        src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
-        thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(2, '0')}_thumb.webp`,
+    const imagesData = details
+        .map(([title, detail, photographer],
+              index) => ({
+                src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
+                thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1)
+                    .toString().padStart(2, '0')}_thumb.webp`,
         title,
         detail,
         photographer

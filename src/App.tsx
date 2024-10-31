@@ -15,6 +15,9 @@ import Professional from './pages/portrait/Professional.tsx';
 import Lifestyle from './pages/portrait/Lifestyle.tsx'
 import Booking from "./pages/Booking.tsx";
 import RainCal from "./pages/calendars/RainCal.tsx";
+import HotelFull from "./pages/realestate/HotelFull.tsx";
+
+
 
 const App: React.FC = () => {
     useEffect(() => {
@@ -66,6 +69,7 @@ const App: React.FC = () => {
                     <Route path="/lifestyle" element={<Lifestyle />} />
                     <Route path="/commercial" element={<Commercial />} />
                     <Route path="/hotel" element={<Hotel />} />
+                    <Route path="/hotel-full" element={<HotelFull />} />
                     <Route path="/residential" element={<Residential />} />
                     <Route path="/wedding" element={<Wedding />} />
                     <Route path="/events" element={<Events />} />
