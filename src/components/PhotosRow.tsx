@@ -14,7 +14,7 @@ const PhotosRow = () => {
             <div className="photos-container">
                 {tempImages.map((image, index) => (
                     <div key={index} className="photo-wrapper">
-                        <img src={`/public/res/img/realestate/hotel_full/thumb/${image}`}
+                        <img src={`/res/img/realestate/hotel_full/thumb/${image}`}
                              alt={`Hotel photo ${index + 1}`} />
                     </div>
                 ))}
