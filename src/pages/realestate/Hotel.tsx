@@ -12,7 +12,6 @@ const Hotel = () => {
     return (
         <>
             <HotelLightBoxWithStyles/>
-            <HotelMap/>
             <div className={"portfolio-section-header"}>
                 <div className={"horizontal-line"}></div>
                 <h4>See a Full Sample Delivery</h4>
@@ -20,12 +19,11 @@ const Hotel = () => {
             </div>
             <div
                 onClick={handlePhotosRowClick}
-                style={{
-                    cursor: 'pointer',
-                }}
+                style={{cursor: 'pointer',}}
             >
                 <PhotosRow/>
             </div>
+            <HotelMap/>
         </>
     );
 };
