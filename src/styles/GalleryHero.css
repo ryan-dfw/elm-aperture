@@ -18,6 +18,28 @@
     overflow: hidden;
 }
 
+.hero-header {
+    position: absolute;
+    top: 40 px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    width: 90%;
+    text-align: center;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-header h4 {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0;
+    font-style: italic;
+}
+
 
 .gallery-hero-bkg {
     filter: blur(2px);
