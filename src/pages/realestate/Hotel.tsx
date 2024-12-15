@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import HotelLightBoxWithStyles from "../../datasets/lightboxes/HotelLightBox";
 import HotelMap from "../../embeds/maps/HotelMap.tsx";
-import PhotosRow from "../../components/PhotosRow.tsx";
+import GalleryHero from "../../components/GalleryHero.tsx";
 
 const Hotel = () => {
     const navigate = useNavigate();
@@ -13,15 +13,15 @@ const Hotel = () => {
         <>
             <HotelLightBoxWithStyles/>
             <div className={"portfolio-section-header"}>
-                <div className={"horizontal-line"}></div>
-                <h4>See a Full Sample Delivery</h4>
-                <div className={"horizontal-line"}></div>
+                <div className={"horizontal-line-mini"}></div>
+                <h4>See the Full Story: 300+ Photos Tailored for Your Hotel’s Success.</h4>
+                <div className={"horizontal-line-mini"}></div>
             </div>
             <div
                 onClick={handlePhotosRowClick}
                 style={{cursor: 'pointer',}}
             >
-                <PhotosRow/>
+                <GalleryHero/>
             </div>
             <HotelMap/>
         </>

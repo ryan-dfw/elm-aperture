@@ -23,6 +23,19 @@
     background-color: white;
 }
 
+.horizontal-line-mini {
+    width: calc((1 / 50) * (100vw - 1000px) + 15%);
+    height: 1px;
+    margin-top: -8px;
+    background-color: white;
+}
+
+@media (max-width: 500px) {
+    .horizontal-line-mini {
+        width: calc((1 / 90) * (100vw - 1000px) + 1%);
+    }
+}
+
 .portfolio-section-header h4 {
     color: white;
     font-size: calc((1/70) * (100vw - 1000px) + 20px);
