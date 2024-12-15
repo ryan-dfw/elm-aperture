@@ -1,3 +1,15 @@
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
 .vimeo-profile-frame {
     position: absolute;
     top: 0;
@@ -14,6 +26,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.clickable-header {
+    cursor: pointer;
 }
 
 .horizontal-line {
