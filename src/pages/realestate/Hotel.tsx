@@ -7,7 +7,7 @@ import GalleryHero from "../../components/GalleryHero.tsx";
 const Hotel = () => {
     const navigate = useNavigate();
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
-    
+
     useEffect(() => {
         const handleResize = () => setIsDesktop(window.innerWidth > 768);
         window.addEventListener('resize', handleResize);
@@ -39,7 +39,6 @@ const Hotel = () => {
                         : "See a full delivery - all 300+ photos"}
                 </p>
             </div>
-
             <HotelMap />
         </>
     );

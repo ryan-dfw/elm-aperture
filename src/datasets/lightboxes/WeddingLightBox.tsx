@@ -5,8 +5,8 @@ const Wedding = () => {
     const subDirectory = 'wedding';
     const details: [string, string, string, number, number][] = [
         ['Palos Verdes', ', Wedding', 'Rain', 0, 80],                       // 01
-        ['Serene Lakeside', ', Wedding Party', 'Maivy', 0, -50],            // 02
-        ['Palos Verdes', ', Wedding', 'Rain', 0, 30],                       // 03
+        ['The Springs', ', Wedding Portraits', 'Rain', 0, -50],             // 02
+        ['Serene Lakeside', ', Wedding Party', 'Maivy', 0, -50],            // 03
         ['Serene Lakeside', ', Wedding Portrait', 'Maivy', 0, 300],         // 04
         ['Mandalay Canal', ', Engagement', 'Rain', 0, 40],                  // 05
         ['Japanese Garden', ', Wedding Ceremony', 'Rain', 30, 80],          // 06

@@ -13,7 +13,7 @@ const Headshot = () => {
         ['Zadie', '', 'Rain', 0, 0],                                        // 07
         ['Lucinda', '', 'Rain', 0, 0],                                      // 08
         ['Julie', '', 'Maivy', 0, 0],                                       // 09
-        ['filler image', '', 'no one', 0, 0],                               // 10
+        ['Grace', '', 'Rain', 0, 0],                                        // 10
         ['filler image', '', 'no one', 0, 0],                               // 11
         ['filler image', '', 'no one', 0, 0],                               // 12
         ['filler image', '', 'no one', 0, 0],                               // 13
