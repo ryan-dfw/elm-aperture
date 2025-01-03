@@ -119,21 +119,27 @@
 
 @media (max-width: 800px) {
   .gallery-container.events {
-    margin: 0 auto;
-  }
-
-  .gallery-container.events .gallery {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-  }
+    flex-direction: column;
+    justify-content: start;
+    .gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
 
-  .gallery-container.events .gallery > div {
-    height: 200px;
-    margin-bottom: 5px;
+      > div {
+        width: calc(50% - 5px);
+        margin-bottom: 5px;
+        box-sizing: border-box;
+
+        > img {
+          object-fit: cover;
+          aspect-ratio: 1;
+        }
+      }
+    }
   }
 
   .gallery-container.realestate {
