@@ -25,6 +25,11 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
         return InitialOfPhotographers[photographerKey];
     };
     const initial = details.map(item => getInitial(item[2]));
+    const directoryClasses: Record<string, string> = {
+        portrait: "portrait",
+        events: "events",
+        realestate: "realestate",
+    };
 
     const imagesData = details
         .map(([title, detail, photographer],
@@ -179,9 +184,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     }
 
     return (
-        <div className={`gallery-container ${(
-            directory === "portrait" ? "portrait" : directory === "events" ? "events" : ""
-            )}`}>
+        <div className={`gallery-container ${directoryClasses[directory] || ""}`}>
             <div
                 className={`gallery ${subDirectory === "headshot" && window.innerWidth > 1000 ? "headshot-grid" : ""}`}>
                 {imagesData.map((image, index: number) => (

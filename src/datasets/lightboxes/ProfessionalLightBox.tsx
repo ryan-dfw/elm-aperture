@@ -11,7 +11,7 @@ const Professional = () => {
         ['Chris', ', realtor', 'Rain', 180, 0],                             // 05
         ['Erik', ', teacher', 'Rain', 140, 0],                              // 06
         ['Dayle', ', therapist', 'Rain', 20, 0],                            // 07
-        ['Vashtai', 'spa director', 'Rain', 100, -50],                      // 08
+        ['Vashtai', 'spa director', 'Rain', 100, 0],                      // 08
         ['filler image', '', 'no one', 20, 0],                              // 09
         ['filler image', '', 'no one', 20, 0],                              // 10
         ['filler image', '', 'no one', 20, 0],                              // 11
