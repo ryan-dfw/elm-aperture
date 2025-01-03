@@ -9,7 +9,7 @@
 
 @media (max-width: 800px) {
   .gallery-container {
-    min-height: 1941px;
+    //min-height: 1941px;
   }
 }
 
@@ -134,6 +134,31 @@
   .gallery-container.events .gallery > div {
     height: 200px;
     margin-bottom: 5px;
+  }
+
+  .gallery-container.realestate {
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    .gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      > div {
+        width: calc(50% - 5px);
+        margin-bottom: 5px;
+        box-sizing: border-box;
+
+        > img {
+          aspect-ratio: 1.5;
+        }
+      }
+    }
   }
 }
 
