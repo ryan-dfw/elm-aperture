@@ -1,4 +1,4 @@
-import BeholdWidget from "@behold/react";
+// import BeholdWidget from "@behold/react";
 import MaivyProfile from "../../datasets/profiles/MaivyProfile.tsx";
 import {useContextValue} from "../../contexts/Context.tsx";
 import {useEffect} from "react";
@@ -14,9 +14,9 @@ const Maivy = () => {
     return (
         <>
             <MaivyProfile/>
-            <div className="behold-container">
-                <BeholdWidget feedId="3nRMGu6Vz93x9lA2lw9q"/>
-            </div>
+            {/*<div className="behold-container">*/}
+            {/*    <BeholdWidget feedId="3nRMGu6Vz93x9lA2lw9q"/>*/}
+            {/*</div>*/}
             {/*<div className={"portfolio-section-header"}>*/}
             {/*    <div className={"horizontal-line"}></div>*/}
             {/*    <h4>AVAILABILITY </h4>*/}
