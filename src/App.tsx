@@ -16,6 +16,8 @@ import Lifestyle from './pages/portrait/Lifestyle.tsx'
 import Booking from "./pages/Booking.tsx";
 import RainCal from "./pages/calendars/RainCal.tsx";
 import HotelFull from "./pages/realestate/HotelFull.tsx";
+import Motel from "./pages/realestate/Motel.tsx";
+import MotelFull from "./pages/realestate/MotelFull.tsx";
 
 
 
@@ -70,6 +72,8 @@ const App: React.FC = () => {
                     <Route path="/commercial" element={<Commercial />} />
                     <Route path="/hotel" element={<Hotel />} />
                     <Route path="/hotel-full" element={<HotelFull />} />
+                    <Route path="/motel" element={<Motel />} />
+                    <Route path="/motel-full" element={<MotelFull />} />
                     <Route path="/residential" element={<Residential />} />
                     <Route path="/wedding" element={<Wedding />} />
                     <Route path="/events" element={<Events />} />

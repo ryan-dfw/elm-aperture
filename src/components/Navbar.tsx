@@ -11,8 +11,9 @@ const PortraitLinks = {
 };
 
 const RealEstateLinks = {
-    Commercial: 'Commercial',
     Hotel: 'Hotel',
+    Motel: 'Motel',
+    Commercial: 'Commercial',
     Residential: 'Residential',
 };
 
