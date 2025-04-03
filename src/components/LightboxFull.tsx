@@ -15,8 +15,8 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const imagesData = Array.from({ length: numberOfPhotos }, (_, index) => ({
-        src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(2, '0')}.webp`,
-        thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(2, '0')}_thumb.webp`,
+        src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(3, '0')}.webp`,
+        thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(3, '0')}_thumb.webp`,
     }));
 
     const closeLightbox = useCallback(() => {

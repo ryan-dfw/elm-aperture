@@ -31,7 +31,7 @@ const Hotel = () => {
                         <h4>See the Full Story: 300+ Photos Tailored for Your Hotel’s Success.</h4>
                     </div>
                 )}
-                <GalleryHero />
+                <GalleryHero name="hotel" number="345" />
                 <p className="hero-descriptor">
                     {isDesktop
                         ? "From lobby to linens, every detail captured to enhance your online presence and bookings." +

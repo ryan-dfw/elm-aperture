@@ -1,20 +1,25 @@
 import '../styles/GalleryHero.css';
 
-const GalleryHero = () => {
-    const heroBkg = "hotel_full_ad.webp";
-    const heroImg = "hotel_full_345.webp";
+interface GalleryHeroProps {
+    name: string;
+    number: string;
+}
+
+const GalleryHero = ({ name, number }: GalleryHeroProps) => {
+    const heroBkg = `${name}_full_ad.webp`;
+    const heroImg = `${name}_full_${number}.webp`;
 
     return (
         <div className="gallery-hero-container">
             <img
                 className="gallery-hero-bkg"
-                src={`/res/img/realestate/hotel_full_ad/${heroBkg}`}
+                src={`/res/img/realestate/${name}_full_ad/${heroBkg}`}
                 alt="Gallery Background"
             />
 
             <img
                 className="hero-image"
-                src={`/res/img/realestate/hotel_full/full/${heroImg}`}
+                src={`/res/img/realestate/${name}_full/full/${heroImg}`}
                 alt="Hero Highlight"
             />
         </div>
