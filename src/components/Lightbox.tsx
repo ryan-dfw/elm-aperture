@@ -186,7 +186,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, details })
     return (
         <div className={`gallery-container ${directoryClasses[directory] || ""}`}>
             <div
-                className={`gallery ${subDirectory === "headshot" && window.innerWidth > 1000 ? "headshot-grid" : ""}`}>
+                className={`gallery ${directory === "portrait" && window.innerWidth > 1000 ? "headshot-grid" : ""}`}>
                 {imagesData.map((image, index: number) => (
                     <div className="galleryimage" key={index} style={{position: 'relative'}}>
                         <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy"/>
