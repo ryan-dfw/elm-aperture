@@ -6,7 +6,7 @@ const RainCalendar = ({ fullscreen }: { fullscreen: boolean }) => {
     const calSourceB: string = import.meta.env.VITE_GOOGLE_CAL_2;
 
     return (
-        <CalendarItem calName={calName} calSourceA={calSourceA} calSourceB={calSourceB} fullscreen={fullscreen} />
+        <CalendarItem calName={calName} calSources={[calSourceA, calSourceB]} fullscreen={fullscreen} />
     );
 };
 

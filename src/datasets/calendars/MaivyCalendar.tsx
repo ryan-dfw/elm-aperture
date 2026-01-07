@@ -4,11 +4,11 @@ const MaivyCalendar = ({ fullscreen }: { fullscreen: boolean }) => {
 
     const calName: string = 'rainCalendar Calendar'
     const calSourceA: string = import.meta.env.VITE_GOOGLE_CAL_3;
-    const calSourceB: string = '';
+    const calSourceB: string = import.meta.env.VITE_GOOGLE_CAL_4;
 
 
     return (
-        <CalendarItem calName={calName} calSourceA={calSourceA} calSourceB={calSourceB} fullscreen={fullscreen}/>
+        <CalendarItem calName={calName} calSources={[calSourceA, calSourceB]} fullscreen={fullscreen}/>
     );
 };
 

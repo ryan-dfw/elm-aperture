@@ -10,21 +10,18 @@ import '../styles/Calendars.css/';
 
 interface CalendarProps {
     calName: string;
-    calSourceA: string;
-    calSourceB: string;
+    calSources: string[];
     fullscreen: boolean;
 }
 
-const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB, fullscreen}) => {
+const CalendarItem: React.FC<CalendarProps> = ({calName, calSources, fullscreen}) => {
     const calendarRef = useRef<HTMLDivElement>(null);
     const isMobile = useMediaQuery({ maxWidth: 768 });
+    const api = import.meta.env.VITE_GOOGLE_API_KEY;
 
     const { setSelectedDateTime } = useContextValue();
 
-    const api = import.meta.env.VITE_GOOGLE_API_KEY;
-    const cal1 = calSourceA;
-    let cal2 = ''
-    calSourceB ? cal2 = calSourceB : cal2 = '';
+    const sources = (calSources ?? []).map(s => s?.trim()).filter(Boolean) as string[];
 
     useEffect(() => {
         const calendarEl = calendarRef.current;
@@ -68,14 +65,7 @@ const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB,
                     return createElement('div', {}, timeText);
                 }
             },
-            eventSources: [
-                {
-                    googleCalendarId: cal1,
-                },
-                {
-                    googleCalendarId: cal2,
-                }
-            ],
+            eventSources: sources.map((id) => ({ googleCalendarId: id })),
             eventClick: function(info) {
                 if (info.event.display === 'background') {
                     info.jsEvent.preventDefault();
@@ -97,7 +87,7 @@ const CalendarItem: React.FC<CalendarProps> = ({calName, calSourceA, calSourceB,
         return () => {
             calendar.destroy();
         };
-    }, [api, cal1, cal2, isMobile, setSelectedDateTime]);
+    }, [api, calSources, fullscreen, isMobile, setSelectedDateTime, sources]);
 
     return (
         <div id={calName} ref={calendarRef}>
