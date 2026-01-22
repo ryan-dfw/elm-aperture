@@ -24,6 +24,7 @@ const EventLinks = {
 
 const Photographers = {
     Rain: 'Rain',
+    Alejandro: 'Alejandro',
     Maivy: 'Maivy'
 };
 
