@@ -1,60 +1,172 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  background-color: #070808;
+  --bg-base: #080a0d;
+  --text: #f2f3f6;
+  --muted: #9ca3af;
+
+  --c1: 59 130 246;
+  --c1a: 0.10;
+  --c2: 124 58 237;
+  --c2a: 0.08;
+  --c3: 245 158 11;
+  --c3a: 0.05;
+
+  --p1x: 86%;
+  --p1y: 18%;
+  --p2x: 14%;
+  --p2y: 82%;
+  --p3x: 78%;
+  --p3y: 58%;
+
+  --line: rgba(242, 243, 246, 0.12);
+  --panel: rgba(242, 243, 246, 0.035);
+
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg-base);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background-color: #070808;
-  scroll-behavior: smooth;
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
+.noto-sans-line-italic {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-base);
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
+  background: transparent;
+  color: var(--text);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-base);
+  background-image:
+          radial-gradient(
+                  min(900px, 92vw) min(700px, 62vh) at var(--p1x) var(--p1y),
+                  rgba(var(--c3) / var(--c3a)) 0%,
+                  rgba(var(--c3) / 0) 60%
+          ),
+          radial-gradient(
+                  min(1200px, 115vw) min(900px, 78vh) at var(--p2x) var(--p2y),
+                  rgba(var(--c1) / var(--c1a)) 0%,
+                  rgba(var(--c1) / 0) 62%
+          ),
+          radial-gradient(
+                  min(1000px, 100vw) min(800px, 70vh) at var(--p3x) var(--p3y),
+                  rgba(var(--c2) / var(--c2a)) 0%,
+                  rgba(var(--c2) / 0) 58%
+          );
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-button:hover {
-  border-color: #646cff;
+
+.portfolio-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  width: min(92vw, 1400px);
+
+  margin:
+          clamp(36px, 6vw, 72px)
+          auto
+          clamp(28px, 4vw, 48px);
+
+  color: rgba(242, 243, 246, 0.72);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.portfolio-section-header h4 {
+  margin: 0;
+
+  font-size: 0.92rem;
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: rgba(242, 243, 246, 0.78);
+}
+
+.horizontal-line {
+  flex: 1;
+  height: 1px;
+  background:
+          linear-gradient(
+                  to right,
+                  rgba(242, 243, 246, 0),
+                  rgba(242, 243, 246, 0.14),
+                  rgba(242, 243, 246, 0)
+          );
+}
+
+.behold-container {
+  width: min(80vw, 1200px);
+  margin: 0 auto 0;
+}
+
+.behold-container > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .portfolio-section-header {
+    width: 100%;
+    gap: 10px;
+    padding: 0 12px;
+    overflow: hidden;
+  }
+
+  .portfolio-section-header h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.10em;
+  }
+
+  .horizontal-line {
+    min-width: 24px;
+  }
 }
