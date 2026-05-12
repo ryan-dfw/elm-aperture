@@ -1,6 +1,5 @@
 import BeholdWidget from "@behold/react";
 import AlejandroProfile from "../../datasets/profiles/AlejandroProfile.tsx";
-import '../../styles/PhotographerPage.css'
 import AlejandroCalendar from "../../datasets/calendars/AlejandroCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
