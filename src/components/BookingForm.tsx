@@ -19,7 +19,18 @@ const BookingForm = () => {
 
     const [contactError, setContactError] = useState("");
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const [isSubmittingVisual, setIsSubmittingVisual] = useState(false);
+
+    const handleSubmitVisual = () => {
+        setIsSubmittingVisual(true);
+        setTimeout(() => {
+            setIsSubmittingVisual(false);
+        }, 1400);
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
         const form = e.currentTarget;
         const formData = new FormData(form);
 
@@ -27,10 +38,24 @@ const BookingForm = () => {
         const telNo = String(formData.get("telNo") || "").trim();
 
         if (!email && !telNo) {
-            e.preventDefault();
             setContactError("Please include either an email or phone number.");
+            return;
         }
+
+        setContactError("");
+        handleSubmitVisual();
+
+        await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData as any).toString(),
+        });
+        form.reset();
+        setIsSubmitted(true);
     };
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -50,11 +75,12 @@ const BookingForm = () => {
     }, [photographer]);
 
     return (
-        <main className="booking-form">
+        <main className={`booking-form ${isSubmittingVisual ? 'booking-form--pulse' : ''}`}>
             <div className="booking-header">
                 <h1>Book or Inquire</h1>
                 <p>all fields optional - let us know what you're looking for!</p>
             </div>
+
             <form name="booking" method="post" data-netlify="true" action="/" onSubmit={handleSubmit}>
                 <input type="hidden" name="form-name" value="booking" />
 
@@ -62,10 +88,12 @@ const BookingForm = () => {
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name"/>
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="telNo">Telephone Number:</label>
                     <input type="tel" id="telNo" name="telNo"/>
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email"/>
@@ -77,6 +105,7 @@ const BookingForm = () => {
 
                 <div className="mb-3 book-form-item">
                     <label htmlFor="photographerRequested">Photographer Requested:</label>
+
                     <select
                         id="photographerRequested"
                         name="photographerRequested"
@@ -89,6 +118,7 @@ const BookingForm = () => {
                         <option value="Maivy">Maivy</option>
                     </select>
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="dayRequested">Day Requested:</label>
                     <input
@@ -99,6 +129,7 @@ const BookingForm = () => {
                         onChange={handleInputChange}
                     />
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="hoursRequested">Hours Requested:</label>
                     <input
@@ -109,17 +140,24 @@ const BookingForm = () => {
                         onChange={handleInputChange}
                     />
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="city">City:</label>
                     <input type="text" id="city" name="city"/>
                 </div>
+
                 <div className="mb-3 book-form-item">
                     <label htmlFor="description">Description of the Shoot:</label>
                     <textarea id="description" name="description"></textarea>
                 </div>
+
                 <button type="submit" className="booking-submit">
                     Submit
                 </button>
+
+                <div className={`booking-status ${isSubmitted ? 'show' : ''}`}>
+                    thank you! someone will get back to you soon.
+                </div>
             </form>
         </main>
     );
