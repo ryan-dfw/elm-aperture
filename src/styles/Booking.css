@@ -1,33 +1,185 @@
-form {
+.booking-page {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    place-items: start center;
+    padding: clamp(72px, 10vw, 120px) 16px 80px;
+}
+
+.booking-form {
+    margin-top: 5vh;
+    width: min(92vw, 560px) !important;
+
+    padding: clamp(24px, 4vw, 44px);
+
+    border: 1px solid rgba(242, 243, 246, 0.08);
+    border-radius: 22px;
+
+    background: rgba(8, 10, 13, 0.42);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
+    gap: 18px;
+}
+
+.booking-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+.booking-header h1 {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+
+    color: rgba(242, 243, 246, 0.92);
+}
+
+.booking-header p {
+    margin: 0;
+
+    color: rgba(242, 243, 246, 0.56);
+
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .book-form-item {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 7px;
+    margin: 0 !important;
 }
 
-label {
-    color: #84879a
+.book-form-item label {
+    color: rgba(242, 243, 246, 0.58);
+
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
-input, textarea, select {
-    background-color: #999cad;
-    border: none;
-    border-radius: 4px;
-    height: 30px;
-    text-align: center;
+.book-form-item input,
+.book-form-item select,
+.book-form-item textarea {
+    width: 100%;
 
+    border: 1px solid rgba(242, 243, 246, 0.10);
+    border-radius: 12px;
+
+    background: rgba(242, 243, 246, 0.055);
+    color: rgba(242, 243, 246, 0.88);
+
+    padding: 11px 13px;
+
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    outline: none;
 }
 
-@media (max-width: 500px) {
-    form {
-        width: 85vw;
-    }
+.book-form-item select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-size:
+            6px 6px,
+            6px 6px,
+            100% 100%;
+
+    background: rgba(242, 243, 246, 0.055) linear-gradient(45deg, transparent 50%, rgba(242, 243, 246, .58) 50%) linear-gradient(135deg, rgba(242, 243, 246, .58) 50%, transparent 50%) no-repeat calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%,
+    0 0;
+
+    color: rgba(242, 243, 246, 0.88);
+}
+
+.book-form-item select option {
+    background: #080a0d;
+    color: rgba(242, 243, 246, 0.88);
+}
+
+.book-form-item textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.book-form-item input[type="date"] {
+    color-scheme: dark;
+}
+
+.book-form-item input:focus,
+.book-form-item select:focus,
+.book-form-item textarea:focus {
+    border-color: rgba(242, 243, 246, 0.24);
+    background: rgba(242, 243, 246, 0.075);
+}
+
+.book-form-item input:-webkit-autofill,
+.book-form-item input:-webkit-autofill:hover,
+.book-form-item input:-webkit-autofill:focus,
+.book-form-item textarea:-webkit-autofill,
+.book-form-item select:-webkit-autofill {
+    -webkit-text-fill-color: rgba(242, 243, 246, 0.88) !important;
+
+    transition: background-color 99999s ease-in-out 0s;
+
+    -webkit-box-shadow:
+            0 0 0px 1000px rgba(242, 243, 246, 0.055) inset !important;
+
+    box-shadow:
+            0 0 0px 1000px rgba(242, 243, 246, 0.055) inset !important;
+
+    border: 1px solid rgba(242, 243, 246, 0.10) !important;
+
+    caret-color: rgba(242, 243, 246, 0.88);
+}
+
+.booking-submit {
+    align-self: center;
+
+    margin-top: 8px;
+
+    border: 1px solid rgba(242, 243, 246, 0.10);
+    border-radius: 14px;
+
+    background: rgba(242, 243, 246, 0.045);
+    color: rgba(242, 243, 246, 0.78);
+
+    padding: 12px 20px;
+
+    font-size: 0.74rem;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+            background 120ms ease,
+            border-color 120ms ease,
+            color 120ms ease;
+}
+
+.booking-submit:hover {
+    background: rgba(242, 243, 246, 0.08);
+    border-color: rgba(242, 243, 246, 0.18);
+    color: rgba(242, 243, 246, 0.95);
+}
+
+.booking-error {
+    margin: -6px 0 4px;
+    color: rgba(245, 158, 11, 0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
 }

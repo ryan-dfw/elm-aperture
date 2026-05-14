@@ -6,7 +6,7 @@ import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useMediaQuery } from 'react-responsive';
 import { useContextValue } from '../contexts/Context.tsx';
-import '../styles/Calendars.css/';
+import '../styles/Calendars.css';
 
 interface CalendarProps {
     calName: string;

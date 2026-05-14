@@ -1,3 +1,16 @@
+#navbar a,
+#navbar button,
+#navbar .navbar-brand,
+#navbar .nav-link,
+#navbar .dropdown-toggle,
+#navbar .dropdown-item {
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
 #navbar {
     background: rgba(8, 10, 13, 0.62) !important;
     backdrop-filter: blur(18px);
