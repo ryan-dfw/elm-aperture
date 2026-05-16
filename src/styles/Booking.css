@@ -276,3 +276,81 @@
 .booking-form:has(.booking-status.show) .booking-submit {
     opacity: 0.50;
 }
+
+@media (max-width: 700px) {
+    .booking-form {
+        width: calc(100vw - 32px);
+        padding: 36px 22px;
+        border-radius: 24px;
+    }
+
+    .booking-header h1 {
+        font-size: clamp(2.4rem, 12vw, 3.2rem);
+        line-height: 1.08;
+        letter-spacing: 0.08em;
+    }
+
+    .booking-header p {
+        max-width: 280px;
+        margin-inline: auto;
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+
+    form {
+        gap: 14px;
+    }
+
+    .book-form-item {
+        gap: 8px;
+    }
+
+    .book-form-item label {
+        font-size: 0.76rem;
+        letter-spacing: 0.18em;
+    }
+
+    .book-form-item input,
+    .book-form-item select,
+    .book-form-item textarea {
+        min-height: 58px;
+        padding: 14px 16px;
+        font-size: 1rem;
+        border-radius: 18px;
+    }
+}
+
+.book-form-item input,
+.book-form-item select,
+.book-form-item textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 1500px) {
+    .booking-header>h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .booking-form {
+        width: calc(90vw - 24px) !important;
+        margin-inline: auto;
+        padding: 32px 18px;
+    }
+
+    .booking-header>h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .booking-header>p {
+        font-size: 0.7rem !important;
+    }
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
+}
