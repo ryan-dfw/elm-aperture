@@ -174,10 +174,29 @@
 }
 
 @media (max-width: 700px) {
+  .gallery-full-page-header {
+    margin-top: 50px;
+    max-width: 75vw;
+  }
+
+  .gallery-full-page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .gallery-full-page-header p {
+    margin-top: 10px;
+    max-width: 100%;
+    font-size: .75rem;
+  }
+
   .gallery-full-section-header {
     margin: 2em 0 0.8em;
 
     font-size: 0.75rem;
     letter-spacing: 0.16em;
+  }
+
+  .gallery-back-button {
+    font-size: 2rem;
   }
 }

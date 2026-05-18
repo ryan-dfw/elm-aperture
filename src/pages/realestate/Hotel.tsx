@@ -54,9 +54,15 @@ const Hotel = () => {
                 </p>
             </div>
 
-            <HotelMap />
+            <div className="service-copy">
+                <div className="service-section-heading heading-compact">
+                    <div className="horizontal-line" />
+                    <h3>Current Coverage</h3>
+                    <div className="horizontal-line" />
+                </div>
+            </div>
 
-            <br />
+            <HotelMap />
 
             <div className="service-copy">
                 <div className="service-section-heading">

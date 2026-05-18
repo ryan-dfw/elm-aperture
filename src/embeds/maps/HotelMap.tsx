@@ -3,9 +3,10 @@ import "../../styles/Maps.css";
 const HotelMap = () => {
     return (
         <div className="map-container">
-            <iframe
-                className="embedmap"
-                src="https://www.google.com/maps/d/u/0/embed?mid=1k4nyGhqu1UnOoiUrHhlDvXXBxjUNtA8&ehbc=2E312F&z=5"
+            <img
+                className="coverage-map"
+                src="/res/img/maps/hotel_map_260518.webp"
+                alt="Hotel and motel photography coverage across the South and Midwest"
                 loading="lazy"
             />
         </div>
