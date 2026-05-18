@@ -81,6 +81,7 @@ const Motel = () => {
                 </p>
             </div>
 
+            {!isDesktop && (<><br/><br/><br/></>)}
             <div className="booking-button-container">
                 <BookingButton/>
             </div>
