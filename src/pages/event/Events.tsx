@@ -1,9 +1,9 @@
-import EventsLightBoxWithStyles from "../../datasets/lightboxes/EventsLightBox";
+import EventsGalleryWithStyles from "../../datasets/galleries/EventsGallery";
 
 const Events = () => {
         return (
             <>
-                    <EventsLightBoxWithStyles/>
+                    <EventsGalleryWithStyles/>
             </>
         );
 }

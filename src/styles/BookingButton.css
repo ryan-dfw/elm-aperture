@@ -12,7 +12,7 @@
     width: auto;
     min-width: 0;
 
-    padding: 4em;
+    padding: 1em;
 
     border: 1px solid rgba(242, 243, 246, 0.08) !important;
     border-radius: 16px !important;
@@ -26,7 +26,9 @@
     color: rgba(242, 243, 246, 0.58) !important;
     -webkit-text-fill-color: rgba(242, 243, 246, 0.58) !important;
 
-    font-size: 0.6rem !important;
+
+    font-family: "Cinzel", serif;
+    font-size: 0.8rem !important;
     font-weight: 600;
     line-height: 1;
 

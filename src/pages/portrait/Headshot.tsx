@@ -1,8 +1,8 @@
-import HeadshotLightBoxWithStyles from "../../datasets/lightboxes/HeadshotLightBox";
+import HeadshotGalleryWithStyles from "../../datasets/galleries/HeadshotGallery";
 const Headshot = () => {
         return (
             <>
-                    <HeadshotLightBoxWithStyles/>
+                    <HeadshotGalleryWithStyles/>
             </>
         );
 }

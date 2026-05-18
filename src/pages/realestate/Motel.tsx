@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MotelLightBoxWithStyles from "../../datasets/lightboxes/MotelLightBox";
+import MotelGalleryWithStyles from "../../datasets/galleries/MotelGallery";
 import HotelMap from "../../embeds/maps/HotelMap.tsx";
 import GalleryHero from "../../components/GalleryHero.tsx";
 
@@ -20,7 +20,7 @@ const Motel = () => {
 
     return (
         <>
-            <MotelLightBoxWithStyles />
+            <MotelGalleryWithStyles />
             <div
                 className="hero-wrapper"
                 onClick={handleNavigateToGallery}

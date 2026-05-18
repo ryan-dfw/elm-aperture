@@ -1,8 +1,8 @@
-import LifestyleLightBoxWithStyles from "../../datasets/lightboxes/LifestyleLightBox.tsx";
+import LifestyleGalleryWithStyles from "../../datasets/galleries/LifestyleGallery.tsx";
 const Lifestyle = () => {
         return (
             <>
-                    <LifestyleLightBoxWithStyles/>
+                    <LifestyleGalleryWithStyles/>
             </>
         );
 }

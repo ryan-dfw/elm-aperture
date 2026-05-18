@@ -1,9 +1,9 @@
-import HotelFullDelivery from "../../datasets/lightboxes/HotelFullDelivery.tsx";
+import HotelFullGallery from "../../datasets/galleries/full/HotelFullGallery.tsx";
 
 const HotelFull = () => {
     return (
         <>
-            <HotelFullDelivery />
+            <HotelFullGallery />
         </>
     );
 }

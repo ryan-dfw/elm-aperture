@@ -11,7 +11,7 @@ These will both point to the images to be used, as well as be the source from wh
 Beneath this is stored all the relevant metadata for each photo, as an array of strings and numbers. Currently, we have it set up to expect a title, short description, photographer, vertical offset for desktop browsers, and vertical offset for mobile browsers.
 A photographer wishing to swap out an image needs only provide the image itself and modify the corresponding line of metadata to match their photo's information.
 
-Finally, the middle layer handles all the logic required in building the component to be mounted. For the lightbox galleries, we have just one component, Lightbox.tsx, handling the build of every lightbox, regardless of subject matter, orientation, or style.
+Finally, the middle layer handles all the logic required in building the component to be mounted. For the lightbox galleries, we have just one component, Gallery.tsx, handling the build of every lightbox, regardless of subject matter, orientation, or style.
 A series of if statements and conditional renderings will build a different lightbox based on relevant props from the dataset.
 This is to ensure ease of use and updatability, as well as promote seperation of concerns.
 

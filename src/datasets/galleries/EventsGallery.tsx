@@ -1,4 +1,4 @@
-import LightBox from "../../components/Lightbox.tsx";
+import Gallery from "../../components/Gallery.tsx";
 
 const Events = () => {
     const directory = 'events';
@@ -24,7 +24,7 @@ const Events = () => {
         ['Retirement Party', ', Euless', 'Rain', 40, 0]                     // 18
     ];
 
-    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Events;

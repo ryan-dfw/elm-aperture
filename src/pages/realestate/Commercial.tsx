@@ -1,9 +1,9 @@
-import CommercialLightBoxWithStyles from "../../datasets/lightboxes/CommercialLightBox";
+import CommercialGalleryWithStyles from "../../datasets/galleries/CommercialGallery";
 
 const Commercial = () => {
         return (
             <>
-                    <CommercialLightBoxWithStyles/>
+                    <CommercialGalleryWithStyles/>
             </>
         );
 }

@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import '../styles/LightboxFull.scss';
+import '../styles/GalleryFull.scss';
 import { useContextValue } from '../contexts/Context.tsx';
 
-interface LightBoxProps {
+interface GalleryProps {
     directory: string;
     subDirectory: string;
     numberOfPhotos: number;
 }
 
-const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPhotos }) => {
+const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhotos }) => {
     const [imageOpen, setImageOpen] = useState(false);
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
@@ -19,7 +19,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
         thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(3, '0')}_thumb.webp`,
     }));
 
-    const closeLightbox = useCallback(() => {
+    const closeGallery = useCallback(() => {
         setShouldShowNav(true);
     }, [setShouldShowNav]);
 
@@ -46,7 +46,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
         const closeButton = document.getElementById('closeButton');
 
         if (closeButton) {
-            closeButton.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeGallery);
         }
         const handleKeyPress = (event: KeyboardEvent) => {
             const closeButtons = document.querySelectorAll('.close');
@@ -82,16 +82,16 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
             });
 
             if (closeButton) {
-                closeButton.removeEventListener('click', closeLightbox);
+                closeButton.removeEventListener('click', closeGallery);
             }
             document.removeEventListener('keydown', handleKeyPress);
         };
-    }, [imagesData.length, closeLightbox, setShouldShowNav, imageOpen]);
+    }, [imagesData.length, closeGallery, setShouldShowNav, imageOpen]);
 
     useEffect(() => {
         const handleOutsideClick = (event: Event) => {
-            const lightboxImg = document.querySelector('.lightboxIMG');
-            if (lightboxImg && !lightboxImg.contains(event.target as Node)) {
+            const galleryImg = document.querySelector('.galleryIMG');
+            if (galleryImg && !galleryImg.contains(event.target as Node)) {
                 const closeButtons = document.querySelectorAll('.close');
                 if (closeButtons.length > 0) {
                     const firstCloseButton = closeButtons[0] as HTMLAnchorElement;
@@ -100,14 +100,14 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
             }
         };
 
-        const lightboxContainer = document.querySelector('.gallery-container');
-        if (lightboxContainer) {
-            lightboxContainer.addEventListener('click', handleOutsideClick);
+        const galleryContainer = document.querySelector('.gallery-container');
+        if (galleryContainer) {
+            galleryContainer.addEventListener('click', handleOutsideClick);
         }
 
         return () => {
-            if (lightboxContainer) {
-                lightboxContainer.removeEventListener('click', handleOutsideClick);
+            if (galleryContainer) {
+                galleryContainer.removeEventListener('click', handleOutsideClick);
             }
         };
     }, []);
@@ -135,7 +135,7 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
                 <div className="img" id={`img-${index + 1}`} key={`img-${index + 1}`}>
                     <div className="content">
                         <img
-                            className="lightboxIMG"
+                            className="galleryIMG"
                             src={image.src}
                             alt={`Large Image ${index + 1}`}
                             loading="lazy"
@@ -170,4 +170,4 @@ const LightBox: React.FC<LightBoxProps> = ({ directory, subDirectory, numberOfPh
     );
 };
 
-export default LightBox;
+export default Gallery;

@@ -1,9 +1,9 @@
-import ResidentialLightBoxWithStyles from "../../datasets/lightboxes/ResidentialLightBox";
+import ResidentialGalleryWithStyles from "../../datasets/galleries/ResidentialGallery";
 
 const Residential = () => {
         return (
             <>
-                    <ResidentialLightBoxWithStyles />
+                    <ResidentialGalleryWithStyles />
             </>
         );
 }

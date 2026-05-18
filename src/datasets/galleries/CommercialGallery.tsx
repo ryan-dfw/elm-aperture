@@ -1,4 +1,4 @@
-import LightBox from "../../components/Lightbox.tsx";
+import Gallery from "../../components/Gallery.tsx";
 
 const Commercial = () => {
     const directory = 'realestate';
@@ -23,7 +23,7 @@ const Commercial = () => {
         ['Azure', ', 2900 McKinney', 'Rain', 0, 0],                         // 17
         ['Bleu Ciel', ', 3130 N Harwood', 'Rain', 0, 0]];                   // 18
 
-    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Commercial;

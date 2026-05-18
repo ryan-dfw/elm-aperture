@@ -1,4 +1,4 @@
-import LightBox from "../../components/Lightbox.tsx";
+import Gallery from "../../components/Gallery.tsx";
 
 const Lifestyle = () => {
     const directory: string = 'portrait';
@@ -23,7 +23,7 @@ const Lifestyle = () => {
         ['filler image', '', 'no one', 0, 0],                              // 17
         ['filler image', '', 'no one', 0, 0]                               // 18
     ];
-    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Lifestyle;

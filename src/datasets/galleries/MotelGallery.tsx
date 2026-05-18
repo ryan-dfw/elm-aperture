@@ -1,4 +1,4 @@
-import LightBox from "../../components/Lightbox.tsx";
+import Gallery from "../../components/Gallery.tsx";
 
 const Motel = () => {
     const directory = 'realestate';
@@ -24,7 +24,7 @@ const Motel = () => {
         ['Moulton Inn & Suites', ', Moulton TX', 'Rain', 0, 0]              // 18
     ];
 
-    return <LightBox  directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
 };
 
 export default Motel;

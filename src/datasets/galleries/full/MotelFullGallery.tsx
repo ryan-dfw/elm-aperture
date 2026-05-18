@@ -1,6 +1,6 @@
-import LightBoxFull from "../../components/LightboxFull.tsx";
+import LightBoxFull from "../../../components/GalleryFull.tsx";
 
-const MotelFullDelivery = () => {
+const MotelFullGallery = () => {
     const directory = 'realestate';
     const subDirectory = 'motel_full';
     const numberOfPhotos = 178;
@@ -8,4 +8,4 @@ const MotelFullDelivery = () => {
     return <LightBoxFull directory={directory} subDirectory={subDirectory} numberOfPhotos={numberOfPhotos} />;
 };
 
-export default MotelFullDelivery;
+export default MotelFullGallery;

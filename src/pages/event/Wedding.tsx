@@ -1,9 +1,9 @@
-import WeddingLightBoxWithStyles from "../../datasets/lightboxes/WeddingLightBox";
+import WeddingGalleryWithStyles from "../../datasets/galleries/WeddingGallery";
 
 const Wedding = () => {
         return (
             <>
-                    <WeddingLightBoxWithStyles/>
+                    <WeddingGalleryWithStyles/>
             </>
         );
 }

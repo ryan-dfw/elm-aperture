@@ -1,8 +1,8 @@
-import ProfessionalLightBoxWithStyles from "../../datasets/lightboxes/ProfessionalLightBox";
+import ProfessionalGalleryWithStyles from "../../datasets/galleries/ProfessionalGallery";
 const Professional = () => {
         return (
             <>
-                    <ProfessionalLightBoxWithStyles/>
+                    <ProfessionalGalleryWithStyles/>
             </>
         );
 }
