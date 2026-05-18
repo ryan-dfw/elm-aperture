@@ -34,6 +34,10 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
     };
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const galleryImages = document.querySelectorAll('.galleryimage');
 
         galleryImages.forEach((image) => {

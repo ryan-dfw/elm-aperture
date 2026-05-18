@@ -58,6 +58,10 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, details }) =
     };
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const handleResize = () => {
             applyOffset(offsetDesktop, offsetMobile);
         };
