@@ -6,13 +6,15 @@ interface GalleryProps {
     directory: string;
     subDirectory: string;
     numberOfPhotos: number;
+    sectionHeaders?: Record<number, string>;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhotos }) => {
+const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhotos, sectionHeaders = {} }) => {
     const [imageOpen, setImageOpen] = useState(false);
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showOrdinals, setShowOrdinals] = useState(false);
 
     const imagesData = Array.from({ length: numberOfPhotos }, (_, index) => ({
         src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(3, '0')}.webp`,
@@ -112,23 +114,61 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhot
         };
     }, []);
 
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "#") {
+                setShowOrdinals((current) => !current);
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
+
     //DO NOT DELETE THIS CONSOLE LOG. It satisfies tsc without ever console logging.
     if (currentIndex + 1 - currentIndex === 0) {
         console.log(currentIndex);
     }
 
     return (
-        <div className={`gallery-container ${(
-            directory === "portrait" ? "portrait" : directory === "events" ? "events" : ""
-            )}`}>
-            <div
-                className={" gallery-full "}>
-                {imagesData.map((image, index: number) => (
-                    <div className="galleryimage" key={index} style={{position: 'relative'}}>
-                        <img src={image.thumbSrc} alt={`Gallery Image ${index + 1}`} loading="lazy"/>
-                        <a href={`#img-${index + 1}`}></a>
-                    </div>
-                ))}
+        <div
+            className={`gallery-container ${
+                directory === "portrait" ? "portrait" : directory === "events" ? "events" : ""
+            }`}
+        >
+            <div className="gallery-full">
+                {imagesData.map((image, index: number) => {
+                    const imageNumber = index + 1;
+                    const sectionHeader = sectionHeaders[imageNumber];
+
+                    return (
+                        <React.Fragment key={imageNumber}>
+                            {sectionHeader && (
+                                <div className="gallery-full-section-header">
+                                    {sectionHeader}
+                                </div>
+                            )}
+
+                            <div className="galleryimage" style={{ position: "relative" }}>
+                                <img
+                                    src={image.thumbSrc}
+                                    alt={`Gallery Image ${imageNumber}`}
+                                    loading="lazy"
+                                />
+                                <a href={`#img-${imageNumber}`}></a>
+
+                                {showOrdinals && (
+                                    <div className="ordinal-overlay">
+                                        {imageNumber}
+                                    </div>
+                                )}
+                            </div>
+                        </React.Fragment>
+                    );
+                })}
             </div>
 
             {imagesData.map((image, index: number) => (
@@ -142,7 +182,7 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhot
                         />
                         <a
                             id={`closeButton-${index + 1}`}
-                            className={`close`}
+                            className="close"
                             href="#gallery"
                             onClick={() => {
                                 if (imageOpen) {
@@ -151,7 +191,7 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhot
                                 }
                             }}
                             style={{
-                                position: 'absolute',
+                                position: "absolute",
                                 top: 0,
                                 right: 0,
                             }}
@@ -160,14 +200,13 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhot
                 </div>
             ))}
 
-            <button className="carousel-btn prev" onClick={handlePrev} style={{display: 'none'}}>
+            <button className="carousel-btn prev" onClick={handlePrev} style={{ display: "none" }}>
                 &lt;
             </button>
-            <button className="carousel-btn next" onClick={handleNext} style={{display: 'none'}}>
+            <button className="carousel-btn next" onClick={handleNext} style={{ display: "none" }}>
                 &gt;
             </button>
         </div>
-    );
-};
+    )};
 
-export default Gallery;
+export default GalleryFull;

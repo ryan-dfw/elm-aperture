@@ -1,0 +1,63 @@
+.service-bridge {
+    width: min(92vw, 980px);
+    margin: clamp(38px, 5vw, 68px) auto;
+}
+
+.service-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.service-section-heading h3 {
+    margin: 0;
+
+    color: rgba(242, 243, 246, 0.7);
+
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.service-bridge p, .service-copy p {
+    width: min(100%, 760px);
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size: clamp(0.86rem, 1.08vw, 1rem);
+    color: rgba(242, 243, 246, 0.64);
+
+    font-weight: 300;
+    line-height: 1.72;
+}
+
+@media (max-width: 700px) {
+    .service-bridge {
+        width: 80vw;
+    }
+    .service-section-heading {
+        margin-inline: auto;
+        justify-content: center;
+    }
+
+    .service-section-heading .horizontal-line {
+        display: none;
+    }
+
+    .service-section-heading h3 {
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        text-align: center;
+    }
+
+    .service-bridge p {
+        font-size: 0.8rem;
+        line-height: 1.62;
+    }
+}
