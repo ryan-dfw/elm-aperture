@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Wedding = () => {
     const directory = 'events';
     const subDirectory = 'wedding';
+    const layout = 'mixed';
     const details: [string, string, string, number, number][] = [
         ['Palos Verdes', ', Wedding', 'Rain', 0, 0],                        // 01
         ['The Springs', ', Wedding Portraits', 'Rain', 0, 0],               // 02
@@ -24,7 +25,7 @@ const Wedding = () => {
         ['Pilgrim Rest Church', ', Wedding Ceremony', 'Maivy', 10, 0]       // 18
     ];
 
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Wedding;

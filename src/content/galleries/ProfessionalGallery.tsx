@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Professional = () => {
     const directory = 'portrait';
     const subDirectory = 'professional';
+    const layout = 'portrait';
     const details: [string, string, string, number, number][] = [
         ['Jackie', ', voice actor', 'Rain', 0, 0],                        // 01
         ['Gabriel', ', actor', 'Rain', 0, 0],                              // 02
@@ -23,7 +24,7 @@ const Professional = () => {
         ['filler image', '', 'no one', 0, 0],                              // 17
         ['filler image', '', 'no one', 0, 0]                               // 18
     ];
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Professional;

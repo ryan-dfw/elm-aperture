@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Commercial = () => {
     const directory = 'realestate';
     const subDirectory = 'commercial';
+    const layout = 'landscape';
     const details: [string, string, string, number, number][] = [
         ['The Mayfair', ', 3400 Welborn', 'Rain', 0, 0],                    // 01
         ['Bleu Ciel', ', 3130 N Harwood', 'Rain', 0, 0],                    // 02
@@ -23,7 +24,7 @@ const Commercial = () => {
         ['Azure', ', 2900 McKinney', 'Rain', 0, 0],                         // 17
         ['Bleu Ciel', ', 3130 N Harwood', 'Rain', 0, 0]];                   // 18
 
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Commercial;

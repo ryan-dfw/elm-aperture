@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Headshot = () => {
     const directory = 'portrait';
     const subDirectory = 'headshot';
+    const layout = 'portrait';
     const details: [string, string, string, number, number][] = [
         ['Annie', '', 'Rain', 0, 0],                                        // 01
         ['Allison', '', 'Rain', 0, 0],                                      // 02
@@ -23,7 +24,7 @@ const Headshot = () => {
         ['filler image', '', 'no one', 0, 0],                               // 17
         ['filler image', '', 'no one', 0, 0]                                // 18
     ];
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Headshot;

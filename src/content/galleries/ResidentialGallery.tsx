@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Residential = () => {
     const directory = 'realestate';
     const subDirectory = 'residential';
+    const layout = 'landscape';
     const details: [string, string, string, number, number][] = [
         ['Living Room', ' bracket', 'Rain', 0, 0],      // 01
         ['Living Room', ' bracket', 'Rain', 0, 0],      // 02
@@ -23,7 +24,7 @@ const Residential = () => {
         ['Patio', ' bracket', 'Rain', 0, 0],            // 17
         ['Patio', ' detail', 'Rain', 0, 0],             // 18
     ];
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Residential;

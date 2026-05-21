@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Lifestyle = () => {
     const directory: string = 'portrait';
     const subDirectory: string = 'lifestyle';
+    const layout = 'portrait';
     const details: [string, string, string, number, number][] = [
         ['Nick', ' at Habitat Commons', 'Rain', 0, 0],                    // 01
         ['Demi', ' at Ambishen Studio', 'Rain', 0, 0],                      // 02
@@ -23,7 +24,7 @@ const Lifestyle = () => {
         ['filler image', '', 'no one', 0, 0],                              // 17
         ['filler image', '', 'no one', 0, 0]                               // 18
     ];
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Lifestyle;

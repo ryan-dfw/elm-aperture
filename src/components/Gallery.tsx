@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import "../styles/Gallery.scss";
 import { useContextValue } from "../contexts/Context.tsx";
 import GalleryView, { GalleryImageData } from "./GalleryView.tsx";
+import {
+    GalleryLayout,
+    GalleryImageDetail,
+} from "../types/gallery.ts";
 
 interface GalleryProps {
     directory: string;
     subDirectory: string;
-    details: [string, string, string, number, number][];
+    layout: GalleryLayout;
+    details: GalleryImageDetail[];
 }
 
-const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, details }) => {
+const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, details }) => {
     const [imageOpen, setImageOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [showOrdinals, setShowOrdinals] = useState(false);
@@ -19,12 +24,6 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, details }) =
 
     const offsetDesktop = details.map((item) => item[3]);
     const offsetMobile = details.map((item) => item[4]);
-
-    const directoryClasses: Record<string, string> = {
-        portrait: "portrait",
-        events: "events",
-        realestate: "realestate",
-    };
 
     const imagesData: GalleryImageData[] = details.map(
         ([title, detail, photographer], index) => ({
@@ -90,10 +89,10 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, details }) =
     }, []);
 
     return (
-        <div className={`gallery-container ${directoryClasses[directory] || ""}`}>
+        <div className={`gallery-container ${layout}`}>
             <div
                 className={`gallery ${
-                    directory === "portrait" && window.innerWidth > 1000 ? "headshot-grid" : ""
+                    layout === "portrait" && window.innerWidth > 1000 ? "headshot-grid" : ""
                 }`}
             >
                 {imagesData.map((image, index: number) => (

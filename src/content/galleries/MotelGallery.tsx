@@ -3,6 +3,7 @@ import Gallery from "../../components/Gallery.tsx";
 const Motel = () => {
     const directory = 'realestate';
     const subDirectory = 'motel';
+    const layout = 'landscape';
     const details: [string, string, string, number, number][] = [
         ['River Valley Motor Inn', ', La Grange TX', 'Rain', 0, 0],         // 01
         ['Moulton Inn & Suites', ', Moulton TX', 'Rain', 0, 0],             // 02
@@ -24,7 +25,7 @@ const Motel = () => {
         ['Moulton Inn & Suites', ', Moulton TX', 'Rain', 0, 0]              // 18
     ];
 
-    return <Gallery directory={directory} subDirectory={subDirectory} details={details}/>;
+    return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;
 };
 
 export default Motel;
