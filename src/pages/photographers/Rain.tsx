@@ -1,6 +1,6 @@
 import BeholdWidget from "@behold/react";
-import RainProfile from "../../datasets/profiles/RainProfile.tsx";
-import RainCalendar from "../../datasets/calendars/RainCalendar.tsx";
+import RainProfile from "../../content/profiles/RainProfile.tsx";
+import RainCalendar from "../../content/calendars/RainCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";

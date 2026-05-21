@@ -1,10 +1,11 @@
-import CommercialGalleryWithStyles from "../../datasets/galleries/CommercialGallery";
+import ServicePage from "../../layouts/ServicePage.tsx";
+import CommercialGalleryWithStyles from "../../content/galleries/CommercialGallery";
 
 const Commercial = () => {
         return (
-            <>
+            <ServicePage>
                     <CommercialGalleryWithStyles/>
-            </>
+            </ServicePage>
         );
 }
 

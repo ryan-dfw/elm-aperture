@@ -1,9 +1,11 @@
-import LifestyleGalleryWithStyles from "../../datasets/galleries/LifestyleGallery.tsx";
+import ServicePage from "../../layouts/ServicePage.tsx";
+import LifestyleGalleryWithStyles from "../../content/galleries/LifestyleGallery.tsx";
+
 const Lifestyle = () => {
         return (
-            <>
+            <ServicePage>
                     <LifestyleGalleryWithStyles/>
-            </>
+            </ServicePage>
         );
 }
 

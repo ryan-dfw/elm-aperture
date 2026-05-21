@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import RainCalendar from "../../datasets/calendars/RainCalendar";
+import RainCalendar from "../../content/calendars/RainCalendar";
 import '../../styles/Calendars.css';
 import { isMobile } from '../../utils/isMobile.ts';
 

@@ -1,9 +1,9 @@
 // import BeholdWidget from "@behold/react";
-import MaivyProfile from "../../datasets/profiles/MaivyProfile.tsx";
+import MaivyProfile from "../../content/profiles/MaivyProfile.tsx";
 import {useContextValue} from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";
-import MaivyCalendar from "../../datasets/calendars/MaivyCalendar.tsx";
+import MaivyCalendar from "../../content/calendars/MaivyCalendar.tsx";
 
 const Maivy = () => {
     const { setPhotographer } = useContextValue();

@@ -1,9 +1,11 @@
-import ProfessionalGalleryWithStyles from "../../datasets/galleries/ProfessionalGallery";
+import ServicePage from "../../layouts/ServicePage.tsx";
+import ProfessionalGalleryWithStyles from "../../content/galleries/ProfessionalGallery";
+
 const Professional = () => {
         return (
-            <>
+            <ServicePage>
                     <ProfessionalGalleryWithStyles/>
-            </>
+            </ServicePage>
         );
 }
 

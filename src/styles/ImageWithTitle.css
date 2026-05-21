@@ -1,4 +1,4 @@
-.map-container {
+.image-container {
     width: min(88vw, 1120px);
     aspect-ratio: 16 / 9;
 
@@ -31,7 +31,7 @@
 }
 
 @media (max-width: 700px) {
-    .map-container {
+    .image-container {
         width: 82vw;
         aspect-ratio: 5 / 4;
 

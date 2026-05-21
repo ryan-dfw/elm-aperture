@@ -1,4 +1,4 @@
-import MotelFullGallery from "../../datasets/galleries/full/MotelFullGallery.tsx";
+import MotelFullGallery from "../../content/galleries/full/MotelFullGallery.tsx";
 
 const MotelFull = () => {
     return (

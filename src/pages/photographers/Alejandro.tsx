@@ -1,6 +1,6 @@
 import BeholdWidget from "@behold/react";
-import AlejandroProfile from "../../datasets/profiles/AlejandroProfile.tsx";
-import AlejandroCalendar from "../../datasets/calendars/AlejandroCalendar.tsx";
+import AlejandroProfile from "../../content/profiles/AlejandroProfile.tsx";
+import AlejandroCalendar from "../../content/calendars/AlejandroCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";
