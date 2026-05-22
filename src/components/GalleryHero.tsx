@@ -1,4 +1,4 @@
-import '../styles/GalleryHero.css';
+import '../styles/casestudy/GalleryHero.css';
 
 interface GalleryHeroProps {
     name: string;

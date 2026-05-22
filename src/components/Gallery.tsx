@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Gallery.scss";
+import "../styles/gallery/Gallery.scss";
 import { useContextValue } from "../contexts/Context.tsx";
 import GalleryView, { GalleryImageData } from "./GalleryView.tsx";
 import {

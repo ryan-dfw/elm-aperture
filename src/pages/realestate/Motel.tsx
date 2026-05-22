@@ -3,7 +3,7 @@ import MotelGalleryWithStyles from "../../content/galleries/MotelGallery";
 import ServiceTextSection from "../../components/service/ServiceTextSection.tsx";
 import CaseStudyPreview from "../../components/service/CaseStudyPreview.tsx";
 import ImageWithTitle from "../../components/service/ImageWithTitle.tsx";
-import "../../styles/ServiceSections.css"
+import "../../styles/service/ServiceSections.css"
 
 import {
     bridge,

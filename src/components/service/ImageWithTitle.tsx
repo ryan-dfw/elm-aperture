@@ -1,4 +1,4 @@
-import "../../styles/ImageWithTitle.css";
+import "../../styles/service/ImageWithTitle.css";
 
 type ImageWithTitleProps = {
     heading: string;

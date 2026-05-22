@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import '../styles/GalleryFull.scss';
+import '../styles/casestudy/GalleryFull.scss';
 import { useContextValue } from '../contexts/Context.tsx';
 
 interface GalleryProps {

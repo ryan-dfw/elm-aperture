@@ -10,7 +10,7 @@ import {
     mapImage,
     closing,
 } from "../../content/services/realestate/hotel.ts";
-import "../../styles/ServiceSections.css";
+import "../../styles/service/ServiceSections.css";
 
 const Hotel = () => {
 

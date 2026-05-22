@@ -1,0 +1,8 @@
+@use "./GalleryTile";
+@use "./GalleryViewer";
+@use "./GalleryLayouts";
+
+.gallery-container {
+  margin: 5px;
+  position: relative;
+}
