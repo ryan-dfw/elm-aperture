@@ -18,6 +18,7 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, deta
     const [imageOpen, setImageOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [showOrdinals, setShowOrdinals] = useState(false);
+    const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
@@ -114,7 +115,7 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, deta
             >
                 {imagesData.map((image, index: number) => (
                     <div
-                        className="galleryimage"
+                        className={`galleryimage ${loadedImages[index] ? "loaded" : ""}`}
                         key={index}
                         style={{ position: "relative" }}
                         onClick={() => {
@@ -128,9 +129,16 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, deta
                         }}
                     >
                         <img
+                            className={loadedImages[index] ? "loaded" : ""}
                             src={image.thumbSrc}
                             alt={`Gallery Image ${index + 1}`}
                             loading="lazy"
+                            onLoad={() => {
+                                setLoadedImages((current) => ({
+                                    ...current,
+                                    [index]: true,
+                                }));
+                            }}
                         />
                         <a href={`#img-${index + 1}`}>{image.title}</a>
                         {showOrdinals && (

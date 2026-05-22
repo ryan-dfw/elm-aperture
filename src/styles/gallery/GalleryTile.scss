@@ -6,14 +6,32 @@
   gap: 0.5em;
 
   & > div {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+
     overflow: hidden;
     position: relative;
     border-radius: 10px;
 
     border: 1px solid rgba(242, 243, 246, 0.08);
-    background: rgba(8, 10, 13, 0.28);
+    background:
+            linear-gradient(
+                    100deg,
+                    rgba(242, 243, 246, 0.04) 20%,
+                    rgba(242, 243, 246, 0.10) 40%,
+                    rgba(242, 243, 246, 0.04) 60%
+            ),
+            rgba(8, 10, 13, 0.28);
 
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.2s linear infinite;
     box-shadow: none;
+
+    &.loaded {
+      animation: none;
+      background: rgba(8, 10, 13, 0.28);
+    }
 
     &:nth-child(6n + 1) {
       grid-column: span 2;
@@ -31,6 +49,11 @@
     }
 
     & > a {
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      draggable: false;
+
       opacity: 0;
       position: absolute;
       inset: 0;
@@ -60,16 +83,27 @@
     }
 
     & > img {
+
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+
       width: 100%;
       min-height: 100%;
       object-fit: cover;
 
+      opacity: 0;
       transform: scale(1.002);
 
       transition:
               filter 220ms ease,
               transform 260ms ease,
               opacity 220ms ease;
+    }
+
+    & > img.loaded {
+      opacity: 1;
     }
 
     &:hover {
@@ -94,6 +128,15 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
   }
 }
 

@@ -15,6 +15,7 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
     const { setShouldShowNav } = useContextValue();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showOrdinals, setShowOrdinals] = useState(false);
+    const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
     const imagesData = Array.from({ length: numberOfPhotos }, (_, index) => ({
         src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1).toString().padStart(3, '0')}.webp`,
@@ -156,13 +157,29 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
                                 </div>
                             )}
 
-                            <div className="galleryimage" style={{ position: "relative" }}>
+                            <div
+                                className={`galleryimage ${loadedImages[index] ? "loaded" : ""}`}
+                                style={{ position: "relative" }}
+                            >
                                 <img
+                                    className={loadedImages[index] ? "loaded" : ""}
                                     src={image.thumbSrc}
                                     alt={`Gallery Image ${imageNumber}`}
                                     loading="lazy"
+                                    draggable={false}
+                                    onDragStart={(event) => event.preventDefault()}
+                                    onLoad={() => {
+                                        setLoadedImages((current) => ({
+                                            ...current,
+                                            [index]: true,
+                                        }));
+                                    }}
                                 />
-                                <a href={`#img-${imageNumber}`}></a>
+                                <a
+                                    href={`#img-${imageNumber}`}
+                                    draggable={false}
+                                    onDragStart={(event) => event.preventDefault()}
+                                />
 
                                 {showOrdinals && (
                                     <div className="ordinal-overlay">
