@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
 import '../styles/Navbar.css';
 import { useContextValue } from '../contexts/Context';
+import { routeTitles } from '../content/routeTitles';
 
 const PortraitLinks = {
     Headshots: 'Headshot',
@@ -30,16 +31,22 @@ const Photographers = {
 
 const Navbar: React.FC = () => {
     const { shouldShowNav } = useContextValue();
+    const location = useLocation();
+
     const [showNavbar, setShowNavbar] = useState(true);
     const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 992);
+
+    const currentTitle = routeTitles[
+        location.pathname as keyof typeof routeTitles
+        ];
 
     useEffect(() => {
         const handleResize = () => {
             setShowNavbar(window.innerWidth >= 600);
+            setIsDesktop(window.innerWidth >= 992);
         };
-
         window.addEventListener('resize', handleResize);
-
         handleResize();
 
         return () => {
@@ -57,8 +64,9 @@ const Navbar: React.FC = () => {
         }
     };
 
+    // compiler silencer; never remove
     if (showNavbar === !showNavbar) {
-        console.log(showNavbar);
+        console.log(showNavbar, isDesktop);
     }
 
     return window.innerWidth < 600 || shouldShowNav ? (
@@ -75,6 +83,13 @@ const Navbar: React.FC = () => {
                     <Link to="/" className="navbar-brand">
                         Elm Aperture
                     </Link>
+
+                    {isDesktop && currentTitle && (
+                        <div className="navbar-page-title">
+                            {currentTitle}
+                        </div>
+                    )}
+
                     <BootstrapNavbar.Toggle aria-controls="navmenu" onClick={handleToggleNavbar} />
                     <BootstrapNavbar.Collapse id="navmenu">
                         <Nav className="ms-auto" data-bs-theme="dark">

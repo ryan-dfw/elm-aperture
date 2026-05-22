@@ -4,6 +4,22 @@
     margin: clamp(38px, 5vw, 68px) auto;
 }
 
+.service-header {
+    width: min(75vw, 980px);
+
+    margin:
+            clamp(50px, 5vw, 68px)
+            auto
+            -30px;
+}
+
+.service-header h1 {
+    font-family: "Cinzel", serif;
+    font-size: 1.25rem;
+    width: min(100%, 760px);
+    color: rgba(242, 243, 246, 0.8);
+}
+
 .service-section-heading {
     display: flex;
     align-items: center;
@@ -29,7 +45,7 @@
     margin-bottom: -3vw;
 }
 
-.service-bridge p, .service-copy p {
+.service-bridge p, .service-copy p, .service-header p {
     width: min(100%, 760px);
     margin: 0 auto;
 

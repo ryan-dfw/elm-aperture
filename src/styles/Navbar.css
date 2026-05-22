@@ -282,3 +282,21 @@
     text-align: center;
 }
 
+.navbar-page-title {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(242, 243, 246, 0.56);
+
+    font-size: 1.25rem;
+    font-weight: 300;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+    user-select: none;
+}
+

@@ -25,18 +25,35 @@ const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, deta
     const offsetDesktop = details.map((item) => item[3]);
     const offsetMobile = details.map((item) => item[4]);
 
+    const bigThumbIndexes = [0, 1, 6, 12];
+    const shouldUseBigThumbs =
+        window.innerWidth > 1000 &&
+        (layout === "landscape" || layout === "mixed");
+
     const imagesData: GalleryImageData[] = details.map(
-        ([title, detail, photographer], index) => ({
-            src: `${basePath}${subDirectory}/full/${subDirectory}_${(index + 1)
+        ([title, detail, photographer], index) => {
+            const imageNumber = (index + 1)
                 .toString()
-                .padStart(2, "0")}.webp`,
-            thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1)
-                .toString()
-                .padStart(2, "0")}_thumb.webp`,
-            title,
-            detail,
-            photographer,
-        })
+                .padStart(2, "0");
+
+            const thumbFolder =
+                shouldUseBigThumbs && bigThumbIndexes.includes(index)
+                    ? "big_thumb"
+                    : "thumb";
+
+            const thumbSuffix =
+                thumbFolder === "big_thumb"
+                    ? "_big_thumb"
+                    : "_thumb";
+
+            return {
+                src: `${basePath}${subDirectory}/full/${subDirectory}_${imageNumber}.webp`,
+                thumbSrc: `${basePath}${subDirectory}/${thumbFolder}/${subDirectory}_${imageNumber}${thumbSuffix}.webp`,
+                title,
+                detail,
+                photographer,
+            };
+        }
     );
 
     const applyOffset = (desktopOffsets: number[], mobileOffsets: number[]) => {

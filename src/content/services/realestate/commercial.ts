@@ -1,4 +1,4 @@
 export const head = {
     title: "Commercial Real Estate",
-    subtitle: 'Architectural and commercial photography for developments'
+    subtitle: 'Architectural coverage for branding or documentation.'
 } as const;

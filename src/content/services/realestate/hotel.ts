@@ -1,6 +1,6 @@
 export const head = {
     title: 'Hotel & Hospitality',
-    subtitle: 'Guest-facing photography for the features that drive booking.',
+    subtitle: 'Guest-facing photography to stand out online.',
 } as const;
 
 export const bridge = {

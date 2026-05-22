@@ -1,4 +1,4 @@
 export const head = {
     title: "Events",
-    subtitle: 'Flexible coverage for live events, gatherings, and functions'
+    subtitle: 'Flexible coverage for live events, gatherings, and functions.'
 }

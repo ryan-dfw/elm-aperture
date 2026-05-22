@@ -1,6 +1,6 @@
 export const head = {
     title: 'Motel & Extended Stay',
-    subtitle: 'lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    subtitle: 'Complete coverage for clarity in booking.',
 } as const;
 
 export const bridge = {

@@ -5,17 +5,20 @@ import CaseStudyPreview from "../../components/service/CaseStudyPreview.tsx";
 import ImageWithTitle from "../../components/service/ImageWithTitle.tsx";
 
 import {
+    head,
     bridge,
     caseStudies,
     mapImage,
     closing,
 } from "../../content/services/realestate/hotel.ts";
 import "../../styles/service/ServiceSections.css";
+import ServiceHeader from "../../components/service/ServiceHeader.tsx";
 
 const Hotel = () => {
 
     return (
         <ServicePage>
+            <ServiceHeader {...head}/>
             <HotelGalleryWithStyles />
             <ServiceTextSection {...bridge} />
             <CaseStudyPreview {...caseStudies.holidayInnExpress} />

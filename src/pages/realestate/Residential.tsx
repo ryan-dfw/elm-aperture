@@ -1,10 +1,13 @@
 import ServicePage from "../../layouts/ServicePage.tsx";
 import ResidentialGalleryWithStyles from "../../content/galleries/ResidentialGallery";
+import ServiceHeader from "../../components/service/ServiceHeader.tsx";
+import {head} from "../../content/services/realestate/residential.ts";
 
 const Residential = () => {
         return (
             <ServicePage>
-                    <ResidentialGalleryWithStyles />
+                <ServiceHeader {...head}/>
+                <ResidentialGalleryWithStyles />
             </ServicePage>
         );
 }
