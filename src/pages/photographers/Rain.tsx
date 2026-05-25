@@ -1,9 +1,8 @@
 import BeholdWidget from "@behold/react";
 import RainProfile from "../../content/profiles/RainProfile.tsx";
-import RainCalendar from "../../content/calendars/RainCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
-import BookingButton from "../../components/BookingButton.tsx";
+import RainCalendar from "../../content/calendars/RainCalendar.tsx";
 
 const Rain = () => {
     const { setPhotographer } = useContextValue();
@@ -24,15 +23,12 @@ const Rain = () => {
             </div>
             <div className={"portfolio-section-header"}>
                 <div className={"horizontal-line"}></div>
-                <h4>AVAILABILITY </h4>
+                <h4>AVAILABILITY</h4>
                 <div className={"horizontal-line"}></div>
             </div>
-            <div style={{margin: '50px'}}></div>
+
             <div className='calendar-container'>
-                <RainCalendar fullscreen={false}/>
-            </div>
-            <div className="booking-button-container">
-                <BookingButton/>
+                <RainCalendar/>
             </div>
         </>
     )

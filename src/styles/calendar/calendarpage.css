@@ -1,0 +1,19 @@
+.cal-page {
+    width: 100%;
+    min-height: calc(100vh - 96px);
+    padding-top: 96px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cal-page iframe {
+    width: 100% !important;
+    min-height: calc(100vh - 96px) !important;
+    border: 0 !important;
+}
+
+.cal-page > div {
+    width: min(1400px, 96vw);
+}

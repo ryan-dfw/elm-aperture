@@ -13,7 +13,7 @@ import Headshot from '../pages/portrait/Headshot';
 import Professional from '../pages/portrait/Professional';
 import Lifestyle from '../pages/portrait/Lifestyle';
 import Booking from '../pages/Booking';
-import RainCal from '../pages/calendars/RainCal';
+import RainCal from '../pages/calendars/RainCal.tsx';
 import Motel from '../pages/realestate/Motel';
 import MotelFullGallery from '../content/galleries/full/MotelFullGallery';
 import HotelFullGallery from "../content/galleries/full/HotelFullGallery.tsx";

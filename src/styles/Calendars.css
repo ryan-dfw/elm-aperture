@@ -1,95 +1,19 @@
-.calendar-container-full {
-    width: min(92vw, 1280px);
+.calendar-link-card {
+    width: min(92vw, 720px);
     margin: 0 auto;
+    padding: 32px;
+    border-radius: 24px;
+    background: rgba(8, 10, 13, 0.42);
+    border: 1px solid rgba(242, 243, 246, 0.1);
+    text-align: center;
 }
 
-.fc {
-    color: rgba(242, 243, 246, 0.68);
-    font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
-}
-
-.fc-toolbar-title {
-    color: rgba(242, 243, 246, 0.88);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-}
-
-.fc-header-toolbar {
-    margin-bottom: 14px !important;
-}
-
-.fc-button {
-    border: 1px solid rgba(242, 243, 246, 0.10) !important;
-    background: rgba(8, 10, 13, 0.34) !important;
-    color: rgba(242, 243, 246, 0.68) !important;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: none !important;
-}
-
-.fc-button:hover {
-    background: rgba(242, 243, 246, 0.055) !important;
-    border-color: rgba(242, 243, 246, 0.14) !important;
-    color: rgba(242, 243, 246, 0.9) !important;
-}
-
-.fc-scrollgrid {
-    border: 1px solid rgba(242, 243, 246, 0.08) !important;
-    border-radius: 18px;
-    overflow: hidden;
-    background: rgba(8, 10, 13, 0.36);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-}
-
-.fc-theme-standard th,
-.fc-theme-standard td {
-    border-color: rgba(242, 243, 246, 0.07) !important;
-}
-
-.fc-col-header-cell,
-.fc-timegrid-axis {
-    background: rgba(242, 243, 246, 0.055) !important;
-}
-
-.fc-col-header-cell a,
-.fc-timegrid-slot-label {
-    color: rgba(242, 243, 246, 0.58) !important;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    text-decoration: none !important;
-}
-
-.fc-timegrid-slot {
-    background: rgba(8, 10, 13, 0.24);
-}
-
-.fc-timegrid-slot-label {
-    background: rgba(242, 243, 246, 0.035) !important;
-}
-
-.fc-bg-event {
-    opacity: 1 !important;
-    background: rgba(242, 243, 246, 0.14) !important;
-    pointer-events: none !important;
-}
-
-.fc-timegrid-slot,
-.fc-timegrid-col,
-.fc-timegrid-body,
-.fc-timegrid-body table {
-    pointer-events: auto;
-}
-
-.fc-event-mirror {
-    background: rgba(96, 165, 250, 0.22) !important;
-    border: 1px solid rgba(147, 197, 253, 0.36) !important;
-}
-
-.fc-now-indicator-line {
-    border-color: rgba(245, 158, 11, 0.72) !important;
-}
-
-.fc-now-indicator-arrow {
-    border-color: rgba(245, 158, 11, 0.72) !important;
+.calendar-link-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(242, 243, 246, 0.18);
+    color: rgba(242, 243, 246, 0.9);
+    text-decoration: none;
 }

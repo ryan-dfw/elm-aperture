@@ -1,12 +1,11 @@
-import CalendarItem from "../../components/Calendar.tsx";
+import Calendar from "../../components/Calendar.tsx";
 
-const RainCalendar = ({ fullscreen }: { fullscreen: boolean }) => {
-    const calName: string = 'rainCalendar Calendar';
-    const calSourceA: string = import.meta.env.VITE_GOOGLE_CAL_1;
-    const calSourceB: string = import.meta.env.VITE_GOOGLE_CAL_2;
-
+const RainCalendar = () => {
     return (
-        <CalendarItem calName={calName} calSources={[calSourceA, calSourceB]} fullscreen={fullscreen} />
+        <Calendar
+            calLink="raindfwphotos/request-availability"
+            layout="week_view"
+        />
     );
 };
 

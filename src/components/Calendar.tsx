@@ -1,98 +1,85 @@
-import React, { useEffect, useRef } from 'react';
-import { Calendar } from '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import interactionPlugin from '@fullcalendar/interaction';
-import { useMediaQuery } from 'react-responsive';
-import { useContextValue } from '../contexts/Context.tsx';
-import '../styles/Calendars.css';
+import { useEffect, useRef } from "react";
+import Cal from "@calcom/embed-react";
+import "../styles/Calendars.css";
 
 interface CalendarProps {
-    calName: string;
-    calSources: string[];
-    fullscreen: boolean;
+    calLink: string;
+    fullscreen?: boolean;
+    layout?: "month_view" | "week_view" | "column_view";
 }
 
-const CalendarItem: React.FC<CalendarProps> = ({calName, calSources, fullscreen}) => {
-    const calendarRef = useRef<HTMLDivElement>(null);
-    const isMobile = useMediaQuery({ maxWidth: 768 });
-    const api = import.meta.env.VITE_GOOGLE_API_KEY;
-
-    const { setSelectedDateTime } = useContextValue();
-
-    const sources = (calSources ?? []).map(s => s?.trim()).filter(Boolean) as string[];
+const Calendar = ({ calLink, fullscreen = false, layout = "week_view" }: CalendarProps) => {
+    const hoveringCal = useRef(false);
+    const guardingStartupScroll = useRef(true);
+    const initialScrollY = useRef(0);
 
     useEffect(() => {
-        const calendarEl = calendarRef.current;
-        if (!calendarEl) return;
+        initialScrollY.current = window.scrollY;
 
-        const calendar = new Calendar(calendarEl, {
-            plugins: [interactionPlugin, dayGridPlugin, googleCalendarPlugin, timeGridPlugin],
-            googleCalendarApiKey: api,
-            initialView: 'timeGridWeek',
-            editable: true,
-            selectable: true,
-            unselectAuto: false,
-            selectMirror: true,
-            selectOverlap: false,
-            headerToolbar: {
-                center: '',
-                start: 'title',
-                end: 'prev,next'
-            },
-            titleFormat: { month: 'short', day: 'numeric' },
-            height: (isMobile && fullscreen) ? '700px' : '686px',
-            slotLabelInterval: '01:00',
-            slotDuration: '01:00',
-            allDaySlot: false,
-            slotLabelFormat: isMobile ? { hour: 'numeric', meridiem: 'narrow' }
-                : { hour: 'numeric', meridiem: 'short' },
-            dayHeaderFormat: isMobile ? { weekday: 'short', day: 'numeric', omitCommas: true, separator: ' ' }
-                : { weekday: 'short', month: 'short', day: 'numeric', omitCommas: false },
-            navLinks: true,
-            nowIndicator: true,
-            firstDay: 1,
-            eventColor: '#0f141c',
-            eventDisplay: 'background',
-            eventContent: function(arg, createElement) {
-                if (arg.event.extendedProps.busy) {
-                    return { domNodes: [] };
-                } else {
-                    const timeText = isMobile
-                        ? arg.timeText.replace(/:00/g, '')
-                        : arg.timeText;
-                    return createElement('div', {}, timeText);
-                }
-            },
-            eventSources: sources.map((id) => ({ googleCalendarId: id })),
-            eventClick: function(info) {
-                if (info.event.display === 'background') {
-                    info.jsEvent.preventDefault();
-                }
-            },
-            selectLongPressDelay: 20,
-            select: function(info) {
-                const selectedDate = info.start.toISOString().split('T')[0];
-                const selectedStart = info.start.toLocaleTimeString([],
-                    { hour: '2-digit', minute: '2-digit' });
-                const selectedEnd = info.end.toLocaleTimeString([],
-                    { hour: '2-digit', minute: '2-digit' });
-                setSelectedDateTime({ date: selectedDate, start: selectedStart, end: selectedEnd });
+        let frame = 0;
+        const startedAt = performance.now();
+
+        const holdInitialPosition = () => {
+            const elapsed = performance.now() - startedAt;
+
+            if (elapsed < 2500) {
+                window.scrollTo(0, initialScrollY.current);
+                frame = requestAnimationFrame(holdInitialPosition);
+                return;
             }
-        });
 
-        calendar.render();
+            guardingStartupScroll.current = false;
+        };
+
+        frame = requestAnimationFrame(holdInitialPosition);
+
+        const handleBlur = () => {
+            if (guardingStartupScroll.current) return;
+            if (!hoveringCal.current) return;
+
+            window.setTimeout(() => {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: "smooth",
+                });
+
+                window.setTimeout(() => {
+                    if (document.activeElement?.tagName !== "IFRAME") {
+                        window.focus();
+                    }
+                }, 900);
+            }, 350);
+        };
+
+        window.addEventListener("blur", handleBlur);
 
         return () => {
-            calendar.destroy();
+            cancelAnimationFrame(frame);
+            window.removeEventListener("blur", handleBlur);
         };
-    }, [api, calSources, fullscreen, isMobile, setSelectedDateTime, sources]);
+    }, []);
 
     return (
-        <div id={calName} ref={calendarRef}>
+        <div
+            className={fullscreen ? "cal-embed cal-embed-fullscreen" : "cal-embed"}
+            onMouseEnter={() => {
+                hoveringCal.current = true;
+            }}
+            onMouseLeave={() => {
+                hoveringCal.current = false;
+            }}
+        >
+            <Cal
+                calLink={calLink}
+                config={{ layout, theme: "dark" }}
+                style={{
+                    width: "100%",
+                    height: fullscreen ? "100vh" : "1200px",
+                    overflow: "auto",
+                }}
+            />
         </div>
     );
 };
 
-export default CalendarItem;
+export default Calendar;
