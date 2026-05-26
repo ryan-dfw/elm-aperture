@@ -3,7 +3,6 @@ import MaivyProfile from "../../content/profiles/MaivyProfile.tsx";
 import {useContextValue} from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";
-import MaivyCalendar from "../../content/calendars/MaivyCalendar.tsx";
 
 const Maivy = () => {
     const { setPhotographer } = useContextValue();
@@ -23,9 +22,6 @@ const Maivy = () => {
                 <div className={"horizontal-line"}></div>
             </div>
             <div style={{margin: '50px'}}></div>
-            <div className='calendar-container'>
-                <MaivyCalendar fullscreen={false}/>
-            </div>
             <div className="booking-button-container">
                 <BookingButton/>
             </div>

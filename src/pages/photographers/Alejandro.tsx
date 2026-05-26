@@ -1,6 +1,5 @@
 import BeholdWidget from "@behold/react";
 import AlejandroProfile from "../../content/profiles/AlejandroProfile.tsx";
-import AlejandroCalendar from "../../content/calendars/AlejandroCalendar.tsx";
 import { useContextValue } from "../../contexts/Context.tsx";
 import {useEffect} from "react";
 import BookingButton from "../../components/BookingButton.tsx";
@@ -40,9 +39,6 @@ const Alejandro = () => {
                 <div className={"horizontal-line"}></div>
             </div>
             <div style={{margin: '50px'}}></div>
-            <div className='calendar-container'>
-                <AlejandroCalendar fullscreen={false}/>
-            </div>
             <div className="booking-button-container">
                 <BookingButton/>
             </div>
