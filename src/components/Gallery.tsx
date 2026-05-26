@@ -17,7 +17,7 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ directory, subDirectory, layout, details }) => {
     const [imageOpen, setImageOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-    const [showOrdinals, setShowOrdinals] = useState(true);
+    const [showOrdinals, setShowOrdinals] = useState(false);
     const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
     const basePath = `res/img/${directory}/`;
