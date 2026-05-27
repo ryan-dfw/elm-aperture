@@ -1,4 +1,4 @@
-import '../styles/Profile.css'
+import '../styles/pages/Profile.css'
 import React, { useState, useEffect } from "react";
 
 interface ProfileProps {

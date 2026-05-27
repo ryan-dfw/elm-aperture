@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
-import '../styles/Navbar.css';
+import '../styles/components/Navbar.css';
 import { useContextValue } from '../contexts/Context';
 import { routeTitles } from '../content/routeTitles';
 
@@ -48,6 +48,10 @@ const Navbar: React.FC = () => {
         };
         window.addEventListener('resize', handleResize);
         handleResize();
+
+        if (/Android/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add("android");
+        }
 
         return () => {
             window.removeEventListener('resize', handleResize);

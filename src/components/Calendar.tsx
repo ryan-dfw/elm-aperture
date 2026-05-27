@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Cal from "@calcom/embed-react";
-import "../styles/Calendars.css";
+import "../styles/calendar/Calendars.css";
 
 interface CalendarProps {
     calLink: string;
@@ -8,7 +8,13 @@ interface CalendarProps {
     layout?: "month_view" | "week_view" | "column_view";
 }
 
-const Calendar = ({ calLink, fullscreen = false, layout = "week_view" }: CalendarProps) => {
+const Calendar = ({
+                      calLink,
+                      fullscreen = false,
+                      layout = "week_view",
+                  }: CalendarProps) => {
+    const isMobile = window.innerWidth < 700;
+
     const hoveringCal = useRef(false);
     const guardingStartupScroll = useRef(true);
     const initialScrollY = useRef(0);
@@ -34,6 +40,7 @@ const Calendar = ({ calLink, fullscreen = false, layout = "week_view" }: Calenda
         frame = requestAnimationFrame(holdInitialPosition);
 
         const handleBlur = () => {
+            if (isMobile) return;
             if (guardingStartupScroll.current) return;
             if (!hoveringCal.current) return;
 
@@ -57,25 +64,38 @@ const Calendar = ({ calLink, fullscreen = false, layout = "week_view" }: Calenda
             cancelAnimationFrame(frame);
             window.removeEventListener("blur", handleBlur);
         };
-    }, []);
+    }, [isMobile]);
 
     return (
         <div
-            className={fullscreen ? "cal-embed cal-embed-fullscreen" : "cal-embed"}
+            className={
+                fullscreen
+                    ? "cal-embed cal-embed-fullscreen"
+                    : "cal-embed"
+            }
             onMouseEnter={() => {
+                if (isMobile) return;
                 hoveringCal.current = true;
             }}
             onMouseLeave={() => {
+                if (isMobile) return;
                 hoveringCal.current = false;
             }}
         >
             <Cal
                 calLink={calLink}
-                config={{ layout, theme: "dark" }}
+                config={{
+                    layout,
+                    theme: "dark",
+                }}
                 style={{
                     width: "100%",
-                    height: fullscreen ? "100vh" : "1200px",
-                    overflow: "auto",
+                    height: fullscreen
+                        ? "100vh"
+                        : isMobile
+                            ? undefined
+                            : "1200px",
+                    overflow: isMobile ? "visible" : "auto",
                 }}
             />
         </div>

@@ -1,0 +1,10 @@
+.behold-container {
+    width: min(80vw, 1200px);
+    max-width: 100%;
+    margin: 0 auto 0;
+}
+
+.behold-container > * {
+    margin-left: auto;
+    margin-right: auto;
+}

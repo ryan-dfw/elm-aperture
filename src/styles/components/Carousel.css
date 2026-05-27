@@ -7,9 +7,12 @@
 }
 
 .carousel-item img {
-    max-height: 80vh;
+    display: block;
+    max-height: 80svh;
+    width: 100%;
     max-width: 100%;
     object-fit: contain;
+    -webkit-user-drag: none;
 }
 
 .carousel-inner {

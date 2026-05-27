@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useContextValue } from "../contexts/Context";
-import "../styles/Booking.css";
+import "../styles/pages/Booking.css";
 
 const BookingForm = () => {
     const { selectedDateTime, photographer } = useContextValue();

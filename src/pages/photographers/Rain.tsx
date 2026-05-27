@@ -18,9 +18,11 @@ const Rain = () => {
                 <h4>FEATURED SHOTS ON INSTAGRAM</h4>
                 <div className={"horizontal-line"}></div>
             </div>
+
             <div className="behold-container">
                 <BeholdWidget feedId="53ACNRUgJYRQEQ2FmFSt"/>
             </div>
+
             <div className={"portfolio-section-header"}>
                 <div className={"horizontal-line"}></div>
                 <h4>AVAILABILITY</h4>

@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@behold/react": "^0.1.10",
+    "@calcom/embed-core": "file:../cal.diy/packages/embeds/embed-core",
     "@calcom/embed-react": "^1.5.3",
+    "@calcom/embed-snippet": "file:../cal.diy/packages/embeds/embed-snippet",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fullcalendar/bootstrap5": "^6.1.11",
     "@fullcalendar/core": "^6.1.11",

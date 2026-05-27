@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Carousel.css';
+import '../styles/components/Carousel.css';
 import { isMobile } from '../utils/isMobile';
 
 const Carousel: React.FC = () => {

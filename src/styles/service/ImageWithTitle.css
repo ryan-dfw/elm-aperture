@@ -1,15 +1,25 @@
+.image-with-title {
+    margin: 0 auto;
+}
+
 .image-container {
     width: min(88vw, 1120px);
     aspect-ratio: 16 / 9;
 
-    margin: clamp(52px, 7vw, 92px) auto;
+    margin:
+            clamp(18px, 2vw, 28px)
+            auto
+            clamp(52px, 7vw, 92px);
 
     overflow: hidden;
+
+    isolation: isolate;
 
     border: 1px solid rgba(242, 243, 246, 0.08);
     border-radius: 24px;
 
     background: rgba(8, 10, 13, 0.42);
+
     box-shadow:
             0 18px 48px rgba(0, 0, 0, 0.32),
             inset 0 0 60px rgba(0, 0, 0, 0.12);
@@ -31,12 +41,15 @@
 }
 
 @media (max-width: 700px) {
+    .image-with-title {
+        margin:
+            clamp(42px, 9vw, 68px)
+            auto;
+    }
+
     .image-container {
         width: 82vw;
         aspect-ratio: 5 / 4;
-
-        margin: clamp(42px, 9vw, 68px) auto;
-
         border-radius: 20px;
     }
 

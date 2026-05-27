@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/BookingButton.css";
+import "../styles/components/BookingButton.css";
 
 const BookingButton = () => {
     return (

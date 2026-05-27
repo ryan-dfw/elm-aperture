@@ -8,7 +8,7 @@ type ImageWithTitleProps = {
 
 const ImageWithTitle = ({ heading, src, alt }: ImageWithTitleProps) => {
     return (
-        <>
+        <div className="image-with-title">
             <div className="service-copy">
                 <div className="service-section-heading heading-compact">
                     <div className="horizontal-line" />
@@ -25,7 +25,7 @@ const ImageWithTitle = ({ heading, src, alt }: ImageWithTitleProps) => {
                     loading="lazy"
                 />
             </div>
-        </>
+        </div>
     );
 };
 
