@@ -8,21 +8,21 @@ const Motel = () => {
         ['River Valley Motor Inn', ', La Grange TX', 'Rain', 0, 0],         // 01
         ['Hotel Bliss', ', Kemah TX', 'Rain', 0, 0],                        // 02
         ['OYO', ', Corpus Christi TX', 'Rain', 0, 0],                       // 03
-        ['Best Value Inn', ', Wichita Falls TX', 'Rain', 0, 0],             // 04
+        ['Fairway Inn', ', La Porte TX', 'Rain', 0, 0],                     // 04
         ['Crown Inn', ', Denver City TX', 'Rain', 0, 0],                    // 05
-        ['Hometown Inn', ', Texhoma OK', 'Rain', 0, 0],                     // 06
-        ['Regency Inn & Suites', ', Bay City TX', 'Rain', 0, 0],            // 07
-        ['Plaza Motel', ', Corpus Christi', 'Rain', 0, 0],                  // 08
+        ['American Inn', ', Vernon TX', 'Rain', 0, 0],                      // 06
+        ['Regency Inn', ', Bay City TX', 'Rain', 0, 0],                     // 07
+        ['Plaza Motel', ', Corpus Christi TX', 'Rain', 0, 0],               // 08
         ['Vali Ho', ', Weslaco TX', 'Rain', 0, 0],                          // 09
-        ['Budget Inn', ', Corpus Christ TX', 'Rain', 0, 0],                 // 10
-        ['Island Inn', ', Galveston TX', 'Rain', 0, 0],                     // 11
+        ['Moulton Inn', ', Moulton TX', 'Rain', 0, 0],                      // 10
+        ['Castle Inn', ', Lawton OK', 'Rain', 0, 0],                        // 11
         ['River Valley Motor Inn', ', La Grange TX', 'Rain', 0, 0],         // 12
-        ['Moulton Inn & Suites', ', Moulton TX', 'Rain', 0, 0],             // 13
+        ['Purple Sage', ', Snyder TX', 'Rain', 0, 0],                       // 13
         ['Executive Inn', ', Pleasanton TX', 'Rain', 0, 0],                 // 14
-        ['Budget Inn', ', Corpus Christ TX', 'Rain', 0, 0],                 // 15
+        ['Budget Inn', ', Corpus Christi TX', 'Rain', 0, 0],                // 15
         ['Texas Inn', ', San Benito TX', 'Rain', 0, 0],                     // 16
-        ['Stamford Inn', ', Stamford TX', 'Rain', 0, 0],                    // 17
-        ['Moulton Inn & Suites', ', Moulton TX', 'Rain', 0, 0]              // 18
+        ['Lone Star Inn', ', Harlingen TX', 'Rain', 0, 0],                  // 17
+        ['Moulton Inn', ', Moulton TX', 'Rain', 0, 0]                       // 18
     ];
 
     return <Gallery directory={directory} subDirectory={subDirectory} layout={layout} details={details}/>;

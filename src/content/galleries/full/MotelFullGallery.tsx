@@ -24,8 +24,7 @@ const MotelFullGallery = () => {
             <div className="gallery-full-page-header">
                 <h1>River Valley Inn</h1>
                 <p>
-                    Exterior approach, reception, five room types, accessibility
-                    accommodations, and guest-facing property details.
+                    A recently repositioned Texas roadside property featuring updated reception spaces, five room types, accessibility accommodations, and guest-facing detail coverage showcasing regional character.
                 </p>
             </div>
 
