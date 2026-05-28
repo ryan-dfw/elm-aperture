@@ -8,10 +8,10 @@ const Motel = () => {
         ['River Valley Motor Inn', ', La Grange TX', 'Rain', 0, 0],         // 01
         ['Hotel Bliss', ', Kemah TX', 'Rain', 0, 0],                        // 02
         ['OYO', ', Corpus Christi TX', 'Rain', 0, 0],                       // 03
-        ['Fairway Inn', ', La Porte TX', 'Rain', 0, 0],                     // 04
+        ['Regency Inn', ', Bay City TX', 'Rain', 0, 0],                     // 04
         ['Crown Inn', ', Denver City TX', 'Rain', 0, 0],                    // 05
         ['American Inn', ', Vernon TX', 'Rain', 0, 0],                      // 06
-        ['Regency Inn', ', Bay City TX', 'Rain', 0, 0],                     // 07
+        ['Fairway Inn', ', La Porte TX', 'Rain', 0, 0],                     // 07
         ['Plaza Motel', ', Corpus Christi TX', 'Rain', 0, 0],               // 08
         ['Vali Ho', ', Weslaco TX', 'Rain', 0, 0],                          // 09
         ['Moulton Inn', ', Moulton TX', 'Rain', 0, 0],                      // 10
