@@ -8,12 +8,25 @@
     align-items: flex-start;
 }
 
-.cal-page iframe {
+.cal-wrapper {
+    width: 90vw;
+    max-width: 1400px;
+}
+
+@media (max-width: 768px) {
+    .cal-page {
+        padding-top: 60px;
+        align-items: flex-start;
+    }
+
+    .cal-wrapper {
+        width: 80vw;
+    }
+}
+
+.cal-wrapper > div,
+.cal-wrapper iframe {
     width: 100% !important;
     min-height: calc(100vh - 96px) !important;
     border: 0 !important;
-}
-
-.cal-page > div {
-    width: min(1400px, 96vw);
 }
