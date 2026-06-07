@@ -14,6 +14,7 @@ import Professional from '../pages/portrait/Professional';
 import Lifestyle from '../pages/portrait/Lifestyle';
 import Booking from '../pages/Booking';
 import RainCal from '../pages/calendars/RainCal.tsx';
+import AlejandroCal from '../pages/calendars/AlejandroCal.tsx';
 import Motel from '../pages/realestate/Motel';
 import MotelFullGallery from '../content/galleries/full/MotelFullGallery';
 import HotelFullGallery from "../content/galleries/full/HotelFullGallery.tsx";
@@ -36,6 +37,7 @@ const AppRoutes = () => (
         <Route path="/maivy" element={<Maivy />} />
         <Route path="/alejandro" element={<Alejandro />} />
         <Route path="/raincal" element={<RainCal />} />
+        <Route path="/alejandrocal" element={<AlejandroCal />} />
         <Route path="/" element={<Homepage />} />
     </Routes>
 );
