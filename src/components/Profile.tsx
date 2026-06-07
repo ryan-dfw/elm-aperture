@@ -10,9 +10,10 @@ interface ProfileProps {
     urlVimeo: string;
     email: string;
     phoneNumber: string;
+    urlLinktree?: string;
 }
 
-const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioText, urlIG, urlVimeo, email, phoneNumber}) => {
+const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioText, urlIG, urlVimeo, email, phoneNumber, urlLinktree}) => {
     const photographerLC = photographer.toLowerCase();
     const [adjustedMarginTop, setAdjustedMarginTop] = useState(0);
 
@@ -64,7 +65,8 @@ const Profile: React.FC<ProfileProps> = ({photographer, position, vFocus, bioTex
                                             },
                                             {value: urlVimeo, prefix: "https://www.vimeo.com/", icon: "fab fa-vimeo"},
                                             {value: email, prefix: "mailto:", icon: "fas fa-envelope"},
-                                            {value: phoneNumber, prefix: "tel:", icon: ""}
+                                            {value: phoneNumber, prefix: "tel:", icon: ""},
+                                            {value: urlLinktree ?? "", prefix: "https://linktr.ee/", icon: "fas fa-link"},
                                         ].map((item, index) => (
                                             item.value && typeof item.value === 'string' && item.value.trim() !== '' ? (
                                                 <React.Fragment key={index}>

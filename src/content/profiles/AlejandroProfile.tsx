@@ -22,6 +22,7 @@ const AlejandroProfile = () => {
         urlVimeo={""}
         email={email}
         phoneNumber={phoneNumber}
+        urlLinktree={"navalabs"}
     />;
 };
 
