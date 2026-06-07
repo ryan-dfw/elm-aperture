@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/casestudy/GalleryFull.scss';
 import { useContextValue } from '../contexts/Context.tsx';
 
@@ -10,10 +10,9 @@ interface GalleryProps {
 }
 
 const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOfPhotos, sectionHeaders = {} }) => {
-    const [imageOpen, setImageOpen] = useState(false);
     const basePath = `res/img/${directory}/`;
     const { setShouldShowNav } = useContextValue();
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [showOrdinals, setShowOrdinals] = useState(false);
     const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
@@ -22,16 +21,9 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
         thumbSrc: `${basePath}${subDirectory}/thumb/${subDirectory}_${(index + 1).toString().padStart(3, '0')}_thumb.webp`,
     }));
 
-    const closeGallery = useCallback(() => {
+    const closeViewer = () => {
         setShouldShowNav(true);
-    }, [setShouldShowNav]);
-
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? imagesData.length - 1 : prevIndex - 1));
-    };
-
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === imagesData.length - 1 ? 0 : prevIndex + 1));
+        setSelectedIndex(null);
     };
 
     useEffect(() => {
@@ -39,109 +31,31 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
     }, []);
 
     useEffect(() => {
-        const galleryImages = document.querySelectorAll('.galleryimage');
-
-        galleryImages.forEach((image) => {
-            image.addEventListener('click', () => {
-                setTimeout(() => {
-                    setImageOpen(true);
-                }, 500);
-                setShouldShowNav(false);
-            });
-        });
-
-        const closeButton = document.getElementById('closeButton');
-
-        if (closeButton) {
-            closeButton.addEventListener('click', closeGallery);
-        }
-        const handleKeyPress = (event: KeyboardEvent) => {
-            const closeButtons = document.querySelectorAll('.close');
-
-            if (event.key === 'Escape' && closeButtons.length > 0) {
-                const firstCloseButton = closeButtons[0] as HTMLAnchorElement;
-                firstCloseButton.click();
-            } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-                const currentHash = window.location.hash;
-                const currentIndex = parseInt(currentHash.substring(5), 10);
-
-                if (!isNaN(currentIndex)) {
-                    let newIndex;
-
-                    if (event.key === 'ArrowLeft') {
-                        newIndex = Math.max(1, currentIndex - 1);
-                    } else {
-                        newIndex = Math.min(imagesData.length, currentIndex + 1);
-                    }
-
-                    window.location.hash = `#img-${newIndex}`;
-                }
-            }
-        };
-
-        document.addEventListener('keydown', handleKeyPress);
-
-        return () => {
-            galleryImages.forEach((image) => {
-                image.removeEventListener('click', () => {
-                    setShouldShowNav(false);
-                });
-            });
-
-            if (closeButton) {
-                closeButton.removeEventListener('click', closeGallery);
-            }
-            document.removeEventListener('keydown', handleKeyPress);
-        };
-    }, [imagesData.length, closeGallery, setShouldShowNav, imageOpen]);
-
-    useEffect(() => {
-        const handleOutsideClick = (event: Event) => {
-            const galleryImg = document.querySelector('.galleryIMG');
-            if (galleryImg && !galleryImg.contains(event.target as Node)) {
-                const closeButtons = document.querySelectorAll('.close');
-                if (closeButtons.length > 0) {
-                    const firstCloseButton = closeButtons[0] as HTMLAnchorElement;
-                    firstCloseButton.click();
-                }
-            }
-        };
-
-        const galleryContainer = document.querySelector('.gallery-container');
-        if (galleryContainer) {
-            galleryContainer.addEventListener('click', handleOutsideClick);
-        }
-
-        return () => {
-            if (galleryContainer) {
-                galleryContainer.removeEventListener('click', handleOutsideClick);
-            }
-        };
-    }, []);
-
-    useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "#") {
+            if (event.key === '#') {
                 setShowOrdinals((current) => !current);
+                return;
+            }
+
+            if (selectedIndex === null) return;
+
+            if (event.key === 'Escape') {
+                closeViewer();
+            } else if (event.key === 'ArrowLeft') {
+                setSelectedIndex(selectedIndex === 0 ? imagesData.length - 1 : selectedIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                setSelectedIndex(selectedIndex === imagesData.length - 1 ? 0 : selectedIndex + 1);
             }
         };
 
-        document.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
-
-    //DO NOT DELETE THIS CONSOLE LOG. It satisfies tsc without ever console logging.
-    if (currentIndex + 1 - currentIndex === 0) {
-        console.log(currentIndex);
-    }
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [selectedIndex, imagesData.length]);
 
     return (
         <div
             className={`gallery-container ${
-                directory === "portrait" ? "portrait" : directory === "events" ? "events" : ""
+                directory === 'portrait' ? 'portrait' : directory === 'events' ? 'events' : ''
             }`}
         >
             <div className="gallery-full">
@@ -158,16 +72,20 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
                             )}
 
                             <div
-                                className={`galleryimage ${loadedImages[index] ? "loaded" : ""}`}
-                                style={{ position: "relative" }}
+                                className={`galleryimage ${loadedImages[index] ? 'loaded' : ''}`}
+                                style={{ position: 'relative' }}
+                                onClick={() => {
+                                    setSelectedIndex(index);
+                                    setShouldShowNav(false);
+                                }}
                             >
                                 <img
-                                    className={loadedImages[index] ? "loaded" : ""}
+                                    className={loadedImages[index] ? 'loaded' : ''}
                                     src={image.thumbSrc}
                                     alt={`Gallery Image ${imageNumber}`}
                                     loading="lazy"
                                     draggable={false}
-                                    onDragStart={(event) => event.preventDefault()}
+                                    onDragStart={(e) => e.preventDefault()}
                                     onLoad={() => {
                                         setLoadedImages((current) => ({
                                             ...current,
@@ -175,12 +93,6 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
                                         }));
                                     }}
                                 />
-                                <a
-                                    href={`#img-${imageNumber}`}
-                                    draggable={false}
-                                    onDragStart={(event) => event.preventDefault()}
-                                />
-
                                 {showOrdinals && (
                                     <div className="ordinal-overlay">
                                         {imageNumber}
@@ -192,42 +104,29 @@ const GalleryFull: React.FC<GalleryProps> = ({ directory, subDirectory, numberOf
                 })}
             </div>
 
-            {imagesData.map((image, index: number) => (
-                <div className="img" id={`img-${index + 1}`} key={`img-${index + 1}`}>
-                    <div className="content">
+            {selectedIndex !== null && (
+                <div id="img-viewer" className="img gallery-view-open" onClick={closeViewer}>
+                    <div className="content" onClick={(e) => e.stopPropagation()}>
                         <img
                             className="galleryIMG"
-                            src={image.src}
-                            alt={`Large Image ${index + 1}`}
-                            loading="lazy"
+                            src={imagesData[selectedIndex].src}
+                            alt={`Large Image ${selectedIndex + 1}`}
+                            loading="eager"
                         />
                         <a
-                            id={`closeButton-${index + 1}`}
                             className="close"
                             href="#gallery"
-                            onClick={() => {
-                                if (imageOpen) {
-                                    setShouldShowNav(true);
-                                    setImageOpen(false);
-                                }
+                            onClick={(e) => {
+                                e.preventDefault();
+                                closeViewer();
                             }}
-                            style={{
-                                position: "absolute",
-                                top: 0,
-                                right: 0,
-                            }}
-                        ></a>
+                            style={{ position: 'absolute', top: 0, right: 0 }}
+                        />
                     </div>
                 </div>
-            ))}
-
-            <button className="carousel-btn prev" onClick={handlePrev} style={{ display: "none" }}>
-                &lt;
-            </button>
-            <button className="carousel-btn next" onClick={handleNext} style={{ display: "none" }}>
-                &gt;
-            </button>
+            )}
         </div>
-    )};
+    );
+};
 
 export default GalleryFull;
